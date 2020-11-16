@@ -1,0 +1,69 @@
+
+/* section profil */
+
+.profil .col-md-5 img {
+	margin: auto;
+	width: 100%;
+	text-align: center;
+	align-items: center;
+}
+
+.profil .title {
+	display: inline-block
+}
+
+.profil .title h3,
+.gallery .title h3,
+.sejarah .title h3,
+.fasilitas .title h3,
+.contact .title h3,
+.alumni .title {
+	margin: auto;
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Poppins', Arial, Helvetica, sans-serif;
+	/* line-height: 2px; */
+}
+
+.sejarah .title hr,
+.gallery .title hr,
+.fasilitas .title hr,
+.contact .title hr,
+.alumni .title hr {
+	border: solid 1px #009624;
+	width: 170px;
+	margin: auto;
+}
+
+.profil .judul {
+	display: inline-block
+}
+
+.profil .judul h3 {
+	margin: auto;
+	/* text-align: center; */
+	margin-left: 5px;
+	font-size: 24px;
+	font-family: 'Poppins', Arial, Helvetica, sans-serif;
+	/* line-height: 2px; */
+}
+
+.profil .judul hr {
+	border: solid 1px #009624;
+	width: 150px;
+	margin: auto;
+}
+
+.profil .table td {
+	font-family: 'Poppins',
+		sans-serif;
+}
+
+.container.profil-container {
+	margin-top: 10px;
+	background-color: #FFF;
+	color: #35373a;
+	min-height: 65vh;
+	border-radius: 20px;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}

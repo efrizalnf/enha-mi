@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import "header.css";
+@import "profil.css";
+@import "gallery-grid.css";
+@import "sambutan.css";
+@import "fasilitas.css";
+@import "footer.css";
+@import "informasi.css";
+@import "loader.css";
+@import "w3.css";
+
+/*for handphone*/
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+	.carousel-caption {
+		width: 60%;
+		/* margin: auto; */
+		background-color: #009624;
+		opacity: 65%;
+		text-align: center;
+		/* top: 50%;
+		transform: translateY(-50%);
+		padding: 3vw; */
+	}
+
+	.carousel-caption h3 {
+		color: #212121;
+		font-size: 3vw;
+		font-family: 'Righteous',
+			cursive;
+		font-style: initial;
+		/* line-height: 3px; */
+		margin: auto;
+		/* margin-top: 35px; */
+	}
+
+	
+	.carousel-caption p {
+		margin: auto;
+		margin-top: 7px;
+		color: #000;
+		font-size: 2vw;
+		font-family: 'Raleway',
+			sans-serif;
+	}
+
+	.carousel-caption hr {
+		width: 200px;
+		height: 1px;
+		margin: auto;
+		margin-bottom: 4px;
+		border-width: 1;
+		color: #212121;
+		background-color: #212121;
+	}
+
+	.carousel-caption a .btn{
+		width: 10px;
+		position: relative;
+		font-size: 6px;
+		color: #ffffff;
+		font-family: 'Raleway',
+			sans-serif;
+		font-style: initial;
+		margin: auto;
+		margin-top: 0px;
+		border-radius: 55px 55px 55px 55px;
+		opacity: unset !important;
+		background-color: #5efc82;
+		border-color: #009624;
+	}
+
+
+	.carousel-caption a:hover {
+		background-color: #009624;
+		border-color: #5efc82;
+	}
+
+	.sejarah img {
+		width: 150px;
+		height: 100px;
+	}
+
+}
+
+
+/*untuk layar device berukuran sedang*/
+@media screen and (max-width: 768px) {
+
+
+	.carousel-caption {
+	
+		height: 120px;
+		width: 60%;
+		margin: auto;
+		background-color: #5efc82;
+		opacity: 65%;
+		text-align: center;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 3vw;
+	}
+
+	.carousel-caption h3 {
+		color: #212121;
+		font-size: 3vw;
+		font-family: 'Righteous',
+			cursive;
+		font-style: initial;
+		margin: auto;
+		margin-top: 5px;
+	}
+
+	.carousel-caption p {
+		line-height: 3;
+		margin: auto;
+		color: #000;
+		font-size: 2vw;
+		font-family: 'Raleway',
+			sans-serif;
+	}
+
+	.carousel-caption hr {
+		width: 200px;
+		height: 1px;
+		margin: auto;
+		margin-bottom: 15px;
+		border-width: 1;
+		color: #212121;
+		background-color: #212121;
+	}
+
+	.carousel-caption a {
+		position: relative;
+		font-size: 8px !important;
+		color: #009624;
+		font-family: 'Raleway',
+			sans-serif;
+		font-style: initial;
+		margin-top: 5px;
+		border-radius: 55px 55px 55px 55px;
+		opacity: 100% !important;
+		background-color: #212121 !important;
+		border-color: #009624;
+	}
+
+
+	.carousel-caption a:hover {
+		background-color: #009624 !important;
+		color: #F8F9FA;
+		border-color: #009624;
+	}
+
+	.sejarah img {
+		width: 400px;
+		height: 300px;
+		padding: 30px;
+	}
+}
+
+/*untuk layar device berukuran besar*/
+@media screen and (max-width: 2000px) {
+	.carousel-caption {
+		width: 60%;
+		margin: auto;
+		background-color: #5efc82;
+		opacity: 65%;
+		text-align: center;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 3vw;
+	}
+
+	.carousel-caption h3 {
+		color: #212121;
+		font-size: 3vw;
+		font-family: 'Righteous',
+			cursive;
+		font-style: initial;
+		margin: auto;
+		margin-top: 5px;
+	}
+
+	.carousel-caption p {
+		line-height: 3;
+		margin: auto;
+		color: #000;
+		font-size: 2vw;
+		font-family: 'Raleway',
+			sans-serif;
+	}
+
+	.carousel-caption hr {
+		width: 200px;
+		height: 1px;
+		margin: auto;
+		margin-bottom: 15px;
+		border-width: 1;
+		color: #212121;
+		background-color: #212121;
+	}
+
+	.carousel-caption a {
+		position: relative;
+		/* font-size: 11px !important; */
+		color: #5efc82;
+		font-family: 'Raleway',
+			sans-serif;
+		font-style: initial;
+		margin: auto;
+		border-radius: 55px 55px 55px 55px;
+		opacity: 100% !important;
+		background-color: #212121 !important;
+		border-color: #5efc82;
+	}
+
+
+	.carousel-caption a:hover {
+		background-color: #009624 !important;
+		color: #F8F9FA;
+		border-color: #5efc82;
+	}
+
+	.sejarah img {
+		width: 320px;
+		height: 350px;
+	}
+
+}
+
+/* Medium devices (tablets, 768px and up) 
+The navbar toggle appears at this breakpoint */
+/* @media (min-width: 768px) {
+
+} */
+/* 
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  } */
+
+body {
+	/* background-color: #F8F9FA; */
+	width: 100%;
+	height: 100%;
+	font-size: 18px;
+	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100vh;
+	
+}
+
+.section-home {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	display: none;
+	transition: opacity 1s ease-in;
+}
+
+section {
+	padding-top: 60px;
+	margin-top: -60px;
+}
+
+img {
+	transition: transform .2s;
+	/* object-fit: cover; */
+}
+
+img:hover {
+	transform: scale(1.1);
+}
+
+
+#scroll-top {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Fixed/sticky position */
+	bottom: 20px;
+	/* Place the button at the bottom of the page */
+	right: 15px;
+	/* Place the button 30px from the right */
+	z-index: 99;
+	/* Make sure it does not overlap */
+	border: none;
+	/* Remove borders */
+	outline: none;
+	/* Remove outline */
+	background-color: #009624;
+	/* Set a background color */
+	color: white;
+	/* Text color */
+	cursor: pointer;
+	/* Add a mouse pointer on hover */
+	padding: 15px;
+	/* Some padding */
+	border-radius: 20px 0 20px 0;
+	/* Rounded corners */
+	font-size: 18px;
+	/* Increase font size */
+}
+
+#scroll-top:hover {
+	background-color: #0bc236;
+	/* Add a dark-grey background on hover */
+}
+
+
+

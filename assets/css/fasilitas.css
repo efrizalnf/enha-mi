@@ -1,0 +1,28 @@
+/* fasilitas */
+.container.fasilitas-container {
+	margin-top: 10px;
+	background-color: #fff;
+	color: #35373a;
+	min-height: 50vh;
+	border-radius: 20px;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.fasilitas h5 {
+	margin-top: 15px;
+	font-family: "Raleway";
+}
+
+.fasilitas .col-md {
+	padding: 10px;
+
+}
+
+.fasilitas .fas {
+	color: #5efc82;
+}
+
+/* .fasilitas .fas {
+	border: solid 1px #ffba50;
+	border-radius: 150%;
+} */

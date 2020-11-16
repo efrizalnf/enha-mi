@@ -1,0 +1,24 @@
+
+/* Gallery @ css gallery */
+
+/* Sejarah / Sambutan Kepsek*/
+.container.sejarah-container {
+	margin-top: 10px;
+	background-color: #fff;
+	color: #35373a;
+	min-height: 80vh;
+	border-radius: 20px;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.sejarah p {
+	width: 100%;
+	text-align: justify;
+	padding: 15px;
+	border: #5efc82 solid 1px;
+	border-radius: 10px;
+}
+
+.sejarah .col-md {
+	margin: auto;
+}

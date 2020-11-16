@@ -1,0 +1,93 @@
+
+/* LOADER 1 */
+.loader {
+    height: 50px;
+    transform-origin: bottom center;
+    animation: rotate 3s linear infinite;
+  }
+  
+  .circle {
+    display: inline-block;
+    background-color: #009624;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: grow 1.5s linear infinite;
+    margin: -10px;
+  }
+  
+  .circle:nth-child(2) {
+    background-color: #5efc82;
+    animation-delay: 0.75s;
+  }
+  
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes grow {
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  
+  /* LOADER 2 */
+  /* .loader {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 40px;
+    color: palevioletred;
+  }
+  
+  .loader::after {
+    content: '\2026';
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    animation: dots steps(4, end) 2s infinite;
+    width: 0px;
+  }
+  
+  @keyframes dots {
+    to {
+      width: 1.25em;
+    }
+  } */
+  
+  /* LOADER 3 */
+ /*  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loader > span {
+    display: inline-block;
+    background-color: rgb(2, 114, 45);
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    margin: 0 8px;
+    transform: translate3d(0);
+    animation: bounce 0.6s infinite alternate;
+  }
+  
+  .loader > span:nth-child(2) {
+    background-color: rgb(10, 167, 114);
+    animation-delay: 0.2s;
+  }
+  
+  .loader > span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes bounce {
+    to {
+      width: 16px;
+      height: 16px;
+      transform: translate3d(0, -16px, 0);
+    }
+  } */

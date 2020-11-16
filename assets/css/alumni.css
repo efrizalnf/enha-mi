@@ -1,0 +1,93 @@
+/* alumni */
+.container.alumni-container {
+	margin-top: 30px;
+	margin-bottom: 25px;
+	background-color: #fff;
+	margin: auto;
+	color: #35373a;
+	min-height: 100vh;
+	border-radius: 20px;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.isi-card {
+	display: grid;
+	padding: 10px;
+	padding-bottom: 40px;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-gap: 10px;
+	margin: 10px 40px 40px;
+	z-index: 0;
+}
+
+.isi-card .card {
+	position: relative;
+	width: 80px;
+	margin: 0 auto;
+	background-color: #FCF9CC;
+	padding: 20px;
+	box-sizing: border-box;
+	text-align: center;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
+	overflow: hidden;
+}
+
+.isi-card .card .col-md {
+	margin: 150px;
+}
+
+.isi-card .card .layer {
+	position: absolute;
+	top: calc(100% - 2px);
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#FCF9CC, #009624);
+	z-index: 1;
+	transition: 0.5s;
+
+}
+
+.isi-card .card:hover .layer {
+	top: 0;
+}
+
+.isi-card .card .isi {
+	position: relative;
+	z-index: 2;
+}
+
+.isi-card .card .isi p {
+	font-size: 18px;
+	line-height: 24px;
+	color: #212121;
+}
+
+.isi-card .card .isi img {
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 4px solid #FCF9CC;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
+}
+
+.isi-card .card .isi .name h2 {
+	font-size: 20px;
+	color: #212121;
+}
+
+.isi-card .card .isi .image img {
+	margin-bottom: 25px;
+}
+
+.isi-card .card .isi .name h2 span {
+	color: #009624;
+	font-size: 18px;
+	transition: 0.5s;
+}
+
+.isi-card .card:hover .isi .name h2 span {
+	color: #fff;
+}

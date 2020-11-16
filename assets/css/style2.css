@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Righteous&display=swap');
+
+/*untuk layar device berukuran kecil*/
+@media screen and (min-width: 250px) {
+
+	.carousel-item {
+		height: 50%;
+	}
+
+	.carousel-item img {
+		height: 50%;
+	}
+}
+
+/*untuk layar device berukuran sedang*/
+@media screen and (min-width: 550px) {
+	.red {
+		width: 33%;
+	}
+
+	.orange {
+		width: 67%;
+	}
+}
+
+/*untuk layar device berukuran besar*/
+@media screen and (min-width: 800px) {
+	.container {
+		width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+
+
+body {
+	background-color: rgb(46, 46, 44);
+}
+
+
+img {
+	transition: transform .2s;
+	/* object-fit: cover; */
+}
+
+img:hover {
+	transform: scale(1.1);
+}
+
+
+.navbar {
+	color: #fff;
+	font-style: initial;
+	text-shadow: -1px 0 black,
+		0 1px black,
+		1px 0 black,
+		0 -1px black;
+	/* background-color: #fff !important;
+	opacity: 50%;
+	border-bottom: solid 3px #ffba50;
+	border-top: solid 3px #ffba50; */
+
+}
+
+.navbar li a {
+	font-style: initial;
+	text-shadow: -1px 0 black,
+		0 1px black,
+		1px 0 black,
+		0 -1px black;
+}
+
+.navbar-toggler-right {
+	margin: auto;
+}
+
+.dropdown .dropdown-menu {
+	border-radius: 0;
+}
+
+
+/* Medium devices (tablets, 768px and up) 
+The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+	.dropdown:hover .dropdown-menu {
+		display: block;
+		margin-top: 0;
+		border-radius: 0;
+	}
+}
+
+.nav-header {
+	border-top: solid 3px #ffba50;
+	padding-top: 15px;
+	background-color: #ffae6a;
+}
+
+.nav-text {
+	margin: auto;
+	text-align: center;
+}
+
+.nav-text ul li h5 {
+	font-size: 24px;
+	font-style: initial;
+	font-family: 'Righteous',
+		cursive;
+}
+
+.list-unstyled {
+	margin: auto;
+	line-height: 2px;
+}
+
+.fas {
+	margin-right: 10px;
+}
+
+.top-header img {
+	margin-right: 15px;
+}
+
+.top-header a {
+	text-decoration: none;
+	color: lavenderblush;
+	text-shadow: -1px 0 black,
+		0 1px black,
+		1px 0 black,
+		0 -1px black;
+	display: flex;
+	margin-bottom: 15px;
+	padding: 0;
+	/* text-align: center; */
+}
+
+.top-contact a {
+	font-size: 14px;
+	text-decoration: none;
+	color: lavenderblush;
+	padding: 0;
+	margin: auto;
+}
+
+.top-sosmed a {
+	text-decoration: none;
+	color: lavenderblush;
+	padding: 0;
+	margin-right: auto;
+}
+
+.carousel-item {
+	height: 500px;
+}
+
+.carousel-item img {
+	height: 500px;
+}
+
+
+/* Isi */
+
+.header p {
+	color: #fff;
+}
+
+.navigasi {
+	text-align: center;
+	width: 700px;
+	margin: 0 auto;
+	padding: 30px 30px;
+}
+
+.header {
+	text-align: center;
+	font-size: 18px;
+	margin: 40px;
+
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-gap: 20px;
+	margin: 200px auto 100px;
+}
+
+.container .card {
+	position: relative;
+	width: 350px;
+	margin: 0 auto;
+	background-color: #333;
+	padding: 20px;
+	box-sizing: border-box;
+	text-align: center;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
+	overflow: hidden;
+}
+
+.container .card .layer {
+	position: absolute;
+	top: calc(100% - 2px);
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#e91ee3, #03a9f4);
+	z-index: 1;
+	transition: 0.5s;
+
+}
+
+.container .card:hover .layer {
+	top: 0;
+}
+
+.container .card .isi {
+	position: relative;
+	z-index: 2;
+}
+
+.container .card .isi p {
+	font-size: 18px;
+	line-height: 24px;
+	color: #fff;
+}
+
+.container .card .isi img {
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 4px solid #fff;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
+}
+
+.container .card .isi .name h2 {
+	font-size: 20px;
+	color: #fff;
+}
+
+.container .card .isi .name h2 span {
+	color: #5EABD1;
+	font-size: 18px;
+	transition: 0.5s;
+}
+
+.container .card:hover .isi .name h2 span {
+	color: #fff;
+}
