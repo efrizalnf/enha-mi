@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import "loader.css";
 @import "header.css";
 @import "profil.css";
 @import "gallery-grid.css";
@@ -8,7 +9,7 @@
 @import "fasilitas.css";
 @import "footer.css";
 @import "informasi.css";
-@import "loader.css";
+
 @import "w3.css";
 
 /*for handphone*/
@@ -35,7 +36,7 @@
 		/* margin-top: 35px; */
 	}
 
-	
+
 	.carousel-caption p {
 		margin: auto;
 		margin-top: 7px;
@@ -55,7 +56,7 @@
 		background-color: #212121;
 	}
 
-	.carousel-caption a .btn{
+	.carousel-caption a .btn {
 		width: 10px;
 		position: relative;
 		font-size: 6px;
@@ -90,7 +91,7 @@
 
 
 	.carousel-caption {
-	
+
 		height: 120px;
 		width: 60%;
 		margin: auto;
@@ -245,6 +246,9 @@ body {
 	/* background-color: #F8F9FA; */
 	width: 100%;
 	height: 100%;
+	/* opacity: 0;
+	display: none;
+	transition: opacity 1s ease-in; */
 	font-size: 18px;
 	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 	display: flex;
@@ -252,10 +256,11 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	min-height: 100vh;
-	
+
 }
 
-.section-home {
+
+#section-head {
 	width: 100%;
 	height: 100%;
 	opacity: 0;
@@ -263,10 +268,27 @@ body {
 	transition: opacity 1s ease-in;
 }
 
+#section-content {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	display: none;
+	transition: opacity 1s ease-in;
+}
+
+/* #section-footer {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	display: none;
+	transition: opacity 1s ease-in;
+} */
+
 section {
 	padding-top: 60px;
 	margin-top: -60px;
 }
+
 
 img {
 	transition: transform .2s;
@@ -311,6 +333,3 @@ img:hover {
 	background-color: #0bc236;
 	/* Add a dark-grey background on hover */
 }
-
-
-

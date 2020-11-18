@@ -1,5 +1,3 @@
-
-
 /* Header Sec */
 /* .navbar-brand {
 	animation: pulse 10s infinite;
@@ -20,7 +18,9 @@
 	}
 } */
 
+
 .navbar {
+
 	align-content: center;
 	font-style: initial;
 	margin: auto;
@@ -105,15 +105,16 @@
 }
 
 /* hide arrow */
-.dropdown-toggle::after { 
-	content: none; 
-} 
+.dropdown-toggle::after {
+	content: none;
+}
 
-.dropdown:hover .dropdown-menu{
+.dropdown:hover .dropdown-menu {
 	display: block;
 	color: #057e2d;
 }
-.dropdown .dropdown-menu  {
+
+.dropdown .dropdown-menu {
 	color: #057e2d;
 	font-style: initial;
 	text-decoration: none;
@@ -250,11 +251,11 @@
 	}
   } */
 
-  .carousel-item h3 {
+.carousel-item h3 {
 	animation: pulseone 4s 1;
-  }
+}
 
-  @keyframes pulseone {
+@keyframes pulseone {
 	0% {
 		transform: scale(1, 1);
 	}
@@ -269,21 +270,30 @@
 }
 
 
-  .carousel-item p {
-	margin:0px;
-	white-space:nowrap;
-	overflow:hidden;
-	animation:typing 4s steps(18,end) forwards;
+.carousel-item p {
+	margin: 0px;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: typing 4s steps(18, end) forwards;
 	/* animation:typing 4s steps(18,end) forwards,
 			  blink 1s infinite; */
-  }
+}
 
-  @keyframes typing {
-	0% { width:0% }
-	50% { width:50% }
-	100% { width:100% }
-  }
-  /* @keyframes blink {
+@keyframes typing {
+	0% {
+		width: 0%
+	}
+
+	50% {
+		width: 50%
+	}
+
+	100% {
+		width: 100%
+	}
+}
+
+/* @keyframes blink {
 	0%,100% {
 	  border-right:2px solid transparent;
 	}
@@ -320,15 +330,11 @@
 	border-radius: 10px 0 0 10px;
 	float: right;
 	margin: auto;
-	
+
 }
 
 .carousel .carousel-indicators li {
 	width: 10px;
-   height: 10px;
-   border-radius: 100%;
- }
-
-
-
-
+	height: 10px;
+	border-radius: 100%;
+}
