@@ -31,10 +31,14 @@ function hideloader() {
 		}
 
 		if (fadeTarget.style.opacity > 0) {
-			fadeTarget.style.opacity -= 0.1;
+			setTimeout(() => {
+				fadeTarget.style.opacity -= 0.1;
+			}, 2800);
+
 		} else {
 			clearInterval(fadeEfect);
 			fadeTarget.style.display = "none"
 		}
-	}, 1)
+	}, 2)
+
 }
