@@ -4,20 +4,17 @@
 }
 
 .navbar {
-
 	align-content: center;
 	font-style: initial;
 	margin: auto;
 	/* height: 65px !important; */
-	background-color: #FFF !important;
+	background-color: #057e2d !important;
 	opacity: 90%;
 	border-bottom: solid 1px #5efc82;
-
-
 }
 
 .navbar-toggler-right {
-	background-color: #5efc82;
+	background-color: #009624;
 	border-radius: 10px;
 }
 
@@ -47,7 +44,7 @@
 }
 
 .list-unstyled {
-	color: #0fca3b;
+	color: #ffffff;
 	margin: auto;
 	line-height: 2px;
 }
@@ -75,7 +72,7 @@
 
 .collapse .navbar-nav .nav-item a:hover {
 	color: #212121;
-	background-color: #5efc82;
+	background-color: #8acf9b;
 	transition: .5s;
 	animation-delay: 0.10s;
 	font-style: initial;
@@ -129,7 +126,7 @@
 
 .top-header a {
 	text-decoration: none;
-	color: #5efc82;
+	color: #ffffff;
 	text-shadow: -1px 0 black,
 		0 1px black,
 		1px 0 black,

@@ -73,3 +73,7 @@ $(function() {
    <script async defer
        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfz3Euq9lMt4i7V-rho11jkgRCTC5t4vo&callback=initMap">
    </script>
+
+   </body>
+
+   </html>
