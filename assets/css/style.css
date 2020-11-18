@@ -9,7 +9,7 @@
 @import "fasilitas.css";
 @import "footer.css";
 @import "informasi.css";
-
+@import "header-default.css";
 @import "w3.css";
 
 /*for handphone*/
@@ -260,7 +260,7 @@ body {
 }
 
 
-#section-head {
+.section-home {
 	width: 100%;
 	height: 100%;
 	opacity: 0;
