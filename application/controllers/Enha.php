@@ -13,8 +13,5 @@ class Enha extends CI_Controller {
     $this->load->view('templates/landing/footer_default');
     }   
 
-	public function error_page()
-	{
-		$this->load->view('maintenance');
-	}
+	
 }
