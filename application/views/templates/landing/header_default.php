@@ -65,7 +65,7 @@
             <div class="collapse navbar-collapse flex-column" id="navbar">
                 <ul class="navbar-nav w-100 justify-content-end px-3">
                     <li class="nav-item bg-success rounded text-warning active mr-1">
-                        <a class="nav-link font-weight-bold" href="<?php echo base_url('home/index')?>">Home <span
+                        <a class="nav-link font-weight-bold" href="<?php echo base_url('enha/index')?>">Home <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">

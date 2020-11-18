@@ -20,12 +20,23 @@
     <title>MI Nurul Huda Kota Bandung</title>
 </head>
 
-<body>
-    <div class="loader">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+<body onload="hideloader();">
+    <div class="loading overlay">
+        <div class="ldio-ohmxfizoh9a">
+            <div></div>
+            <div></div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+        </div>
     </div>
+
+    <!-- <div class="loader">
+    <div class="circle"></div><div class="circle"></div><div class="circle"></div></div>
+    -->
     <!--     <div class="loader">
         <span></span>
         <span></span>
@@ -96,7 +107,7 @@
                             Direktori
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="<?php echo base_url('guru/detail')?>">Direktori Guru</a>
+                            <a class="dropdown-item" href="<?php echo base_url('enha/dirguru')?>">Direktori Guru</a>
                             <a class="dropdown-item" href="#">Direktori Siswa</a>
                         </div>
                     </li>
@@ -344,55 +355,55 @@
                 </div>
                 <div class="tz-gallery">
                     <div class="row">
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="<?php echo base_url()?>assets/img/1.jpg">
-                                <img src="assets/img/1.jpg" alt="Park">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="<?php echo base_url()?>assets/img/2.jpg">
-                                <img src="assets/img/2.jpg" alt="Bridge">
-                            </a>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <a class="lightbox" href="<?php echo base_url()?>assets/img/3.jpg">
-                                <img src="assets/img/3.jpg" alt="Tunnel">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="<?php echo base_url()?>assets/img/4.jpg">
-                                <img src="assets/img/4.jpg" alt="Coast">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="<?php echo base_url()?>assets/img/5.jpg">
-                                <img src="assets/img/5.jpg" alt="Rails">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="<?php echo base_url()?>assets/img/6.jpg">
-                                <img src="assets/img/6.jpg" alt="Traffic">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="<?php echo base_url()?>assets/img/7.jpg">
-                                <img src="assets/img/7.jpg" alt="Rocks">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="<?php echo base_url()?>assets/img/8.jpg">
-                                <img src="assets/img/8.jpg" alt="Benches">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="<?php echo base_url()?>assets/img/9.jpg">
-                                <img src="assets/img/9.jpg" alt="Sky">
-                            </a>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/img/1.jpg">
+                                    <img src="assets/img/1.jpg" alt="enha-img-1">
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/img/2.jpg">
+                                    <img src="assets/img/2.jpg" alt="enha-img-2">
+                                </a>
+                            </div>
+                            <div class="col-sm-12 col-md-4">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/img/3.jpg">
+                                    <img src="assets/img/3.jpg" alt="enha-img-3">
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/img/4.jpg">
+                                    <img src="assets/img/4.jpg" alt="enha-img-4">
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/img/5.jpg">
+                                    <img src="assets/img/5.jpg" alt="enha-img-5">
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/img/6.jpg">
+                                    <img src="assets/img/6.jpg" alt="enha-img-6">
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/img/7.jpg">
+                                    <img src="assets/img/7.jpg" alt="enha-img-7">
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/img/8.jpg">
+                                    <img src="assets/img/8.jpg" alt="enha-img-8">
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/img/9.jpg">
+                                    <img src="assets/img/9.jpg" alt="enha-img-9">
+                                </a>
+                            </div>
                         </div>
                     </div>
-
                 </div>
-            </div>
         </section>
         <section class="footer" id="section-footer">
             <div class="footer-container">
@@ -453,8 +464,6 @@
         <script src="<?php echo base_url()?>assets/js/smooth-scroll.min.js"></script>
         <script src="<?php echo base_url()?>assets/js/baguetteBox.min.js"></script>
         <script type="text/javascript">
-        baguetteBox.run('.tz-gallery');
-
         $(function() {
             var scroll = new SmoothScroll('a[href*="#section-"]', {
                 // speed: 1000

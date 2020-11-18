@@ -33,7 +33,7 @@
 }
 
 .navbar-toggler-right {
-	background-color: #5efc82;
+	background-color: #057e2d;
 	border-radius: 10px;
 }
 
@@ -46,7 +46,7 @@
 	/* height: 45px; */
 	border-top: solid 1px #4D555E;
 	padding-top: 15px;
-	background-color: #009624;
+	background-color: #057e2d;
 }
 
 .nav-text {
@@ -84,13 +84,15 @@
 	align-content: center;
 	color: #212121;
 	font-style: initial;
+	font-family: 'Poppins',
+		cursive;
 	text-decoration: none;
 	border-radius: 12px 12px 12px 12px;
 }
 
 .collapse .navbar-nav .nav-item a:hover {
 	color: #212121;
-	background-color: #5efc82;
+	background-color: #0da130;
 	transition: .5s;
 	animation-delay: 0.10s;
 	font-style: initial;
@@ -144,11 +146,11 @@
 
 .top-header a {
 	text-decoration: none;
-	color: #5efc82;
-	text-shadow: -1px 0 black,
-		0 1px black,
-		1px 0 black,
-		0 -1px black;
+	color: #08b430;
+	text-shadow: -1px 0 rgb(34, 37, 34),
+		0 1px rgb(34, 37, 34),
+		1px 0 rgb(34, 37, 34),
+		0 -1px rgb(34, 37, 34);
 	display: flex;
 	margin: auto;
 	/* margin-bottom: 15px; */
@@ -212,7 +214,7 @@
 }
 
 .carousel-inner .carousel-item a:hover {
-	background-color: #5efc82;
+	background-color: #089228;
 }
 
 

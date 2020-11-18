@@ -68,7 +68,7 @@ $(function() {
     });
 });
    </script>
-   <script src="<?php echo base_url()?>assets/js/loaderdefault.js"></script>
+   <script src="<?php echo base_url()?>assets/js/loader.js"></script>
    <script src="<?php echo base_url()?>assets/js/enha.js"></script>
    <script async defer
        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfz3Euq9lMt4i7V-rho11jkgRCTC5t4vo&callback=initMap">
