@@ -1,0 +1,39 @@
+.container.dirguru {
+	margin-bottom: 20px;
+	background-color: #fff;
+	color: #35373a;
+	min-height: 50vh;
+	border-radius: 20px;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+
+.dirguru h1 {
+	text-align: center;
+	margin-top: 70px;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: bold;
+}
+
+.container.dirguru hr {
+	baccolor: #28a745;
+}
+
+.dirguru p.page-description {
+	text-align: center;
+	max-width: 800px;
+	margin: 25px auto;
+	color: #888;
+	font-size: 18px;
+}
+
+@media(max-width: 768px) {
+	body {
+		padding: 0;
+	}
+
+	.container.dirguru {
+		border-radius: 0;
+	}
+}

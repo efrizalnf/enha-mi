@@ -37,8 +37,7 @@
         <a class="navbar-brand" href="#">
             <img class="navbar-brand-full" src="<?php echo base_url();?>assets/landing/img/logo-enha.png" width="32"
                 height="32" alt="Enha Logo">
-            <p>ENHA Admin</p>
-            <img class="navbar-brand-minimized" src="<?php echo base_url();?>assets/admin/img/brand/sygnet.svg"
+            <img class="navbar-brand-minimized" src="<?php echo base_url();?>assets/landing/img/logo-enha.png"
                 width="30" height="30" alt="CoreUI Logo">
         </a>
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">

@@ -1,4 +1,3 @@
-
 /* section profil */
 
 .profil .col-md-5 img {
@@ -12,28 +11,7 @@
 	display: inline-block
 }
 
-.profil .title h3,
-.gallery .title h3,
-.sejarah .title h3,
-.fasilitas .title h3,
-.contact .title h3,
-.alumni .title {
-	margin: auto;
-	text-align: center;
-	font-size: 24px;
-	font-family: 'Poppins', Arial, Helvetica, sans-serif;
-	/* line-height: 2px; */
-}
 
-.sejarah .title hr,
-.gallery .title hr,
-.fasilitas .title hr,
-.contact .title hr,
-.alumni .title hr {
-	border: solid 1px #009624;
-	width: 170px;
-	margin: auto;
-}
 
 .profil .judul {
 	display: inline-block

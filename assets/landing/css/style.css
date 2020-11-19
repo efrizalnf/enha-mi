@@ -11,6 +11,7 @@
 @import "informasi.css";
 @import "header-default.css";
 @import "w3.css";
+@import "dirguru.css";
 
 /*for handphone*/
 @media only screen and (min-width: 0px) and (max-width: 480px) {
@@ -293,6 +294,36 @@ img:hover {
 	transform: scale(1.1);
 }
 
+
+/* Title Box */
+
+.profil .title h3,
+.gallery .title h3,
+.sejarah .title h3,
+.fasilitas .title h3,
+.contact .title h3,
+.alumni .title,
+.guru .title h3 {
+	margin: auto;
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Poppins', Arial, Helvetica, sans-serif;
+	/* line-height: 2px; */
+}
+
+.sejarah .title hr,
+.gallery .title hr,
+.fasilitas .title hr,
+.contact .title hr,
+.alumni .title hr,
+.guru .title hr {
+	border: solid 1px #009624;
+	width: 170px;
+	margin: auto;
+}
+
+
+/* Scroll page */
 
 #scroll-top {
 	display: none;

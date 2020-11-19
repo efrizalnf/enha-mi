@@ -15,22 +15,22 @@ class AdminPanel extends CI_Controller {
 
 	public function dashboard()
 	{
-		$this->template->load('templates/admin/template', 'dashboard');
+		$this->template->load('templates/admin/template', 'admin/dashboard');
 	}
 
 	public function forms()
 	{
-		$this->template->load('templates/admin/template', 'forms');
+		$this->template->load('templates/admin/template', 'admin/forms');
 	}
 
 	public function tables()
 	{
-		$this->template->load('templates/admin/template', 'tables');
+		$this->template->load('templates/admin/template', 'admin/tables');
 	}
 
 	public function charts()
 	{
-		$this->template->load('templates/admin/template', 'charts');
+		$this->template->load('templates/admin/template', 'admin/charts');
 	}
 
    

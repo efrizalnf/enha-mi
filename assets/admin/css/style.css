@@ -15597,18 +15597,3 @@ body {
 /*# sourceMappingURL=style.css.map */
 
 /* EnhaStyle */
-
-.navbar-brand p {
-	font-size: 16px;
-	color: #575252;
-	margin: 2px;
-	padding: 5px;
-	font-family: 'Poppins',
-		cursive;
-	align-items: center;
-}
-
-.navbar-brand {
-	margin: 4px;
-	align-items: center;
-}
