@@ -3,7 +3,7 @@
            <div class="row">
                <div class="col-md">
                    <div class="logo-footer justify-content-center text-center">
-                       <img class="mb-2" src="<?php echo base_url()?>assets/img/logo-enha2.png"
+                       <img class="mb-2" src="<?php echo base_url()?>assets/landing/img/logo-enha2.png"
                            alt="footer mas nurul huda">
                        <h3>MIS Nurul Huda</h3>
                        <h5 class="mb-1">"Terwujudnya Insan kamil yang beriman, berilmu pengetahuan, cerdas,
@@ -49,11 +49,11 @@
        </div>
 
    </section>
-   <script src="<?php echo base_url()?>assets/js/jquery-3.4.1.slim.min.js"></script>
-   <script src="<?php echo base_url()?>assets/js/popper.min.js"></script>
-   <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
-   <script src="<?php echo base_url()?>assets/js/smooth-scroll.min.js"></script>
-   <script src="<?php echo base_url()?>assets/js/baguetteBox.min.js"></script>
+   <script src="<?php echo base_url()?>assets/landing/js/jquery-3.4.1.slim.min.js"></script>
+   <script src="<?php echo base_url()?>assets/landing/js/popper.min.js"></script>
+   <script src="<?php echo base_url()?>assets/landing/js/bootstrap.min.js"></script>
+   <script src="<?php echo base_url()?>assets/landing/js/smooth-scroll.min.js"></script>
+   <script src="<?php echo base_url()?>assets/landing/js/baguetteBox.min.js"></script>
    <script type="text/javascript">
 baguetteBox.run('.tz-gallery');
 
@@ -68,8 +68,8 @@ $(function() {
     });
 });
    </script>
-   <script src="<?php echo base_url()?>assets/js/loader.js"></script>
-   <script src="<?php echo base_url()?>assets/js/enha.js"></script>
+   <script src="<?php echo base_url()?>assets/landing/js/loader.js"></script>
+   <script src="<?php echo base_url()?>assets/landing/js/enha.js"></script>
    <script async defer
        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfz3Euq9lMt4i7V-rho11jkgRCTC5t4vo&callback=initMap">
    </script>

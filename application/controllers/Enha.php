@@ -12,6 +12,8 @@ class Enha extends CI_Controller {
         $this->load->view('dirguru');
         $this->load->view('templates/landing/footer_default');
     } 
+
+    
     
    
 }

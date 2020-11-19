@@ -10,12 +10,12 @@
     <meta name="copyright" content="efrizalnf|zlztech 2020">
     <meta name="author" content="efrizalnf|zlztech 2020">
     <meta name="url" content="https://www.everyzalz.blogspot.com">
-    <link rel="icon" href="<?php echo base_url()?>assets/img/favicon.ico">
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/w3.css">
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/baguetteBox.min.css">
+    <link rel="icon" href="<?php echo base_url()?>assets/landing/img/favicon.ico">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/w3.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/baguetteBox.min.css">
     <title>MI Nurul Huda Kota Bandung</title>
 </head>
 
@@ -51,7 +51,7 @@
             </div>
             <div class="top-header">
                 <a href="#section-home" class="navbar-brand ml-3 mt-2">
-                    <img src="<?php echo base_url()?>assets/img/logo-enha2.png" class="ml-15 mr-2" width="49"
+                    <img src="<?php echo base_url()?>assets/landing/img/logo-enha2.png" class="ml-15 mr-2" width="49"
                         height="49">
                     <div class="nav-text">
                         <ul class="list-unstyled">
