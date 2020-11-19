@@ -84,6 +84,11 @@
 		height: 100px;
 	}
 
+	.guru .foto {
+		display: inline-block;
+		padding: 40px;
+	}
+
 }
 
 
@@ -285,14 +290,7 @@ section {
 }
 
 
-img {
-	transition: transform .2s;
-	/* object-fit: cover; */
-}
 
-img:hover {
-	transform: scale(1.1);
-}
 
 
 /* Title Box */

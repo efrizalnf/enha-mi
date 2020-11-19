@@ -8,12 +8,11 @@ class Enha extends CI_Controller {
     }
 
     public function dirguru(){
+        $this->load->model('enhamodel');
+        $data['guru'] = $this->enhamodel->getDirGuru();
         $this->load->view('templates/landing/header_default');
-        $this->load->view('landing/dirguru');
+        $this->load->view('landing/dirguru', $data);
         $this->load->view('templates/landing/footer_default');
+        
     } 
-
-    
-    
-   
 }

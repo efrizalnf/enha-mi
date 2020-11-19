@@ -12,12 +12,21 @@
         </div>
     </div>
     <section class="guru" id="section-dirguru">
-        <div class="container dirguru mt-3">
-            <div class="row justify-content-center">
+        <div class="container borderbox mt-3">
+            <div class="title justify-content-center">
                 <div class="title mb-4 mt-4">
                     <h3 class="title-section mb-1">Guru MI Nurul Huda</h3>
                     <hr class="hr-section">
                 </div>
+            </div>
+            <div class="foto">
+                <?php foreach ($guru as $gurumapel) :?>
+                <div class="imgguru">
+                    <h4><?php echo $gurumapel['mapel_ampu']?></h4>
+                    <img src="<?php echo base_url()?>assets/landing/img/<?php echo $gurumapel['foto_guru']?>" alt="">
+                    <h6><?php echo $gurumapel['nama_guru']?></h6>
+                </div>
+                <?php endforeach; ?>
             </div>
 
         </div>
