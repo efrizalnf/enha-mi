@@ -10,13 +10,13 @@
     <meta name="copyright" content="efrizalnf|zlztech 2020">
     <meta name="author" content="efrizalnf|zlztech 2020">
     <meta name="url" content="https://www.everyzalz.blogspot.com">
-    <link rel="icon" href="<?php echo base_url()?>assets/img/favicon.ico">
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css">
+    <link rel="icon" href="<?php echo base_url()?>assets/landing/img/favicon.ico">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/w3.css">
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/baguetteBox.min.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/w3.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/baguetteBox.min.css">
     <title>MI Nurul Huda Kota Bandung</title>
 </head>
 
@@ -74,7 +74,7 @@
             </div>
             <div class="top-header">
                 <a href="#section-home" class="navbar-brand ml-3 mt-2">
-                    <img src="<?php echo base_url()?>assets/img/logo-enha2.png" class="ml-15 mr-2" width="49"
+                    <img src="<?php echo base_url()?>assets/landing/img/logo-enha2.png" class="ml-15 mr-2" width="49"
                         height="49">
                     <div class="nav-text">
                         <ul class="list-unstyled ">
@@ -88,7 +88,7 @@
             <div class="collapse navbar-collapse flex-column" id="navbar">
                 <ul class="navbar-nav w-100 justify-content-end px-3">
                     <li class="nav-item bg-success rounded text-warning active mr-1">
-                        <a class="nav-link font-weight-bold" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link font-weight-bold" href="#">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="http://minurulhuda.sch.id" id="navbarDropdownMenuLink"
@@ -156,7 +156,8 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="carousel-layer"></div>
-                                <img src="<?php echo base_url()?>assets/img/1.png" class="d-block w-100" alt="...">
+                                <img src="<?php echo base_url()?>assets/landing/img/1.png" class="d-block w-100"
+                                    alt="...">
                                 <div class="carousel-caption satu">
                                     <h3>MI NURUL HUDA</h3>
                                     <p>"Cerdas, Enerjik, Riang, Intelek, Agamis"</p>
@@ -169,7 +170,8 @@
                             </div>
                             <div class="carousel-item">
                                 <div class="carousel-layer"></div>
-                                <img src="<?php echo base_url()?>assets/img/2.png" class="d-block w-100" alt="...">
+                                <img src="<?php echo base_url()?>assets/landing/img/2.png" class="d-block w-100"
+                                    alt="...">
                                 <div class="carousel-caption dua">
                                     <h3>Menerima Peserta Didik Baru</h3>
                                     <p>Tahun ajaran 2021-2022</p>
@@ -181,7 +183,8 @@
                             </div>
                             <div class="carousel-item">
                                 <div class="carousel-layer"></div>
-                                <img src="<?php echo base_url()?>assets/img/3.png" class="d-block w-100" alt="...">
+                                <img src="<?php echo base_url()?>assets/landing/img/3.png" class="d-block w-100"
+                                    alt="...">
                                 <div class="carousel-caption">
                                     <h3>Madrasah Hebat Bermartabat</h3>
                                     <p>Ayo Sekolah di Madrasah!</p>
@@ -236,7 +239,7 @@
                 </div>
                 <div class="row mt-4">
                     <div class="col-md-5 ">
-                        <img src="<?php echo base_url()?>assets/img/yapinda.jpg" alt="profil enha">
+                        <img src="<?php echo base_url()?>assets/landing/img/yapinda.jpg" alt="profil enha">
                     </div>
                     <div class="col-md-7 mt-3">
                         <h3>Profil</h3>
@@ -275,7 +278,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md m-auto text-center">
-                        <img src="<?php echo base_url()?>assets/img/kamad.jpg" alt="H. Enan Suryana Alm">
+                        <img src="<?php echo base_url()?>assets/landing/img/kamad.jpg" alt="H. Enan Suryana Alm">
                     </div>
                     <div class="col-md m-2">
                         <p class="content-sejarah mt-1 mr-5">
@@ -357,47 +360,47 @@
                     <div class="row">
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/img/1.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/1.jpg">
                                     <img src="assets/img/1.jpg" alt="enha-img-1">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/img/2.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/2.jpg">
                                     <img src="assets/img/2.jpg" alt="enha-img-2">
                                 </a>
                             </div>
                             <div class="col-sm-12 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/img/3.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/3.jpg">
                                     <img src="assets/img/3.jpg" alt="enha-img-3">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/img/4.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/4.jpg">
                                     <img src="assets/img/4.jpg" alt="enha-img-4">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/img/5.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/5.jpg">
                                     <img src="assets/img/5.jpg" alt="enha-img-5">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/img/6.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/6.jpg">
                                     <img src="assets/img/6.jpg" alt="enha-img-6">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/img/7.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/7.jpg">
                                     <img src="assets/img/7.jpg" alt="enha-img-7">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/img/8.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/8.jpg">
                                     <img src="assets/img/8.jpg" alt="enha-img-8">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/img/9.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/9.jpg">
                                     <img src="assets/img/9.jpg" alt="enha-img-9">
                                 </a>
                             </div>
@@ -410,7 +413,7 @@
                 <div class="row">
                     <div class="col-md">
                         <div class="logo-footer justify-content-center text-center">
-                            <img class="mb-2" src="<?php echo base_url()?>assets/img/logo-enha2.png"
+                            <img class="mb-2" src="<?php echo base_url()?>assets/landing/img/logo-enha2.png"
                                 alt="footer mas nurul huda">
                             <h3>MIS Nurul Huda</h3>
                             <h5 class="mb-1">"Terwujudnya Insan kamil yang beriman, berilmu pengetahuan, cerdas,
@@ -458,11 +461,11 @@
             </div>
 
         </section>
-        <script src="<?php echo base_url()?>assets/js/jquery-3.4.1.slim.min.js"></script>
-        <script src="<?php echo base_url()?>assets/js/popper.min.js"></script>
-        <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
-        <script src="<?php echo base_url()?>assets/js/smooth-scroll.min.js"></script>
-        <script src="<?php echo base_url()?>assets/js/baguetteBox.min.js"></script>
+        <script src="<?php echo base_url()?>assets/landing/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="<?php echo base_url()?>assets/landing/js/popper.min.js"></script>
+        <script src="<?php echo base_url()?>assets/landing/js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url()?>assets/landing/js/smooth-scroll.min.js"></script>
+        <script src="<?php echo base_url()?>assets/landing/js/baguetteBox.min.js"></script>
         <script type="text/javascript">
         $(function() {
             var scroll = new SmoothScroll('a[href*="#section-"]', {
@@ -475,8 +478,8 @@
             });
         });
         </script>
-        <script src="<?php echo base_url()?>assets/js/loader.js"></script>
-        <script src="<?php echo base_url()?>assets/js/enha.js"></script>
+        <script src="<?php echo base_url()?>assets/landing/js/loader.js"></script>
+        <script src="<?php echo base_url()?>assets/landing/js/enha.js"></script>
         <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfz3Euq9lMt4i7V-rho11jkgRCTC5t4vo&callback=initMap">
         </script>
