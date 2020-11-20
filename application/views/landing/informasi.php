@@ -11,21 +11,21 @@
             </div>
         </div>
     </div>
-    <section class="guru" id="section-dirguru">
+    <section class="info" id="section-info">
         <div class="container borderbox mt-3">
             <div class="title justify-content-center">
                 <div class="title mb-4 mt-4">
-                    <h3 class="title-section mb-1">Guru MI Nurul Huda</h3>
+                    <h3 class="title-section mb-1">Informasi Terkini</h3>
                     <hr class="hr-section">
                 </div>
             </div>
-            <div class="foto">
-                <?php foreach ($guru as $gurumapel) :?>
-                <div class="imgguru">
-                    <h4><?php echo $gurumapel['mapel_ampu']?></h4>
-                    <img src="<?php echo base_url()?>assets/landing/img/<?php echo $gurumapel['foto_guru']?>" alt="">
-                    <h6><?php echo $gurumapel['nama_guru']?></h6>
-                </div>
+            <div class="container-info">
+                <?php foreach ($informasi as $info) :?>
+               <div class="info">
+                   <h5><?php echo $info['judul_info']?></h5>
+                    <h7><?php echo $info['isi_info']?></h7> 
+                    <p>Diposting pada : <?php echo $info['tgl_info']?></p>
+               </div>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -34,5 +34,4 @@
         <br>
         <br><br>
     </section>
-
 </body>

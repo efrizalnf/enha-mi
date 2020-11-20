@@ -107,7 +107,7 @@
                             Direktori
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="<?php echo base_url('enha/dirguru')?>">Direktori Guru</a>
+                            <a class="dropdown-item" href="<?php echo base_url('enhas/dirguru')?>">Direktori Guru</a>
                             <a class="dropdown-item" href="#">Direktori Siswa</a>
                         </div>
                     </li>
@@ -123,8 +123,8 @@
                             Informasi
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Berita Terbaru</a>
-                            <a class="dropdown-item" href="#">Pengumuman</a>
+                            <a class="dropdown-item" href="<?php echo base_url('enhas/informasi')?>">Berita Terbaru</a>
+                            <a class="dropdown-item" href="<?php echo base_url('enhas/informasi')?>">Pengumuman</a>
                         </div>
                     </li>
 
@@ -211,7 +211,7 @@
             <nav>
                 <div class="informasi">
                     <div class="row">
-                        <div class="info col-md-12 col-sm-12">
+                        <div class="inform col-md-12 col-sm-12">
                             <p class="font-weight-bold">|| SELAMAT DATANG DI OFFICIAL WEBSITE MI NURUL HUDA &nbsp;
                                 &nbsp; &nbsp; || &nbsp; &nbsp; &nbsp; <span>Penerimaan Peserta
                                     didik baru tahun

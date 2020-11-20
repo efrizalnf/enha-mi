@@ -1,0 +1,33 @@
+
+
+.container-info {
+    padding: 15px;
+    background-color: #0fbb43af;
+    padding-bottom: 50px;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.info h5 {
+	font-size: 25px;
+	font-family: 'Poppins',
+		sans-serif;
+}
+
+.info h7 {
+	font-size: 20px;
+    margin-top: 2px;
+    align-items: center;
+    font-family: 'Bellota Text';
+	font-style: initial;
+	
+}
+
+.info p {
+	font-size: 12px;
+	margin-top: 2px;
+	font-family: 'Poppins',
+		sans-serif;
+}

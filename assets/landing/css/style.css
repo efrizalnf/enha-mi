@@ -12,13 +12,14 @@
 @import "header-default.css";
 @import "w3.css";
 @import "dirguru.css";
+@import "info.css";
 
 /*for handphone*/
 @media only screen and (min-width: 0px) and (max-width: 480px) {
 	.carousel-caption {
 		width: 60%;
 		/* margin: auto; */
-		background-color: #009624;
+		background-color: #12b337;
 		opacity: 65%;
 		text-align: center;
 		/* top: 50%;
@@ -69,14 +70,14 @@
 		margin-top: 0px;
 		border-radius: 55px 55px 55px 55px;
 		opacity: unset !important;
-		background-color: #5efc82;
+		background-color: #12b337;
 		border-color: #009624;
 	}
 
 
 	.carousel-caption a:hover {
 		background-color: #009624;
-		border-color: #5efc82;
+		border-color: #12b337;
 	}
 
 	.sejarah img {
@@ -101,7 +102,7 @@
 		height: 120px;
 		width: 60%;
 		margin: auto;
-		background-color: #5efc82;
+		background-color: #12b337;
 		opacity: 65%;
 		text-align: center;
 		top: 50%;
@@ -171,7 +172,7 @@
 	.carousel-caption {
 		width: 60%;
 		margin: auto;
-		background-color: #5efc82;
+		background-color: #12b337;
 		opacity: 65%;
 		text-align: center;
 		top: 50%;
@@ -211,7 +212,7 @@
 	.carousel-caption a {
 		position: relative;
 		/* font-size: 11px !important; */
-		color: #5efc82;
+		color: #12b337;
 		font-family: 'Raleway',
 			sans-serif;
 		font-style: initial;
@@ -219,14 +220,14 @@
 		border-radius: 55px 55px 55px 55px;
 		opacity: 100% !important;
 		background-color: #212121 !important;
-		border-color: #5efc82;
+		border-color: #12b337;
 	}
 
 
 	.carousel-caption a:hover {
 		background-color: #009624 !important;
 		color: #F8F9FA;
-		border-color: #5efc82;
+		border-color: #12b337;
 	}
 
 	.sejarah img {
@@ -301,7 +302,8 @@ section {
 .fasilitas .title h3,
 .contact .title h3,
 .alumni .title,
-.guru .title h3 {
+.guru .title h3,
+.info .title h3 {
 	margin: auto;
 	text-align: center;
 	font-size: 24px;
@@ -314,7 +316,9 @@ section {
 .fasilitas .title hr,
 .contact .title hr,
 .alumni .title hr,
-.guru .title hr {
+.guru .title hr,
+.info .title hr
+{
 	border: solid 1px #009624;
 	width: 170px;
 	margin: auto;

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>404 HTML Template by Colorlib</title>
+    <title>ENHAS 404</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:700" rel="stylesheet">
@@ -41,8 +41,8 @@
 
             <a href="<?php echo base_url('enha/index')?>">Kembali</a>
             <div class="notfound-social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
+                <a href="https://www.facebook.com/mi.nurulhuda.589" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.youtube.com/watch?v=MngGrau0l3U&t=16s" target="_blank"><i class="fa fa-youtube"></i></a>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Enha extends CI_Controller {
+class Enhas extends CI_Controller {
 
     public function index(){
          $this->load->view('landing/home');
@@ -13,6 +13,13 @@ class Enha extends CI_Controller {
         $this->load->view('templates/landing/header_default');
         $this->load->view('landing/dirguru', $data);
         $this->load->view('templates/landing/footer_default');
-        
     } 
+
+    public function informasi(){
+        $this->load->model('enhamodel');
+        $data['informasi'] = $this->enhamodel->getInformasi();
+        $this->load->view('templates/landing/header_default');
+        $this->load->view('landing/informasi', $data);
+        $this->load->view('templates/landing/footer_default');
+    }
 }

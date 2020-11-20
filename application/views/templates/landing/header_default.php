@@ -65,7 +65,7 @@
             <div class="collapse navbar-collapse flex-column" id="navbar">
                 <ul class="navbar-nav w-100 justify-content-end px-3">
                     <li class="nav-item bg-success rounded text-warning active mr-1">
-                        <a class="nav-link font-weight-bold" href="<?php echo base_url('enha/index')?>">Home <span
+                        <a class="nav-link font-weight-bold" href="<?php echo base_url('enhas/index')?>">Home <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
@@ -85,7 +85,7 @@
                             Direktori
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Direktori Guru</a>
+                            <a class="dropdown-item" href="<?php echo base_url('enhas/dirguru')?>">Direktori Guru</a>
                             <a class="dropdown-item" href="#">Direktori Siswa</a>
                         </div>
                     </li>
@@ -101,8 +101,8 @@
                             Informasi
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Berita Terbaru</a>
-                            <a class="dropdown-item" href="#">Pengumuman</a>
+                            <a class="dropdown-item" href="<?php echo base_url('enhas/informasi')?>">Berita Terbaru</a>
+                            <a class="dropdown-item" href="<?php echo base_url('enhas/informasi')?>">Pengumuman</a>
                         </div>
                     </li>
 
