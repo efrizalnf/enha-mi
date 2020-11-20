@@ -13,6 +13,7 @@
 @import "w3.css";
 @import "dirguru.css";
 @import "info.css";
+@import "download.css";
 
 /*for handphone*/
 @media only screen and (min-width: 0px) and (max-width: 480px) {
@@ -28,7 +29,7 @@
 	}
 
 	.carousel-caption h3 {
-		color: #212121;
+		color: #ffffff;
 		font-size: 3vw;
 		font-family: 'Righteous',
 			cursive;
@@ -42,7 +43,7 @@
 	.carousel-caption p {
 		margin: auto;
 		margin-top: 7px;
-		color: #000;
+		color: rgb(255, 255, 255);
 		font-size: 2vw;
 		font-family: 'Raleway',
 			sans-serif;
@@ -111,7 +112,7 @@
 	}
 
 	.carousel-caption h3 {
-		color: #212121;
+		color: #ffffff;
 		font-size: 3vw;
 		font-family: 'Righteous',
 			cursive;
@@ -123,7 +124,7 @@
 	.carousel-caption p {
 		line-height: 3;
 		margin: auto;
-		color: #000;
+		color: rgb(255, 255, 255);
 		font-size: 2vw;
 		font-family: 'Raleway',
 			sans-serif;
@@ -149,7 +150,7 @@
 		margin-top: 5px;
 		border-radius: 55px 55px 55px 55px;
 		opacity: 100% !important;
-		background-color: #212121 !important;
+		background-color: #ffffff !important;
 		border-color: #009624;
 	}
 
@@ -181,7 +182,7 @@
 	}
 
 	.carousel-caption h3 {
-		color: #212121;
+		color: #ffffff;
 		font-size: 3vw;
 		font-family: 'Righteous',
 			cursive;
@@ -193,7 +194,7 @@
 	.carousel-caption p {
 		line-height: 3;
 		margin: auto;
-		color: #000;
+		color: rgb(255, 255, 255);
 		font-size: 2vw;
 		font-family: 'Raleway',
 			sans-serif;
@@ -219,7 +220,7 @@
 		margin: auto;
 		border-radius: 55px 55px 55px 55px;
 		opacity: 100% !important;
-		background-color: #212121 !important;
+		background-color: #fdfdfd !important;
 		border-color: #12b337;
 	}
 
@@ -232,7 +233,7 @@
 
 	.sejarah img {
 		width: 320px;
-		height: 350px;
+		height: 400px;
 	}
 
 }
@@ -303,7 +304,9 @@ section {
 .contact .title h3,
 .alumni .title,
 .guru .title h3,
-.info .title h3 {
+.info .title h3,
+.download .title h3
+{
 	margin: auto;
 	text-align: center;
 	font-size: 24px;
@@ -317,7 +320,8 @@ section {
 .contact .title hr,
 .alumni .title hr,
 .guru .title hr,
-.info .title hr
+.info .title hr,
+.download .title hr
 {
 	border: solid 1px #009624;
 	width: 170px;

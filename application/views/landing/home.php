@@ -73,7 +73,7 @@
                 </button>
             </div>
             <div class="top-header">
-                <a href="#section-home" class="navbar-brand ml-3 mt-2">
+                <a href="<?php echo base_url('enhas/index')?>" class="navbar-brand ml-3 mt-2">
                     <img src="<?php echo base_url()?>assets/landing/img/logo-enha2.png" class="ml-15 mr-2" width="49"
                         height="49">
                     <div class="nav-text">
@@ -95,18 +95,18 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Tentang Kami
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu w3-animate-zoom" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#section-profil" class="page-scroll">Profil</a>
                             <a class="dropdown-item" href="#section-sejarah" class="page-scroll">Sambutan Kamad</a>
                             <a class="dropdown-item" href="#section-fasilitas" class="page-scroll">Fasilitas</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://minurulhuda.sch.id" id="navbarDropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
                             Direktori
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu w3-animate-zoom" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="<?php echo base_url('enhas/dirguru')?>">Direktori Guru</a>
                             <a class="dropdown-item" href="#">Direktori Siswa</a>
                         </div>
@@ -118,11 +118,11 @@
                         <a class="nav-link" href="#section-gallery" class="page-scroll">Galeri</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://minurulhuda.sch.id" id="navbarDropdownMenuLink"
+                        <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Informasi
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu w3-animate-zoom" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="<?php echo base_url('enhas/informasi')?>">Pengumuman</a>
                             <a class="dropdown-item" href="<?php echo base_url('enhas/download')?>">File Download</a>
                         </div>
@@ -133,7 +133,7 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             eNHa Apps
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu w3-animate-zoom" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="http://ard.minurulhuda.sch.id/portal/login/mi"
                                 target="_blank">ARD</a>
                             <a class="dropdown-item" href="http://cbt.minurulhuda.sch.id/" target="_blank">eNHa-CBT</a>
@@ -278,7 +278,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md m-auto text-center">
-                        <img src="<?php echo base_url()?>assets/landing/img/kamad.jpg" alt="H. Enan Suryana Alm">
+                        <img src="<?php echo base_url()?>assets/landing/img/kamad.png" alt="H. Enan Suryana Alm">
                     </div>
                     <div class="col-md m-2">
                         <p class="content-sejarah mt-1 mr-5">
@@ -360,47 +360,47 @@
                     <div class="row">
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/1.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/1.jpeg">
                                     <img src="assets/img/1.jpg" alt="enha-img-1">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/2.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/2.jpeg">
                                     <img src="assets/img/2.jpg" alt="enha-img-2">
                                 </a>
                             </div>
                             <div class="col-sm-12 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/3.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/3.jpeg">
                                     <img src="assets/img/3.jpg" alt="enha-img-3">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/4.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/4.jpeg">
                                     <img src="assets/img/4.jpg" alt="enha-img-4">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/5.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/5.jpeg">
                                     <img src="assets/img/5.jpg" alt="enha-img-5">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/6.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/6.jpeg">
                                     <img src="assets/img/6.jpg" alt="enha-img-6">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/7.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/7.jpeg">
                                     <img src="assets/img/7.jpg" alt="enha-img-7">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/8.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/8.jpeg">
                                     <img src="assets/img/8.jpg" alt="enha-img-8">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/9.jpg">
+                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/9.jpeg">
                                     <img src="assets/img/9.jpg" alt="enha-img-9">
                                 </a>
                             </div>

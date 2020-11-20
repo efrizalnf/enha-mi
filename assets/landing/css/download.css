@@ -20,7 +20,7 @@
 		padding: 0;
 	}
 
-	.container.dirguru {
+	.container {
 		border-radius: 0;
 	}
 }
@@ -33,7 +33,7 @@
 	align-items: center;
 }
 
-.download .foto {
+.download .dl {
 	display: grid;
 	grid-template-columns: auto auto auto;
 	grid-gap: 50px;
@@ -58,7 +58,7 @@
 }
 
 .download h4 {
-	font-size: 25px;
+	font-size: 20px;
 	margin-top: 5px;
 	font-family: 'Bellota Text';
 	font-style: initial;

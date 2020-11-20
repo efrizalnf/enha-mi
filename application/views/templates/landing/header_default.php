@@ -50,7 +50,7 @@
                 </button>
             </div>
             <div class="top-header">
-                <a href="#section-home" class="navbar-brand ml-3 mt-2">
+                <a href="<?php echo base_url('enhas/index')?>" class="navbar-brand ml-3 mt-2">
                     <img src="<?php echo base_url()?>assets/landing/img/logo-enha2.png" class="ml-15 mr-2" width="49"
                         height="49">
                     <div class="nav-text">
@@ -69,22 +69,22 @@
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://minurulhuda.sch.id" id="navbarDropdownMenuLink"
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Tentang Kami
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#section-profil" class="page-scroll">Profil</a>
-                            <a class="dropdown-item" href="#section-sejarah" class="page-scroll">Sambutan Kamad</a>
-                            <a class="dropdown-item" href="#section-fasilitas" class="page-scroll">Fasilitas</a>
+                        <div class="dropdown-menu w3-animate-zoom" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="<?php echo base_url('enhas/index#section-profil')?>" class="page-scroll">Profil</a>
+                            <a class="dropdown-item" href="<?php echo base_url('enhas/index#section-sejarah')?>" class="page-scroll">Sambutan Kamad</a>
+                            <a class="dropdown-item" href="<?php echo base_url('enhas/index#section-fasilitas')?>" class="page-scroll">Fasilitas</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://minurulhuda.sch.id" id="navbarDropdownMenuLink"
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Direktori
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu w3-animate-zoom" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="<?php echo base_url('enhas/dirguru')?>">Direktori Guru</a>
                             <a class="dropdown-item" href="#">Direktori Siswa</a>
                         </div>
@@ -93,25 +93,25 @@
                         <a class="nav-link" href="http://ppdb.yapinda.online/" target="_blank">PPDB</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#section-gallery" class="page-scroll">Galeri</a>
+                        <a class="nav-link" href="<?php echo base_url('enhas/index#section-gallery')?>" class="page-scroll">Galeri</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://minurulhuda.sch.id" id="navbarDropdownMenuLink"
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Informasi
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="<?php echo base_url('enhas/informasi')?>">Berita Terbaru</a>
+                        <div class="dropdown-menu w3-animate-zoom" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="<?php echo base_url('enhas/informasi')?>">Pengumuman</a>
+                            <a class="dropdown-item" href="<?php echo base_url('enhas/download')?>">File Download</a>
                         </div>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://minurulhuda.sch.id" id="navbarDropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             eNHa Apps
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu w3-animate-zoom" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="http://ard.minurulhuda.sch.id/portal/login/mi"
                                 target="_blank">ARD</a>
                             <a class="dropdown-item" href="http://cbt.minurulhuda.sch.id/" target="_blank">eNHa-CBT</a>

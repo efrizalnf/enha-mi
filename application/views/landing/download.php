@@ -21,8 +21,10 @@
             </div>
             <div class="dl">
                 <?php foreach ($download as $dl) :?>
-                <div class="dlfiles fas fa-file-pdf-o fa-2x">
-                    <a src="<?php echo base_url()?>assets/landing/files/<?php echo $dl['lokasi_file']?>" alt="filepdf" download>
+                <div class="dlfiles">
+                    <a href="<?php echo base_url()?>assets/landing/files/<?php echo $dl['lokasi_file']?>" alt="filepdf" download>
+                    <i class="fa fa-file fa-5x" style="font-size:48px;color:green"></i>
+                </a>
                     <h4><?php echo $dl['nama_file']?></h4>
                 </div>
                 <?php endforeach; ?>
