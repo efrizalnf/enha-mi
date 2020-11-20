@@ -6,4 +6,7 @@ class EnhaModel extends CI_Model{
     public function getInformasi(){
         return $this->db->get('tb_info')->result_array();
     }
+    public function getFile(){
+        return $this->db->get('tb_files')->result_array();
+    }
 }

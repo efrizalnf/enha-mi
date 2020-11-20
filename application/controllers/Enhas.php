@@ -22,4 +22,12 @@ class Enhas extends CI_Controller {
         $this->load->view('landing/informasi', $data);
         $this->load->view('templates/landing/footer_default');
     }
+
+    public function download(){
+        $this->load->model('enhamodel');
+        $data['download'] = $this->enhamodel->getFile();
+        $this->load->view('templates/landing/header_default');
+        $this->load->view('landing/download', $data);
+        $this->load->view('templates/landing/footer_default');
+    }
 }

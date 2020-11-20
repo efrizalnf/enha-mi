@@ -123,8 +123,8 @@
                             Informasi
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="<?php echo base_url('enhas/informasi')?>">Berita Terbaru</a>
                             <a class="dropdown-item" href="<?php echo base_url('enhas/informasi')?>">Pengumuman</a>
+                            <a class="dropdown-item" href="<?php echo base_url('enhas/download')?>">File Download</a>
                         </div>
                     </li>
 

@@ -1,0 +1,72 @@
+.container.borderbox {
+	display: grid;
+	background-color: #fff;
+	color: #35373a;
+	min-height: 50vh;
+	border-radius: 20px;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.borderbox p.page-description {
+	text-align: center;
+	max-width: 800px;
+	margin: 25px auto;
+	color: #888;
+	font-size: 18px;
+}
+
+@media(max-width: 768px) {
+	body {
+		padding: 0;
+	}
+
+	.container.dirguru {
+		border-radius: 0;
+	}
+}
+
+.download {
+
+	margin: 30px;
+	text-align: center;
+	padding: 10px;
+	align-items: center;
+}
+
+.download .foto {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 50px;
+	margin-bottom: 20px;
+	margin: 40px;
+	padding: 20px;
+}
+
+.download img {
+	width: 200px;
+	height: 200px;
+	margin-top: 6px;
+	margin-bottom: 15px;
+	border-radius: 150%;
+	background-size: cover;
+	border: solid 3px rgb(2, 77, 27);
+	transition: transform .2s;
+}
+
+.download img:hover {
+	transform: scale(1.1);
+}
+
+.download h4 {
+	font-size: 25px;
+	margin-top: 5px;
+	font-family: 'Bellota Text';
+	font-style: initial;
+}
+
+.download h6 {
+	font-size: 18px;
+	margin-top: 2px;
+	font-family: 'Poppins',
+		sans-serif;
+}
