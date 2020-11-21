@@ -361,47 +361,47 @@
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
                                 <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/1.jpeg">
-                                    <img src="assets/img/1.jpg" alt="enha-img-1">
+                                    <img src="<?php echo base_url('assets/landing/img/1.jpeg')?>" alt="enha-img-1">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/2.jpeg">
-                                    <img src="assets/img/2.jpg" alt="enha-img-2">
+                                    <img src="<?php echo base_url('assets/landing/img/2.jpeg')?>" alt="enha-img-2">
                                 </a>
                             </div>
                             <div class="col-sm-12 col-md-4">
                                 <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/3.jpeg">
-                                    <img src="assets/img/3.jpg" alt="enha-img-3">
+                                    <img src="<?php echo base_url('assets/landing/img/3.jpeg')?>" alt="enha-img-3">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/4.jpeg">
-                                    <img src="assets/img/4.jpg" alt="enha-img-4">
+                                    <img src="<?php echo base_url('assets/landing/img/4.jpeg')?>" alt="enha-img-4">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/5.jpeg">
-                                    <img src="assets/img/5.jpg" alt="enha-img-5">
+                                    <img src="<?php echo base_url('assets/landing/img/5.jpeg')?>" alt="enha-img-5">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/6.jpeg">
-                                    <img src="assets/img/6.jpg" alt="enha-img-6">
+                                    <img src="<?php echo base_url('assets/landing/img/6.jpeg')?>" alt="enha-img-6">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/7.jpeg">
-                                    <img src="assets/img/7.jpg" alt="enha-img-7">
+                                    <img src="<?php echo base_url('assets/landing/img/7.jpeg')?>" alt="enha-img-7">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/8.jpeg">
-                                    <img src="assets/img/8.jpg" alt="enha-img-8">
+                                    <img src="<?php echo base_url('assets/landing/img/8.jpeg')?>" alt="enha-img-8">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/9.jpeg">
-                                    <img src="assets/img/9.jpg" alt="enha-img-9">
+                                    <img src="<?php echo base_url('assets/landing/img/9.jpeg')?>" alt="enha-img-9">
                                 </a>
                             </div>
                         </div>
