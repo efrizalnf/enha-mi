@@ -22,7 +22,19 @@ class AdminPanel extends CI_Controller {
 			$nama = $this->input->post('nama_guru');
 			$mapel = $this->input->post('mapel_ampu');
 			$uploadfoto = $_FILES['foto_guru'];
-			
+			if($uploadfoto =''){
+				
+			}else{
+				$config['upload_path'] = 'assets/landing/img/fotoguru'; 
+				$config['allowed_types'] = 'jpg|jpeg|png|gif';
+				
+				$this->load->library('upload', $config);
+				if (!$this->upload->do_upload('foto_guru')) {
+					echo "Upload gagal!"; die(); //do alert here
+				} else{
+					$uploadfoto = $this->upload->data('file_name');
+				}
+			}
 
 			$data = array(
 				'nip' => $nip,

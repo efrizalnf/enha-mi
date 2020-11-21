@@ -23,7 +23,8 @@
                 <?php foreach ($guru as $gurumapel) :?>
                 <div class="imgguru">
                     <h4><?php echo $gurumapel['mapel_ampu']?></h4>
-                    <img src="<?php echo base_url()?>assets/landing/img/<?php echo $gurumapel['foto_guru']?>" alt="">
+                    <img src="<?php echo base_url()?>assets/landing/img/fotoguru/<?php echo $gurumapel['foto_guru']?>"
+                        alt="">
                     <h6><?php echo $gurumapel['nama_guru']?></h6>
                 </div>
                 <?php endforeach; ?>

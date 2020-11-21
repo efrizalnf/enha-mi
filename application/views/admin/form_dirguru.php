@@ -83,8 +83,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <?= form_open_multipart('adminpanel/inputguru')?>
-                    <!-- <form method="post" action="<?php echo base_url(). 'adminpanel/inputguru';?>" class="was-validated"> -->
+                    <?php echo form_open_multipart('adminpanel/inputguru');?>
+
                     <div class="form-group">
                         <label for="inputNip">NIP/NUPTK</label>
                         <input type="text" class="form-control" id="inputNip" name="nip"
@@ -133,15 +133,13 @@
                         </div> -->
                     <label for="uploadFoto">Upload Foto</label>
                     <div class="custom-file mb-3">
-
-                        <input type="file" class="custom-file-input" id="uploadFoto" name="fot0_guru">
-                        <label class="custom-file-label" for="uploadFoto">Pilih foto...</label>
-
+                        <!-- <label class="custom-file-label" for="uploadFoto">Pilih foto...</label> -->
+                        <input type="file" class="form-control" id="uploadFoto" name="foto_guru">
                     </div>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save changes</button>
                     <!-- </form> -->
-                    <?= form_close(); ?>
+                    <?php echo form_close(); ?>
                 </div>
 
             </div>
