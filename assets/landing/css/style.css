@@ -305,8 +305,7 @@ section {
 .alumni .title,
 .guru .title h3,
 .info .title h3,
-.download .title h3
-{
+.download .title h3 {
 	margin: auto;
 	text-align: center;
 	font-size: 24px;
@@ -321,8 +320,7 @@ section {
 .alumni .title hr,
 .guru .title hr,
 .info .title hr,
-.download .title hr
-{
+.download .title hr {
 	border: solid 1px #009624;
 	width: 170px;
 	margin: auto;

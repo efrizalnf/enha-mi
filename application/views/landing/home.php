@@ -12,7 +12,6 @@
     <meta name="url" content="https://www.everyzalz.blogspot.com">
     <link rel="icon" href="<?php echo base_url()?>assets/landing/img/favicon.ico">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/w3.css">

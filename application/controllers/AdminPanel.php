@@ -8,10 +8,35 @@ class AdminPanel extends CI_Controller {
 		$this->template->load('templates/admin/template', 'admin/dashboard');
 	}
 
-	public function forms()
+
+	public function inputdirguru()
 	{
-		$this->template->load('templates/admin/template', 'admin/forms');
+		$this->load->model('enhamodel');
+		$data['guru'] = $this->enhamodel->getDirGuru();
+		$this->template->load('templates/admin/template', 'admin/form_dirguru' , $data);
+		
+	}	
+
+	public function inputguru(){
+			$nip = $this->input->post('nip');
+			$nama = $this->input->post('nama_guru');
+			$mapel = $this->input->post('mapel_ampu');
+			$uploadfoto = $_FILES['foto_guru'];
+			
+
+			$data = array(
+				'nip' => $nip,
+				'nama_guru' => $nama,
+				'mapel_ampu' => $mapel,
+				'foto_guru'	=> $uploadfoto
+			);
+
+			$this->enhamodel->inputdataGuru($data, 'tb_guru');
+			redirect('adminpanel/inputdirguru');
+		
 	}
+
+	
 
 	public function tables()
 	{
