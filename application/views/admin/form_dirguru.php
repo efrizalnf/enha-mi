@@ -14,6 +14,12 @@
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inputEnhasModal"><i
                             class="fa fa-plus"></i>&nbsp; Input
                         Data</button>
+                    <?php $error = $this->session->flashdata('error');
+                    if (!empty($error))
+                        {
+                        echo "<font size=12 font color=red>$error</font>";
+                        }
+                    ?>
                     <table class="table table-responsive-sm table-bordered table-striped table-sm mt-3">
                         <thead>
                             <tr>

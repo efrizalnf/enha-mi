@@ -98,7 +98,7 @@
                             <i class="nav-icon icon-people"></i>Direktori</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('adminpanel/inputdirguru');?>">
+                                <a class="nav-link" href="<?php echo site_url('adminpanel/dataguru');?>">
                                     <i class="nav-icon icon-user"></i>Direktori Guru</a>
                             </li>
                             <li class="nav-item">
@@ -129,12 +129,8 @@
     </div>
     <footer class="app-footer">
         <div>
-            <a href="https://misnurulhuda.sch.id">ENHAS Admin Panel</a>
+            <a href="https://misnurulhuda.sch.id">ENHAS Web Admin Panel</a>
             <span>&copy; 2020 Build by zlz.</span>
-        </div>
-        <div class="ml-auto">
-            <span>Powered by</span>
-            <a href="https://coreui.io">CoreUI</a>
         </div>
     </footer>
     <!-- Bootstrap and necessary plugins-->
