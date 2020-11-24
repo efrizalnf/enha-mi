@@ -12,13 +12,13 @@
     <title>ENHAS Web Admin Login</title>
 
     <!-- Custom fonts for this template-->
-    <link href="<?php echo base_url();?>/landing/vendor/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url();?>assets/login/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<?php echo base_url();?>assets/admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/login/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -39,6 +39,7 @@
                                     src="<?php echo base_url();?>assets/landing/img/logo-enha2.png"
                                     style="width: 230px; height: 230px;">
                             </div>
+
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -46,15 +47,16 @@
                                     </div>
                                     <form class="user" method="post"
                                         action="<?php echo base_url('adminpanel/index');?>">
+
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" name="username"
-                                                id="username" placeholder="Username">
-                                            <?php form_error('username')?>
+                                                id="username" placeholder="Username" >
+                                            <?php echo form_error('username')?>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                name="password" id="password" placeholder="Password">
-                                            <?php form_error('password')?>
+                                                name="password" id="password" placeholder="Password" >
+                                            <?php echo form_error('password')?>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -94,13 +96,13 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="<?php echo base_url();?>assets/admin/vendors/jquery/js/jquery.min.js"></script>
-    <script src="<?php echo base_url();?>assets/admin/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo base_url();?>assets/login/vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>assets/login/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="<?php echo base_url();?>assets/admin/vendors/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?php echo base_url();?>assets/login/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="<?php echo base_url();?>assets/admin/js/sb-admin-2.min.js"></script>
+    <script src="<?php echo base_url();?>assets/login/js/sb-admin-2.min.js"></script>
 
 </body>
 
