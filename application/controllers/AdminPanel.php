@@ -9,6 +9,7 @@ class Adminpanel extends CI_Controller {
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('session');	
+
 	}
 
 
@@ -23,11 +24,11 @@ class Adminpanel extends CI_Controller {
 			$this->load->view('admin/login');
 		} else {
 			// validasi sukses login
-			$this->_login();
+			$this->login();
 		}
 	}
 
-	private function _login(){
+	public function login(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 
@@ -40,7 +41,8 @@ class Adminpanel extends CI_Controller {
 			if($password == $pass['password']){
 				$data = [
 					'username' => $user['username'],
-					'nama' => $user['nama']
+					'nama' => $user['nama'],
+					'status' => $user['status']
 				];
 
 				$this->session->set_userdata($data);
@@ -58,15 +60,20 @@ class Adminpanel extends CI_Controller {
 	public function logout(){
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('nama');
+		$this->session->unset_userdata('status');
 
 		$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda Telah Logout!</div>');
 			redirect('adminpanel/index');
 	}
 
 	public function dashboard()
-	{
+	{	
+		if($this->session->userdata('status') != 1){
+			redirect(base_url('adminpanel/index'));
+		}else{
 		$data['tb_user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
 		$this->template->load('templates/admin/template', 'admin/dashboard', $data);
+	}
 	}
 
 
