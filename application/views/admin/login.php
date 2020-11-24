@@ -45,18 +45,19 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">ENHAS <br> Web Admin Panel Login</h1>
                                     </div>
+                                    <?php echo $this->session->flashdata('message');?>
                                     <form class="user" method="post"
                                         action="<?php echo base_url('adminpanel/index');?>">
 
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" name="username"
-                                                id="username" placeholder="Username" >
-                                            <?php echo form_error('username')?>
+                                                id="username" placeholder="Username" value="<?php echo set_value('username');?>">
+                                            <?php echo form_error('username', '<small class="text-danger pl-3">', '</small>')?>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
                                                 name="password" id="password" placeholder="Password" >
-                                            <?php echo form_error('password')?>
+                                            <?php echo form_error('password', '<small class="text-danger pl-3">', '</small>')?>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">

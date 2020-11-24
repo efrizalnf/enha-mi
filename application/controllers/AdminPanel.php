@@ -7,7 +7,8 @@ class Adminpanel extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->library('form_validation');	
+		$this->load->library('form_validation');
+		$this->load->library('session');	
 	}
 
 
@@ -20,12 +21,52 @@ class Adminpanel extends CI_Controller {
 
 		if ($this->form_validation->run() == false) {
 			$this->load->view('admin/login');
+		} else {
+			// validasi sukses login
+			$this->_login();
 		}
+	}
+
+	private function _login(){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+
+		 $user = $this->db->get_where('tb_user', ['username' => $username])->row_array();
+		 $pass = $this->db->get_where('tb_user', ['password' => $password])->row_array();
+		// var_dump($user); die;
+
+
+		if($user){
+			if($password == $pass['password']){
+				$data = [
+					'username' => $user['username'],
+					'nama' => $user['nama']
+				];
+
+				$this->session->set_userdata($data);
+				redirect('adminpanel/dashboard');
+			}else{
+				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
+			redirect('adminpanel/index');
+			}
+		}else{
+			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Username tidak terdaftar!</div>');
+			redirect('adminpanel/index');
+		}
+	}
+
+	public function logout(){
+		$this->session->unset_userdata('username');
+		$this->session->unset_userdata('nama');
+
+		$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda Telah Logout!</div>');
+			redirect('adminpanel/index');
 	}
 
 	public function dashboard()
 	{
-		$this->template->load('templates/admin/template', 'admin/dashboard');
+		$data['tb_user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
+		$this->template->load('templates/admin/template', 'admin/dashboard', $data);
 	}
 
 
