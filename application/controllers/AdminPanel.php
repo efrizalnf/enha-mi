@@ -9,11 +9,11 @@ class Adminpanel extends CI_Controller {
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('session');	
-
 	}
 
 	public function index()
 	{	
+<<<<<<< HEAD
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		
@@ -66,8 +66,10 @@ class Adminpanel extends CI_Controller {
 
 	public function dashboard()
 	{	
+=======
+>>>>>>> 34d96fd6c796eb61d54ea6951279e8e763b87d43
 		if($this->session->userdata('status') != 1){
-			redirect(base_url('adminpanel/index'));
+			redirect(base_url('login/index'));
 		}else{
 		$data['tb_user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
 		$this->template->load('templates/admin/template', 'admin/dashboard', $data);
@@ -81,6 +83,8 @@ class Adminpanel extends CI_Controller {
 		$data['guru'] = $this->enhamodel->getDirGuru();
 		$this->template->load('templates/admin/template', 'admin/form_dirguru' , $data);
 	}	
+
+
 
 	public function inputguru(){
 			$nip = $this->input->post('nip');
@@ -116,7 +120,42 @@ class Adminpanel extends CI_Controller {
 		
 	}
 
+
+
+	public function gallery(){
+		$this->template->load('templates/admin/template', 'admin/gallery');
+	}
 	
+	public function inputgallery(){
+		$namakegiatan = $this->input->post('nama_kegiatan');
+		$fotokegiatan = $_FILES['foto_kegiatan' .$i];
+		if($fotokegiatan = ''){
+			
+		}else{
+			$config['upload_path'] = 'assets/landing/img';
+			$config['allowed_types'] = 'jpg|jpeg|png|gif';
+			 $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+			$this->load->library('upload', $config);
+				if (!$this->upload->do_upload('foto_kegiatan' .$i)) {
+					$this->session->set_flashdata('error', 'Upload Gagal, Silahkan Masukan Foto!');
+					// return redirect('adminpanel/dataguru');
+					// echo "Upload gagal!"; die(); //do alert here
+				} else{
+					$fotokegiatan = $this->upload->data('file_name');
+				}
+		}
+
+		$data = array(
+				'nama_kegiatan' => $namakegiatan,
+				'foto_kegiatan' => $fotokegiatan
+			);
+
+			$this->enhamodel->inputFotogallery($data, 'tb_gallery');
+			redirect('adminpanel/inputgallery');
+
+		$this->template->load('templates/admin/template', 'admin/gallery');
+	}
+
 
 	public function tables()
 	{
