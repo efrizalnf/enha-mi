@@ -29,6 +29,8 @@ class Adminpanel extends CI_Controller {
 		$this->template->load('templates/admin/template', 'admin/form_dirguru' , $data);
 	}	
 
+
+
 	public function inputguru(){
 			$nip = $this->input->post('nip');
 			$nama = $this->input->post('nama_guru');
@@ -63,8 +65,38 @@ class Adminpanel extends CI_Controller {
 		
 	}
 
+
+
+	public function gallery(){
+		$this->template->load('templates/admin/template', 'admin/gallery');
+	}
 	
 	public function inputgallery(){
+		$namakegiatan = $this->input->post('nama_kegiatan');
+		$fotokegiatan = $_FILES['foto_kegiatan' .$i];
+		if($fotokegiatan = ''){
+			
+		}else{
+			$config['upload_path'] = 'assets/landing/img';
+			$config['allowed_types'] = 'jpg|jpeg|png|gif';
+			 $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+			$this->load->library('upload', $config);
+				if (!$this->upload->do_upload('foto_kegiatan' .$i)) {
+					$this->session->set_flashdata('error', 'Upload Gagal, Silahkan Masukan Foto!');
+					// return redirect('adminpanel/dataguru');
+					// echo "Upload gagal!"; die(); //do alert here
+				} else{
+					$fotokegiatan = $this->upload->data('file_name');
+				}
+		}
+
+		$data = array(
+				'nama_kegiatan' => $namakegiatan,
+				'foto_kegiatan' => $fotokegiatan
+			);
+
+			$this->enhamodel->inputFotogallery($data, 'tb_gallery');
+			redirect('adminpanel/inputgallery');
 
 		$this->template->load('templates/admin/template', 'admin/gallery');
 	}

@@ -14,7 +14,7 @@ class Enhamodel extends CI_Model{
     public function inputdataGuru($data){
         $this->db->insert('tb_guru', $data);
     }
-    public function getLogin(){
-        
+    public function inputFotogallery($data){
+        $this->db->insert('tb_gallery', $data);
     }
 }

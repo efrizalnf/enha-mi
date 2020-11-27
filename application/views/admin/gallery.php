@@ -10,21 +10,21 @@
                 <div class="card-header">
                     <i class="fa fa-align-justify"></i>Input Gallery
                 </div>
-                	<span class="border border-success mt-3 ml-3 mr-3  p-2">
-                	<div class="card-body">
+                 <?php echo form_open_multipart('adminpanel/inputgallery');?>
+                 <?php for ($i=1; $i<=5 ; $i++) : ?>
+                	<div class="card-body border border-success rounded m-3 p-4">
                     <div class="custom-file">
-                        <label for="uploadFoto">Nama Kegiatan</label>
-                        <input type="text" class="form-control mb-2" id="uploadGallery" name="foto_kegiatan" placeholder="Masukan nama kegiatan">
-                		<label for="uploadFoto">Upload Foto</label>
-                        <input type="file" class="form-control" id="uploadGallery" name="foto_kegiatan">
-                   
+                        <label for="uploadGallery">Nama Kegiatan</label>
+                        <input type="text" class="form-control mb-2" id="namakegiatan" name="nama_kegiatan" placeholder="Masukan nama kegiatan">
+                        <input type="file" class="form-control" id="fotokegiatan" name="foto_kegiatan<?php echo $i;?>">
                     </div>
                 	</div>
-                   </span>
+               <?php endfor; ?>
                    <div class="card-body">
                         <button type="submit" class="btn btn-primary"><i
                             class="fa fa-upload"></i>&nbsp; Upload</button>
                    </div>
+                   <?php echo form_close(); ?>
             </div>
         </div><!--/.col-->
     </div>

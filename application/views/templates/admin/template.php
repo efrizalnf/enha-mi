@@ -112,7 +112,7 @@
                             <i class="nav-icon icon-frame"></i>Input Image Slide</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('adminpanel/inputgallery');?>">
+                        <a class="nav-link" href="<?php echo site_url('adminpanel/gallery');?>">
                             <i class="nav-icon icon-frame"></i>Input Image Gallery</a>
                     </li>
                     <li class="nav-item">
