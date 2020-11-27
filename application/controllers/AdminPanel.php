@@ -12,8 +12,6 @@ class Adminpanel extends CI_Controller {
 
 	}
 
-
-
 	public function index()
 	{	
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
@@ -24,11 +22,11 @@ class Adminpanel extends CI_Controller {
 			$this->load->view('admin/login');
 		} else {
 			// validasi sukses login
-			$this->login();
+			$this->_login();
 		}
 	}
 
-	public function login(){
+	private function _login(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 
