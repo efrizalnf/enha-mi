@@ -47,7 +47,7 @@
                                     </div>
                                     <?php echo $this->session->flashdata('message');?>
                                     <form class="user" method="post"
-                                        action="<?php echo base_url('adminpanel/index');?>">
+                                        action="<?php echo base_url('login/index');?>">
 
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" name="username"

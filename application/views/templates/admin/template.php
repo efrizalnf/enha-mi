@@ -70,7 +70,7 @@
                         <i class="fa fa-user"></i>Profile</a>
                     <a class="dropdown-item" href="#">
                         <i class="fa fa-wrench"></i> Settings</a>
-                    <a class="dropdown-item" href="<?= site_url('adminpanel/logout')?>">
+                    <a class="dropdown-item" href="<?= site_url('login/logout')?>">
                         <i class="fa fa-lock"></i> Logout</a>
                 </div>
             </li>
@@ -110,6 +110,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url('adminpanel/charts');?>">
                             <i class="nav-icon icon-frame"></i>Input Image Slide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo site_url('adminpanel/inputgallery');?>">
+                            <i class="nav-icon icon-frame"></i>Input Image Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url('adminpanel/charts');?>">
