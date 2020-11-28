@@ -22,12 +22,13 @@
                         ?>
                         <table class="table table-responsive-sm table-bordered table-striped table-sm mt-3">
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th>No.</th>
                                     <th>NIP/NUPTK</th>
                                     <th>Nama guru</th>
                                     <th>Mapel</th>
                                     <th>Upload File</th>
+                                    <th>Edit/Hapus Data</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
@@ -41,7 +42,8 @@
                                     <td><?php echo $gurumapel['nama_guru']?></td>
                                     <td><?php echo $gurumapel['mapel_ampu']?></td>
                                     <td><?php echo $gurumapel['foto_guru']?></td>
-                                    <td>
+                                    <td class="td-actions text-center"><button class="btn btn-primary m-1"><i class="fa fa-edit"></i> </button><a href="<?php base_url('adminpanel/deleteguru')?>deleteguru/<?php echo $gurumapel['id'];?>" class="btn btn-danger m-1"><i class="fa fa-trash"></i> </a></td>
+                                    <td class="td-actions text-center">
                                         <span class="badge badge-success">Active</span>
                                     </td>
                                 </tr>

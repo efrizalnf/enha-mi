@@ -9,65 +9,12 @@ class Adminpanel extends CI_Controller {
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('session');	
+		$this->load->model('enhamodel');
 	}
 
+	
 	public function index()
 	{	
-<<<<<<< HEAD
-		$this->form_validation->set_rules('username', 'Username', 'trim|required');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required');
-		
-
-		if ($this->form_validation->run() == false) {
-			$this->load->view('admin/login');
-		} else {
-			// validasi sukses login
-			$this->_login();
-		}
-	}
-
-	private function _login(){
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-
-		 $user = $this->db->get_where('tb_user', ['username' => $username])->row_array();
-		 $pass = $this->db->get_where('tb_user', ['password' => $password])->row_array();
-		// var_dump($user); die;
-
-
-		if($user){
-			if($password == $pass['password']){
-				$data = [
-					'username' => $user['username'],
-					'nama' => $user['nama'],
-					'status' => $user['status']
-				];
-
-				$this->session->set_userdata($data);
-				redirect('adminpanel/dashboard');
-			}else{
-				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
-			redirect('adminpanel/index');
-			}
-		}else{
-			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Username tidak terdaftar!</div>');
-			redirect('adminpanel/index');
-		}
-	}
-
-	public function logout(){
-		$this->session->unset_userdata('username');
-		$this->session->unset_userdata('nama');
-		$this->session->unset_userdata('status');
-
-		$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda Telah Logout!</div>');
-			redirect('adminpanel/index');
-	}
-
-	public function dashboard()
-	{	
-=======
->>>>>>> 34d96fd6c796eb61d54ea6951279e8e763b87d43
 		if($this->session->userdata('status') != 1){
 			redirect(base_url('login/index'));
 		}else{
@@ -120,15 +67,24 @@ class Adminpanel extends CI_Controller {
 		
 	}
 
+	public function deleteguru($id){
+		$this->enhamodel->selectdeleteGuru($id);
+		redirect('adminpanel/dataguru');
+	}
+
 
 
 	public function gallery(){
+		// $this->load->model('enhamodel');
+		// $data['gallery'] = $this->enhamodel->inputFotogallery();
 		$this->template->load('templates/admin/template', 'admin/gallery');
 	}
 	
 	public function inputgallery(){
 		$namakegiatan = $this->input->post('nama_kegiatan');
-		$fotokegiatan = $_FILES['foto_kegiatan' .$i];
+		$fotokegiatan = $_FILES['foto_kegiatan'] .$i;
+		// var_dump($fotokegiatan);
+		for ($i=1; $i <=5 ; $i++) { 
 		if($fotokegiatan = ''){
 			
 		}else{
@@ -136,7 +92,7 @@ class Adminpanel extends CI_Controller {
 			$config['allowed_types'] = 'jpg|jpeg|png|gif';
 			 $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 			$this->load->library('upload', $config);
-				if (!$this->upload->do_upload('foto_kegiatan' .$i)) {
+				if (!$this->upload->do_upload('foto_kegiatan')) {
 					$this->session->set_flashdata('error', 'Upload Gagal, Silahkan Masukan Foto!');
 					// return redirect('adminpanel/dataguru');
 					// echo "Upload gagal!"; die(); //do alert here
@@ -144,7 +100,7 @@ class Adminpanel extends CI_Controller {
 					$fotokegiatan = $this->upload->data('file_name');
 				}
 		}
-
+	}
 		$data = array(
 				'nama_kegiatan' => $namakegiatan,
 				'foto_kegiatan' => $fotokegiatan

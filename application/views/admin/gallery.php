@@ -4,7 +4,7 @@
         <li class="breadcrumb-item active">Input Gallery</li>
         <!-- Breadcrumb Menu-->
     </ol>
-    <div class="row">
+    <div class="row p-4">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
