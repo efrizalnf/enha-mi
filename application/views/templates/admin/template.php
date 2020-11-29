@@ -151,6 +151,9 @@
     </script>
     <script src="<?php echo base_url();?>assets/admin/js/main.js"></script>
     <script src="<?php echo base_url();?>assets/admin/js/charts.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/js/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/js/enhas.js"></script>
+   
 </body>
 
 </html>

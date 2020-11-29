@@ -38,8 +38,9 @@ class Adminpanel extends CI_Controller {
 			$nama = $this->input->post('nama_guru');
 			$mapel = $this->input->post('mapel_ampu');
 			$uploadfoto = $_FILES['foto_guru'];
-			if($uploadfoto = ''){
-				// $this->session->set_flashdata('error', 'Upload Gagal, Silahkan Masukan Foto!');
+			if($uploadfoto == ''){
+				$this->session->set_flashdata('error', 'Data tidak boleh kosong!');
+				redirect('adminpanel/dataguru');
 				
 			}else{
 				$config['upload_path'] = 'assets/landing/img/fotoguru'; 
@@ -47,8 +48,8 @@ class Adminpanel extends CI_Controller {
 				
 				$this->load->library('upload', $config);
 				if (!$this->upload->do_upload('foto_guru')) {
-					$this->session->set_flashdata('error', 'Upload Gagal, Silahkan Masukan Foto!');
-					// return redirect('adminpanel/dataguru');
+					$this->session->set_flashdata('error', 'Silahkan upload foto!');
+					redirect('adminpanel/dataguru');
 					// echo "Upload gagal!"; die(); //do alert here
 				} else{
 					$uploadfoto = $this->upload->data('file_name');
@@ -62,8 +63,11 @@ class Adminpanel extends CI_Controller {
 				'foto_guru'	=> $uploadfoto
 			);
 
+			
 			$this->enhamodel->inputdataGuru($data, 'tb_guru');
+			$this->session->set_flashdata('message', 'Data guru berhasil ditambahkan');
 			redirect('adminpanel/dataguru');
+		
 		
 	}
 
