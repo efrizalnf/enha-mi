@@ -7,6 +7,7 @@ class Enhamodel extends CI_Model{
 
     public function getDirGuru(){
        return $this->db->get($this->tbguru)->result_array();
+    //    return $this->db->get_where($this->tbguru)->result_array();
     }
     public function getInformasi(){
         return $this->db->get($this->tbinfo)->result_array();
@@ -19,11 +20,20 @@ class Enhamodel extends CI_Model{
     public function inputdataGuru($data){
         $this->db->insert($this->tbguru, $data);
     }
+
     public function inputFotogallery($data){
         $this->db->insert($this->tbgallery, $data);
     }
+    
 
+// Edit
+    public function editDataGuru($id, $data){
+    $this->db->update($this->tbguru, $data, array('id' => $id));
+    }
+
+//    delete
     public function selectdeleteGuru($id){
       return $this->db->delete($this->tbguru, array('id' => $id));
     }
+
 }

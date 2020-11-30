@@ -71,6 +71,40 @@ class Adminpanel extends CI_Controller {
 		
 	}
 
+	public function editGuru($id){
+		$nip = $this->input->post('nip');
+		$nama_guru = $this->input->post('nama_guru');
+		$mapel_ampu = $this->input->post('mapel_ampu');
+		$uploadfoto = $_FILES['foto_guru'];
+
+		if ($uploadfoto = '') {
+			
+		}else{
+			$config['upload_path'] = 'assets/landing/img/fotoguru';
+			$config['allowed_types'] = 'jpg|jpeg|png|gif';
+
+			$this->load->library('upload', $config);
+			if (!$this->upload->do_upload('foto_guru')){
+				$this->session->set_flashdata('error', 'Silahkan upload foto!');
+				redirect('adminpanel/dataguru');
+			}else{
+				$uploadfoto = $this->upload->data('file_name');
+			}
+		}
+
+		$data = array('nip' => $nip,
+						'nama_guru' => $nama_guru,
+						'mapel_ampu' => $mapel_ampu,
+						'foto_guru' => $uploadfoto
+	);
+
+	$this->enhamodel->editDataGuru($id, $data);
+	$this->session->set_flashdata('success', 'Data guru berhasil di edit');
+	redirect('adminpanel/dataguru');
+
+	}
+
+
 	public function deleteguru($id){
 		$this->enhamodel->selectdeleteGuru($id);
 		redirect('adminpanel/dataguru');
@@ -86,7 +120,7 @@ class Adminpanel extends CI_Controller {
 	
 	public function inputgallery(){
 		$namakegiatan = $this->input->post('nama_kegiatan');
-		$fotokegiatan = $_FILES['foto_kegiatan'] .$i;
+		$fotokegiatan = $_FILES['foto_kegiatan'];
 		// var_dump($fotokegiatan);
 		for ($i=1; $i <=5 ; $i++) { 
 		if($fotokegiatan = ''){

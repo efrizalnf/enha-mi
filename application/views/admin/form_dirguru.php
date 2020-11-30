@@ -39,7 +39,8 @@
                                     <td><?php echo $gurumapel['mapel_ampu']?></td>
                                     <td><?php echo $gurumapel['foto_guru']?></td>
                                     <td class="td-actions text-center">
-                                        <a class="btn btn-primary m-1"><i class="fa fa-edit"></i> </a>
+                                        <a href="<?php base_url()?><?php echo $gurumapel['id'];?>" data-toggle="modal"
+                            data-target="#editEnhasModal" class="btn btn-primary m-1"><i class="fa fa-edit"></i> </a>
                                         <a href="<?php base_url()?>deleteguru/<?php echo $gurumapel['id'];?>"
                                             class="btn btn-danger m-1 btn-hapus"><i class="fa fa-trash"></i>
                                         </a>
@@ -80,11 +81,8 @@
             <!--/.col-->
         </div>
         <!--/.row-->
-        </div>
         <div class="modal fade" id="inputEnhasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
-
-
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -161,6 +159,64 @@
                         <div class="modal-footer w-100">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                             <button type="submit" class="btn btn-primary" id="inputdataguru">Simpan</button>
+                        </div>
+                        <!-- </form> -->
+                        <?php echo form_close(); ?>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Edit data -->
+        <div class="modal fade" id="editEnhasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Data Guru</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <?php echo form_open_multipart('adminpanel/editguru');?>
+                        <input type="hidden" class="form-control" id="Id" name="id" value="<?= $gurumapel['id']?>">
+                        <div class="form-group">
+                            <label for="inputNip">NIP/NUPTK</label>
+                            <input type="text" class="form-control" id="inputNip" name="nip"
+                                placeholder="Inputkan NIP atau NUPTK" value="<?= $gurumapel['nip']?>" required>
+                            <div class="invalid-feedback">
+                                Inputkan NIP/NUPTK!
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputNama">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="inputNama" name="nama_guru"
+                                placeholder="Inputkan Nama dan Gelar" value="<?= $gurumapel['nama_guru']?>" required>
+                            <div class="invalid-feedback">
+                                Inputkan Nama Lengkap!
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputMapel">Mapel Ampu</label>
+                            <input type="text" class="form-control" id="inputMapel" name="mapel_ampu"
+                                placeholder="Inputkan Mata Pelajaran yang di ampu" value="<?= $gurumapel['mapel_ampu']?>" required>
+                            <div class="invalid-feedback">
+                                Inputkan Mapel yang di ampu!
+                            </div>
+                        </div>
+                        <label for="uploadFoto">Upload Foto</label>
+                        <div class="custom-file mb-3">
+                            <!-- <label class="custom-file-label" for="uploadFoto">Pilih foto...</label> -->
+                            <input type="file" class="form-control" id="uploadFoto" name="foto_guru" value="<?= $gurumapel['foto_guru']?>>">
+
+                        </div>
+                        <div class="modal-footer w-100">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary" id="inputdataguru">Edit</button>
                         </div>
                         <!-- </form> -->
                         <?php echo form_close(); ?>
