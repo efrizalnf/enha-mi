@@ -34,14 +34,14 @@ class Adminpanel extends CI_Controller {
 
 
 	public function inputguru(){
-		$id = $this->input->post('id');
 			$nip = $this->input->post('nip');
 			$nama = $this->input->post('nama_guru');
 			$mapel = $this->input->post('mapel_ampu');
 			$uploadfoto = $_FILES['foto_guru'];
 			if($uploadfoto == ''){
-				$this->session->set_flashdata('error', 'Data tidak boleh kosong!');
-				redirect('adminpanel/dataguru');
+				$nip = $this->input->post('nip');
+			$nama = $this->input->post('nama_guru');
+			$mapel = $this->input->post('mapel_ampu');
 				
 			}else{
 				$config['upload_path'] = 'assets/landing/img/fotoguru'; 
@@ -58,7 +58,6 @@ class Adminpanel extends CI_Controller {
 			}
 
 			$data = array(
-				'id'     => $id,
 				'nip' => $nip,
 				'nama_guru' => $nama,
 				'mapel_ampu' => $mapel,
@@ -75,36 +74,43 @@ class Adminpanel extends CI_Controller {
 
 	public function editguru($id){
 		$id = $this->input->post('id');
-		$nip = $this->input->post('nip');
-		$nama_guru = $this->input->post('nama_guru');
-		$mapel_ampu = $this->input->post('mapel_ampu');
-		$uploadfoto = $_FILES['foto_guru'];
+        $config['upload_path']= 'assets/landing/img/fotoguru';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
+		$this->load->library('upload', $config);
+        if(!$this->upload->do_upload('foto_guru')){
+			$nip = $this->input->post('nip');
+			$nama = $this->input->post('nama_guru');
+			$mapel = $this->input->post('mapel_ampu');
 
-		if ($uploadfoto = '') {
-			
-		}else{
-			$config['upload_path'] = 'assets/landing/img/fotoguru';
-			$config['allowed_types'] = 'jpg|jpeg|png|gif';
+			$data = array(
+				'nip' => $nip,
+				'nama_guru' => $nama,
+				'mapel_ampu' => $mapel
+				
+			);
+	
+			$this->enhamodel->prosesEditGuru('tb_guru', $data, array('id' => $id));
+			$this->session->set_flashdata('message', 'Data guru berhasil di ubah');
+			redirect('adminpanel/dataguru');
+        }else{
+				$nip = $this->input->post('editnip');
+				$nama = $this->input->post('editnamaguru');
+				$mapel = $this->input->post('editmapelampu');
+				$foto = $_FILES['editfotoguru'];
+                $foto = $this->upload->data('file_name');
+        }
+        
+        $data = array(
+			'nip' => $nip,
+			'nama_guru' => $nama,
+			'mapel_ampu' => $mapel,
+			'foto_guru'	=> $foto
+		);
 
-			$this->load->library('upload', $config);
-			if (!$this->upload->do_upload('foto_guru')){
-				$this->session->set_flashdata('error', 'Silahkan upload foto!');
-				redirect('adminpanel/dataguru');
-			}else{
-				$uploadfoto = $this->upload->data('file_name');
-			}
-		}
-
-		$data = array('nip' => $nip,
-						'nama_guru' => $nama_guru,
-						'mapel_ampu' => $mapel_ampu,
-						'foto_guru' => $uploadfoto
-	);
-
-	$this->enhamodel->editDataGuru($id, $data);
-	$this->session->set_flashdata('success', 'Data guru berhasil di edit');
-	redirect('adminpanel/dataguru');
-
+		$this->enhamodel->prosesEditGuru('tb_guru', $data, array('id' => $id));
+		$this->session->set_flashdata('message', 'Data guru berhasil di ubah');
+		redirect('adminpanel/dataguru');
+	   
 	}
 
 

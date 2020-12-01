@@ -17,40 +17,36 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal"
                             data-target="#inputEnhasModal"><i class="fa fa-plus"></i>&nbsp; Input
                             Data</button>
-                        <table class="table table-responsive-sm table-bordered table-striped table-sm mt-3">
+                        <table class="table table-hover table-responsive-sm table-bordered table-striped table-sm mt-3">
                             <thead>
                                 <tr class="text-center">
                                     <th>No.</th>
                                     <th>NIP/NUPTK</th>
                                     <th>Nama guru</th>
                                     <th>Mapel</th>
-                                    <th>Upload File</th>
+                                    <th>Foto</th>
                                     <th>Edit/Hapus Data</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
 
-                            <tbody>
+                            <tbody class="align-middle" style="height: 100px;">
                                 <?php $no=1; 
                                 foreach ($guru as $gurumapel) :?>
-                                <tr>
-                                    <td><?php echo $no++?></td>
-                                    <td><?php echo $gurumapel['nip']?></td>
-                                    <td><?php echo $gurumapel['nama_guru']?></td>
-                                    <td><?php echo $gurumapel['mapel_ampu']?></td>
-                                    <td><?php echo $gurumapel['foto_guru']?></td>
-                                    <td class="td-actions text-center">
-                                        <a href="#" class="btn btn-primary btn-edit m-1"
-                                            data-id="<?= $gurumapel['id'];?>" 
-                                            data-nip="<?= $gurumapel['nip'];?>"
-                                            data-nama="<?= $gurumapel['nama_guru'];?>"
-                                            data-mapel="<?= $gurumapel['mapel_ampu'];?>"
-                                            data-foto="<?= $gurumapel['foto_guru'];?>"><i class="fa fa-edit"></i></a>
-                                        <a href="<?php base_url()?>deleteguru/<?php echo $gurumapel['id'];?>"
+                                <tr valign="middle">
+                                    <td class="align-middle text-center"><?php echo $no++?></td>
+                                    <td class="align-middle text-center"><?php echo $gurumapel['nip']?></td>
+                                    <td class="align-middle"><?php echo $gurumapel['nama_guru']?></td>
+                                    <td class="align-middle"><?php echo $gurumapel['mapel_ampu']?></td>
+                                    <td class="align-middle"> <img class="rounded border border-light mx-auto d-block m-3"  src="<?php echo base_url() . 'assets/landing/img/fotoguru/' .  $gurumapel['foto_guru'];?>" width="60" height="60" id="previmg" name="previmg"
+                                value="<?php echo $gurumapel['foto_guru']?>" ></td>
+                                    <td class="td-actions text-center align-middle">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editEnhasModal<?= $gurumapel['id']?>"><i class="fa fa-edit"></i></button>
+                                        <button href="<?php base_url()?>deleteguru/<?php echo $gurumapel['id'];?>"
                                             class="btn btn-danger m-1 btn-hapus"><i class="fa fa-trash"></i>
-                                        </a>
+                                        </button>
                                     </td>
-                                    <td class="td-actions text-center">
+                                    <td class="td-actions text-center align-middle">
                                         <span class="badge badge-success">Active</span>
                                     </td>
                                 </tr>
@@ -175,7 +171,10 @@
         </div>
 
         <!-- Modal Edit data -->
-        <div class="modal fade" id="editEnhasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <?php 
+        
+        foreach($guru as $gurumapel) : ?>
+        <div class="modal fade" id="editEnhasModal<?= $gurumapel['id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -187,11 +186,11 @@
                     </div>
                     <div class="modal-body">
                         <?php echo form_open_multipart('adminpanel/editguru');?>
-                        <input type="hidden" class="form-control editid" id="editid" name="editid"
+                        <input type="text" class="form-control editid" id="id" name="id"
                             value="<?php echo $gurumapel['id']?>">
                         <div class="form-group">
                             <label for="inputNip">NIP/NUPTK</label>
-                            <input type="text" class="form-control editnip" id="editNip" name="nip"
+                            <input type="text" class="form-control editnip" id="editNip" name="editnip"
                                 placeholder="Inputkan NIP atau NUPTK" value="<?php echo $gurumapel['nip']?>" required>
                             <div class="invalid-feedback">
                                 Inputkan NIP/NUPTK!
@@ -199,7 +198,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputNama">Nama Lengkap</label>
-                            <input type="text" class="form-control editnama" id="editNama" name="nama_guru"
+                            <input type="text" class="form-control editnama" id="editNama" name="editnamaguru"
                                 placeholder="Inputkan Nama dan Gelar" value="<?php echo $gurumapel['nama_guru']?>"
                                 required>
                             <div class="invalid-feedback">
@@ -208,7 +207,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputMapel">Mapel Ampu</label>
-                            <input type="text" class="form-control editmapel" id="editMapel" name="mapel_ampu"
+                            <input type="text" class="form-control editmapel" id="editMapel" name="editmapelampu"
                                 placeholder="Inputkan Mata Pelajaran yang di ampu"
                                 value="<?php echo $gurumapel['mapel_ampu']?>" required>
                             <div class="invalid-feedback">
@@ -218,9 +217,14 @@
                         <label for="uploadFoto">Upload Foto</label>
                         <div class="custom-file mb-3">
                             <!-- <label class="custom-file-label" for="uploadFoto">Pilih foto...</label> -->
-                            <input type="file" class="form-control editfoto" id="editFoto" name="foto_guru"
+                            <input type="file" class="form-control editfoto" id="editFoto" name="editfotoguru"
                                 value="<?php echo $gurumapel['foto_guru']?>">
 
+                        </div>
+                        <div class="form-group">
+                            <label for="previmg">Foto saat ini</label>
+                            <img class="rounded border border-light mx-auto d-block"  src="<?php echo base_url() . 'assets/landing/img/fotoguru/' .  $gurumapel['foto_guru'];?>" width="100" height="150" id="previmg" name="previmg"
+                                value="<?php echo $gurumapel['foto_guru']?>" >
                         </div>
                         <div class="modal-footer w-100">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -232,24 +236,5 @@
                 </div>
             </div>
         </div>
+        <?php endforeach; ?>
     </main>
-    <script>
-$(document).ready(function() {
-    // show.bs.modal for show modal
-    $('btn-edit').on('click', function() {
-        const id = $(this).data('id');
-        const nip = $(this).data('nip');
-        const nama = $(this).data('nama');
-        const mapel = $(this).data('mapel');
-        const foto = $(this).data('foto');
-
-        $('.editid').val(id);
-        $('.editnip').val(nip);
-        $('.editnama').val(nama);
-        $('.editmapel').val(mapel);
-        $('.editfoto').val(foto);
-
-        $('#editEnhasModal').modal('show');
-    });
-});
-    </script>
