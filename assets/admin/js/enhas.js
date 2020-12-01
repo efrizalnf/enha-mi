@@ -1,3 +1,5 @@
+
+// Alert Success
 const flashdata = $('.flash-data').data('flashdata');
 console.log(flashdata);
 if (flashdata) {
@@ -7,6 +9,7 @@ if (flashdata) {
     })
 }
 
+// Alert Error
 const flashdataerr = $('.flash-data-err').data('flashdata');
 console.log(flashdataerr);
 if(flashdataerr){
@@ -16,6 +19,7 @@ if(flashdataerr){
       })
 }
 
+// Alert Hapus
 $(document).on('click', '.btn-hapus', function(e) {
     e.preventDefault();
     const href = $(this).attr('href');
@@ -33,6 +37,29 @@ $(document).on('click', '.btn-hapus', function(e) {
       })
 });
 
+
+// Edit Modal get dataset
+
+function getModal(){
+$(document).ready(function(){
+    // show.bs.modal for show modal
+$('btn-edit').on('click', function(){
+   const id = $(this).data('id');
+   const nip = $(this).data('nip');
+   const nama = $(this).data('nama');
+   const mapel = $(this).data('mapel');
+   const foto = $(this).data('foto');
+
+   $('.editid').val(id);
+   $('.editnip').val(nip);
+   $('.editnama').val(nama);
+   $('.editmapel').val(mapel);
+   $('.editfoto').val(foto);
+
+   $('#editEnhasModal').modal('show');
+});
+});
+}
 
 // modal validation-message
 // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -53,3 +80,4 @@ $(document).on('click', '.btn-hapus', function(e) {
 //       });
 //     }, false);
 //   })();
+

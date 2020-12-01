@@ -34,6 +34,7 @@ class Adminpanel extends CI_Controller {
 
 
 	public function inputguru(){
+		$id = $this->input->post('id');
 			$nip = $this->input->post('nip');
 			$nama = $this->input->post('nama_guru');
 			$mapel = $this->input->post('mapel_ampu');
@@ -57,6 +58,7 @@ class Adminpanel extends CI_Controller {
 			}
 
 			$data = array(
+				'id'     => $id,
 				'nip' => $nip,
 				'nama_guru' => $nama,
 				'mapel_ampu' => $mapel,
@@ -71,7 +73,8 @@ class Adminpanel extends CI_Controller {
 		
 	}
 
-	public function editGuru($id){
+	public function editguru($id){
+		$id = $this->input->post('id');
 		$nip = $this->input->post('nip');
 		$nama_guru = $this->input->post('nama_guru');
 		$mapel_ampu = $this->input->post('mapel_ampu');
