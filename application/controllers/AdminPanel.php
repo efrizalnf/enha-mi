@@ -69,11 +69,12 @@ class Adminpanel extends CI_Controller {
 			$this->session->set_flashdata('message', 'Data guru berhasil ditambahkan');
 			redirect('adminpanel/dataguru');
 		
-		
+
 	}
 
-	public function editguru($id){
+	public function editguru(){
 		$id = $this->input->post('id');
+		
         $config['upload_path']= 'assets/landing/img/fotoguru';
         $config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
 		$this->load->library('upload', $config);
@@ -89,7 +90,7 @@ class Adminpanel extends CI_Controller {
 				
 			);
 	
-			$this->enhamodel->prosesEditGuru('tb_guru', $data, array('id' => $id));
+			$this->enhamodel->prosesEditGuru('tb_guru', $data, $id );
 			$this->session->set_flashdata('message', 'Data guru berhasil di ubah');
 			redirect('adminpanel/dataguru');
         }else{
@@ -107,7 +108,9 @@ class Adminpanel extends CI_Controller {
 			'foto_guru'	=> $foto
 		);
 
-		$this->enhamodel->prosesEditGuru('tb_guru', $data, array('id' => $id));
+		$where = array('id' => $id);
+
+		$data ['id'] = $this->enhamodel->prosesEditGuru( 'tb_guru', $where, $data, $id);
 		$this->session->set_flashdata('message', 'Data guru berhasil di ubah');
 		redirect('adminpanel/dataguru');
 	   

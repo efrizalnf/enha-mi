@@ -38,10 +38,20 @@
                                     <td class="align-middle text-center"><?php echo $gurumapel['nip']?></td>
                                     <td class="align-middle"><?php echo $gurumapel['nama_guru']?></td>
                                     <td class="align-middle"><?php echo $gurumapel['mapel_ampu']?></td>
-                                    <td class="align-middle"> <img class="rounded border border-light mx-auto d-block m-3"  src="<?php echo base_url() . 'assets/landing/img/fotoguru/' .  $gurumapel['foto_guru'];?>" width="60" height="60" id="previmg" name="previmg"
-                                value="<?php echo $gurumapel['foto_guru']?>" ></td>
+                                    <td class="align-middle"> <img
+                                            class="rounded border border-light mx-auto d-block m-3"
+                                            src="<?php echo base_url() . 'assets/landing/img/fotoguru/' .  $gurumapel['foto_guru'];?>"
+                                            width="60" height="60" id="previmg" name="previmg"
+                                            value="<?php echo $gurumapel['foto_guru']?>"></td>
                                     <td class="td-actions text-center align-middle">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editEnhasModal<?= $gurumapel['id']?>"><i class="fa fa-edit"></i></button>
+                                        <a href="javascript:;" data-id="<?php echo $gurumapel['id'] ?>"
+                                            data-editnip="<?php echo $gurumapel['nip'] ?>"
+                                            data-editnamaguru="<?php echo $gurumapel['nama_guru'] ?>"
+                                            data-editmapelampu="<?php echo $gurumapel['mapel_ampu'] ?>"
+                                            data-editfotoguru="<?php echo $gurumapel['foto_guru'] ?>"
+                                            data-toggle="modal" data-target="#edit-modal">
+                                            <button data-toggle="modal" data-target="#edit-modal"
+                                                class="btn btn-info"><i class="fa fa-edit"></i></button></a>
                                         <button href="<?php base_url()?>deleteguru/<?php echo $gurumapel['id'];?>"
                                             class="btn btn-danger m-1 btn-hapus"><i class="fa fa-trash"></i>
                                         </button>
@@ -171,10 +181,8 @@
         </div>
 
         <!-- Modal Edit data -->
-        <?php 
-        
-        foreach($guru as $gurumapel) : ?>
-        <div class="modal fade" id="editEnhasModal<?= $gurumapel['id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+        <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -186,30 +194,28 @@
                     </div>
                     <div class="modal-body">
                         <?php echo form_open_multipart('adminpanel/editguru');?>
-                        <input type="text" class="form-control editid" id="id" name="id"
+                        <input type="hidden" class="form-control" id="id" name="id"
                             value="<?php echo $gurumapel['id']?>">
                         <div class="form-group">
                             <label for="inputNip">NIP/NUPTK</label>
-                            <input type="text" class="form-control editnip" id="editNip" name="editnip"
-                                placeholder="Inputkan NIP atau NUPTK" value="<?php echo $gurumapel['nip']?>" required>
+                            <input type="text" class="form-control" id="editnip" name="editnip"
+                                placeholder="Inputkan NIP atau NUPTK" required>
                             <div class="invalid-feedback">
                                 Inputkan NIP/NUPTK!
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputNama">Nama Lengkap</label>
-                            <input type="text" class="form-control editnama" id="editNama" name="editnamaguru"
-                                placeholder="Inputkan Nama dan Gelar" value="<?php echo $gurumapel['nama_guru']?>"
-                                required>
+                            <input type="text" class="form-control" id="editnamaguru" name="editnamaguru"
+                                placeholder="Inputkan Nama dan Gelar" required>
                             <div class="invalid-feedback">
                                 Inputkan Nama Lengkap!
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputMapel">Mapel Ampu</label>
-                            <input type="text" class="form-control editmapel" id="editMapel" name="editmapelampu"
-                                placeholder="Inputkan Mata Pelajaran yang di ampu"
-                                value="<?php echo $gurumapel['mapel_ampu']?>" required>
+                            <input type="text" class="form-control" id="editmapelampu"
+                                name="editmapelampu" placeholder="Inputkan Mata Pelajaran yang di ampu" required>
                             <div class="invalid-feedback">
                                 Inputkan Mapel yang di ampu!
                             </div>
@@ -217,15 +223,16 @@
                         <label for="uploadFoto">Upload Foto</label>
                         <div class="custom-file mb-3">
                             <!-- <label class="custom-file-label" for="uploadFoto">Pilih foto...</label> -->
-                            <input type="file" class="form-control editfoto" id="editFoto" name="editfotoguru"
-                                value="<?php echo $gurumapel['foto_guru']?>">
+                            <input type="file" class="form-control editfotoguru" id="editfotoguru" name="editfotoguru">
 
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="previmg">Foto saat ini</label>
-                            <img class="rounded border border-light mx-auto d-block"  src="<?php echo base_url() . 'assets/landing/img/fotoguru/' .  $gurumapel['foto_guru'];?>" width="100" height="150" id="previmg" name="previmg"
-                                value="<?php echo $gurumapel['foto_guru']?>" >
-                        </div>
+                            <img class="rounded border border-light mx-auto d-block"
+                                src="<?php echo base_url() . 'assets/landing/img/fotoguru/' .  $gurumapel['foto_guru'];?>"
+                                width="100" height="150" id="previmg" name="previmg"
+                                >
+                        </div> -->
                         <div class="modal-footer w-100">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                             <button type="submit" class="btn btn-primary" id="editdataguru">Edit</button>
@@ -236,5 +243,21 @@
                 </div>
             </div>
         </div>
-        <?php endforeach; ?>
+
     </main>
+
+    <script>
+$(document).ready(function() {
+    $('#edit-modal').on('show.bs.modal', function(event) {
+        var div = $(event.relatedTarget); // Tombol dimana modal di tampilkan
+        var modal = $(this);
+
+        // Isi nilai pada field
+        modal.find('#id').attr("value", div.data('-id'));
+        modal.find('#editnip').attr("value", div.data('editnip'));
+        modal.find('#editnamaguru').attr("value", div.data('editnamaguru'));
+        modal.find('#editmapelampu').attr("value", div.data('editmapelampu'));
+        modal.find('#editfotoguru').attr("value", div.data('editfotoguru'));
+    });
+});
+    </script>
