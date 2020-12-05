@@ -10,30 +10,39 @@ class Adminpanel extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->library('session');	
 		$this->load->model('enhamodel');
+
+	
 	}
 
+	public function setsession(){
+		if($this->session->userdata('status') != 1){
+			$this->session->set_flashdata('error', 'Session anda telah berakhir, silahkan login kembali!');
+			redirect(base_url('login/index'));
+		}
+	}
 	
 	public function index()
 	{	
-		if($this->session->userdata('status') != 1){
-			redirect(base_url('login/index'));
-		}else{
+		$this->setsession();
 		$data['tb_user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
 		$this->template->load('templates/admin/template', 'admin/dashboard', $data);
-	}
+		
 	}
 
 
 	public function dataguru()
 	{
+		$this->setsession();
 		$this->load->model('enhamodel');
 		$data['guru'] = $this->enhamodel->getDirGuru();
 		$this->template->load('templates/admin/template', 'admin/form_dirguru' , $data);
+		// $this->index();
 	}	
 
 
 
 	public function inputguru(){
+		$this->setsession();
 			$nip = $this->input->post('nip');
 			$nama = $this->input->post('nama_guru');
 			$mapel = $this->input->post('mapel_ampu');
@@ -73,6 +82,7 @@ class Adminpanel extends CI_Controller {
 	}
 
 	public function editguru(){
+		$this->setsession();
 		$id = $this->input->post('id');
 		
         $config['upload_path']= 'assets/landing/img/fotoguru';
@@ -118,6 +128,7 @@ class Adminpanel extends CI_Controller {
 
 
 	public function deleteguru($id){
+		$this->setsession();
 		$this->enhamodel->selectdeleteGuru($id);
 		redirect('adminpanel/dataguru');
 	}
@@ -125,6 +136,7 @@ class Adminpanel extends CI_Controller {
 
 
 	public function gallery(){
+		$this->setsession();
 		// $this->load->model('enhamodel');
 		// $data['gallery'] = $this->enhamodel->inputFotogallery();
 		$this->template->load('templates/admin/template', 'admin/gallery');

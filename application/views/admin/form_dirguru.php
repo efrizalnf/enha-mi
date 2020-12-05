@@ -92,6 +92,7 @@
             <!--/.col-->
         </div>
         <!--/.row-->
+        <!-- Input Guru Modal -->
         <div class="modal fade" id="inputEnhasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -179,9 +180,9 @@
                 </div>
             </div>
         </div>
+<!-- End Input Guru Modal -->
 
-        <!-- Modal Edit data -->
-
+        <!--Edit Guru Modal-->
         <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -199,26 +200,26 @@
                         <div class="form-group">
                             <label for="inputNip">NIP/NUPTK</label>
                             <input type="text" class="form-control" id="editnip" name="editnip"
-                                placeholder="Inputkan NIP atau NUPTK" required>
-                            <div class="invalid-feedback">
+                                placeholder="Inputkan NIP atau NUPTK">
+                            <!-- <div class="invalid-feedback">
                                 Inputkan NIP/NUPTK!
-                            </div>
+                            </div> -->
                         </div>
                         <div class="form-group">
                             <label for="inputNama">Nama Lengkap</label>
                             <input type="text" class="form-control" id="editnamaguru" name="editnamaguru"
-                                placeholder="Inputkan Nama dan Gelar" required>
-                            <div class="invalid-feedback">
+                                placeholder="Inputkan Nama dan Gelar">
+                            <!-- <div class="invalid-feedback">
                                 Inputkan Nama Lengkap!
-                            </div>
+                            </div> -->
                         </div>
                         <div class="form-group">
                             <label for="inputMapel">Mapel Ampu</label>
                             <input type="text" class="form-control" id="editmapelampu"
-                                name="editmapelampu" placeholder="Inputkan Mata Pelajaran yang di ampu" required>
-                            <div class="invalid-feedback">
+                                name="editmapelampu" placeholder="Inputkan Mata Pelajaran yang di ampu">
+                            <!-- <div class="invalid-feedback">
                                 Inputkan Mapel yang di ampu!
-                            </div>
+                            </div> -->
                         </div>
                         <label for="uploadFoto">Upload Foto</label>
                         <div class="custom-file mb-3">
@@ -253,7 +254,7 @@ $(document).ready(function() {
         var modal = $(this);
 
         // Isi nilai pada field
-        modal.find('#id').attr("value", div.data('-id'));
+        modal.find('#id').attr("value", div.data('id'));
         modal.find('#editnip').attr("value", div.data('editnip'));
         modal.find('#editnamaguru').attr("value", div.data('editnamaguru'));
         modal.find('#editmapelampu').attr("value", div.data('editmapelampu'));

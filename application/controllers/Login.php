@@ -7,7 +7,7 @@ public function __construct()
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('session');	
-
+		
 	}
 
 
@@ -25,7 +25,7 @@ public function __construct()
 		}
 	}
 
-	public function login(){
+	private function login(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 
@@ -33,7 +33,7 @@ public function __construct()
 		 $pass = $this->db->get_where('tb_user', ['password' => $password])->row_array();
 		// var_dump($user); die;
 
-		if($user){
+		if($username == $user['username']){
 			if($password == $pass['password']){
 				$data = [
 					'username' => $user['username'],
