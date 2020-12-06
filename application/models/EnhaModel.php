@@ -34,9 +34,9 @@ class Enhamodel extends CI_Model{
     }
 
     public function updatedataguru($data, $id){
-  
-    $where = $this->db->where('id_guru', $id);
-    $this->db->update('tb_guru', $data, array('id_guru' => $id), $where);
+        
+    $this->db->where('id_guru', $id);
+    $this->db->update('tb_guru', $data,  ['id_guru' => $id]);
 
     return TRUE;
     }

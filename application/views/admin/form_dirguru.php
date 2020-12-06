@@ -44,9 +44,20 @@
                                             width="60" height="60" id="previmg" name="previmg"
                                             value="<?php echo $gurumapel['foto_guru']?>"></td>
                                     <td class="td-actions text-center align-middle">
-                                        <a href="<?= base_url();?>adminpanel/editguru/<?= $gurumapel['id_guru'];?>" class="btn btn-info" type="button" data-toggle="modal"
-                            data-target="#edit-modal"><i class="fa fa-edit"></i></a>
-                                        <button href="<?php base_url()?>adminpanel/deleteguru/<?php echo $gurumapel['id_guru'];?>"
+                                        <!-- <a href="<?= base_url();?>adminpanel/editguru/<?= $gurumapel['id_guru'];?>"
+                                            class="btn btn-info" type="button" data-toggle="modal"
+                                            data-target="#edit-modal"><i class="fa fa-edit"></i></a> -->
+                                        <a href="javascript:;" 
+                                        data-id="<?php echo $gurumapel['id_guru'] ?>" 
+                                        data-nip="<?php echo $gurumapel['nip'] ?>" 
+                                        data-nama="<?php echo $gurumapel['nama_guru'] ?>" 
+                                        data-mapel="<?php echo $gurumapel['mapel_ampu'] ?>" 
+                                        data-foto="<?php echo $gurumapel['foto_guru'] ?>" 
+                                        class="btn btn-info"
+                                            type="button" data-toggle="modal" data-target="#edit-modal"><i
+                                                class="fa fa-edit"></i></a>
+                                        <button
+                                            href="<?php base_url()?>adminpanel/deleteguru/<?php echo $gurumapel['id_guru'];?>"
                                             class="btn btn-danger m-1 btn-hapus"><i class="fa fa-trash"></i>
                                         </button>
                                     </td>
@@ -174,7 +185,7 @@
                 </div>
             </div>
         </div>
-<!-- End Input Guru Modal -->
+        <!-- End Input Guru Modal -->
 
         <!--Edit Guru Modal-->
         <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -189,27 +200,29 @@
                     </div>
                     <div class="modal-body">
                         <?php echo form_open_multipart('adminpanel/editguru');?>
-                        <input type="hidden" class="form-control" id="edit_id" name="edit_id" value="<?= $gurumapel['id_guru']?>">
+                        <input type="hidden" class="form-control" id="edit_id" name="edit_id"
+                            value="<?= $gurumapel['id_guru']?>">
                         <div class="form-group">
                             <label for="inputNip">NIP/NUPTK</label>
-                            <input type="text" class="form-control" id="editnip" name="editnip" value="<?= $gurumapel['nip']?>"
-                                placeholder="Inputkan NIP atau NUPTK">
+                            <input type="text" class="form-control" id="editnip" name="editnip"
+                                value="<?= $gurumapel['nip']?>" placeholder="Inputkan NIP atau NUPTK">
                             <div class="invalid-feedback">
                                 Inputkan NIP/NUPTK!
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputNama">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="editnamaguru" name="editnamaguru" value="<?= $gurumapel['nama_guru']?>"
-                                placeholder="Inputkan Nama dan Gelar">
+                            <input type="text" class="form-control" id="editnamaguru" name="editnamaguru"
+                                value="<?= $gurumapel['nama_guru']?>" placeholder="Inputkan Nama dan Gelar">
                             <div class="invalid-feedback">
                                 Inputkan Nama Lengkap!
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputMapel">Mapel Ampu</label>
-                            <input type="text" class="form-control" id="editmapelampu"
-                                name="editmapelampu" value="<?=$gurumapel['mapel_ampu']?>" placeholder="Inputkan Mata Pelajaran yang di ampu">
+                            <input type="text" class="form-control" id="editmapelampu" name="editmapelampu"
+                                value="<?=$gurumapel['mapel_ampu']?>"
+                                placeholder="Inputkan Mata Pelajaran yang di ampu">
                             <div class="invalid-feedback">
                                 Inputkan Mapel yang di ampu!
                             </div>
@@ -217,7 +230,7 @@
                         <label for="uploadFoto">Upload Foto</label>
                         <div class="custom-file mb-3">
                             <!-- <label class="custom-file-label" for="uploadFoto">Pilih foto...</label> -->
-                            <input type="file" class="form-control editfotoguru" id="editfotoguru" name="editfotoguru">
+                            <input type="file" class="form-control editfotoguru" id="editfotoguru" name="editfotoguru" value="<?=$gurumapel['foto_guru']?>">
 
                         </div>
                         <!-- <div class="form-group">
@@ -243,22 +256,37 @@
     <script src="<?php echo base_url();?>assets/admin/vendors/popper.js/js/popper.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/vendors/bootstrap/js/bootstrap.min.js"></script>
     <script>
-        // $(document).ready(function() {
-        //     $('.editmodal').on('click', function() {
-        //         $('#edit-modal').modal('show');
+// $(document).ready(function() {
+//     $('.editmodal').on('click', function() {
+//         $('#edit-modal').modal('show');
 
-        //         $tr = $(this).closest('tr');
+//         $tr = $(this).closest('tr');
 
-        //         var data = $tr.children("td").map(function(){
-        //             return $(this).text();
-        //         }).get();
+//         var data = $tr.children("td").map(function(){
+//             return $(this).text();
+//         }).get();
 
-        //         $('#edit_id').val(data[0]);
-        //         $('#editnip').val(data[1]);
-        //         $('#editnamaguru').val(data[2]);
-        //         $('#editmapelampu').val(data[3]);
-        //         $('#editfotoguru').val(data[4]);
-           
-        //     });
-        // });
+//         $('#edit_id').val(data[0]);
+//         $('#editnip').val(data[1]);
+//         $('#editnamaguru').val(data[2]);
+//         $('#editmapelampu').val(data[3]);
+//         $('#editfotoguru').val(data[4]);
+
+//     });
+// });
+
+$(document).ready(function() {
+        // Untuk sunting
+        $('#edit-modal').on('show.bs.modal', function (event) {
+            var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
+            var modal          = $(this)
+
+            // Isi nilai pada field
+            modal.find('#edit_id').attr("value",div.data('id'));
+            modal.find('#editnip').attr("value",div.data('nip'));
+            modal.find('#editnamaguru').attr("value",div.data('nama'));
+            modal.find('#editmapelampu').attr("value",div.data('mapel'));
+            modal.find('#editfotoguru').attr("value",div.data('foto'));
+        });
+    });
     </script>
