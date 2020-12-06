@@ -45,11 +45,11 @@ public function __construct()
 				redirect('adminpanel/dashboard');
 			}else{
 				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
-			redirect('login/index');
+			redirect('login');
 			}
 		}else{
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Username tidak terdaftar!</div>');
-			redirect('login/index');
+			redirect('login');
 		}
 	}
 
@@ -59,6 +59,6 @@ public function __construct()
 		$this->session->unset_userdata('status');
 
 		$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda Telah Logout!</div>');
-			redirect('login/index');
+			redirect('login');
 	}
 }

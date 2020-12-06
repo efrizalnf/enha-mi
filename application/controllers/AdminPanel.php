@@ -21,11 +21,17 @@ class Adminpanel extends CI_Controller {
 		} 
 	}
 	
-	public function dashboard()
+	public function index()
 	{	
 		$this->setsession();
 		$datasession['tb_user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
 		$this->template->load('templates/admin/template', 'admin/dashboard', $datasession);
+		
+	}
+
+	public function dashboard()
+	{	
+		$this->template->load('templates/admin/template', 'admin/dashboard');
 		
 	}
 

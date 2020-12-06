@@ -30,7 +30,13 @@ class Enhamodel extends CI_Model{
 
 // Edit
     public function prosesEditGuru($data, $id){
-       
+        // $data = array(
+		// 	'nip' => $nip,
+		// 	'nama_guru' => $nama,
+		// 	'mapel_ampu' => $mapel,
+		// 	'foto_guru'	=> $foto,
+		// );
+    // $id = array('id' => $id);
     $where = $this->db->where('id_guru', $id);
     $this->db->update('tb_guru', $data, array('id_guru' => $id), $where);
 

@@ -70,7 +70,7 @@
                         <i class="fa fa-user"></i>Profile</a>
                     <a class="dropdown-item" href="#">
                         <i class="fa fa-wrench"></i> Settings</a>
-                    <a class="dropdown-item" href="<?= site_url('login/logout')?>">
+                    <a class="dropdown-item" href="<?= base_url()?>login/logout">
                         <i class="fa fa-lock"></i> Logout</a>
                 </div>
             </li>
@@ -87,7 +87,7 @@
             <nav class="sidebar-nav ">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('adminpanel/dashboard');?>">
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/dashboard');?>">
                             <i class="nav-icon icon-speedometer"></i> Dashboard
                             <span class="badge badge-primary">HOME</span>
                         </a>
@@ -98,29 +98,29 @@
                             <i class="nav-icon icon-people"></i>Direktori</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('adminpanel/dataguru');?>">
+                                <a class="nav-link" href="<?php echo base_url('adminpanel/dataguru');?>">
                                     <i class="nav-icon icon-user"></i>Direktori Guru</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('adminpanel/tables');?>">
+                                <a class="nav-link" href="<?php echo base_url('adminpanel/tables');?>">
                                     <i class="nav-icon icon-user"></i>Direktori Siswa</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('adminpanel/charts');?>">
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/charts');?>">
                             <i class="nav-icon icon-frame"></i>Input Image Slide</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('adminpanel/gallery');?>">
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/gallery');?>">
                             <i class="nav-icon icon-frame"></i>Input Image Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('adminpanel/charts');?>">
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/charts');?>">
                             <i class="nav-icon icon-paper-clip"></i>Input File Download</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('adminpanel/charts');?>">
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/charts');?>">
                             <i class="nav-icon icon-info"></i>Input Informasi</a>
                     </li>
                 </ul>
