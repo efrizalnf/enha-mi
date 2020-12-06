@@ -29,14 +29,12 @@ class Enhamodel extends CI_Model{
     
 
 // Edit
-    public function prosesEditGuru($data, $id){
-        // $data = array(
-		// 	'nip' => $nip,
-		// 	'nama_guru' => $nama,
-		// 	'mapel_ampu' => $mapel,
-		// 	'foto_guru'	=> $foto,
-		// );
-    // $id = array('id' => $id);
+    public function getGuruById($id){
+        return $this->db->get_where($this->tbguru, ['id_guru' => $id])->row_array();
+    }
+
+    public function updatedataguru($data, $id){
+  
     $where = $this->db->where('id_guru', $id);
     $this->db->update('tb_guru', $data, array('id_guru' => $id), $where);
 
@@ -46,6 +44,6 @@ class Enhamodel extends CI_Model{
 //    delete
     public function selectdeleteGuru($id){
     
-      return $this->db->delete($this->tbguru, array('id_guru' => $id));
+      return $this->db->delete($this->tbguru, ['id_guru' => $id]);
     }
 }

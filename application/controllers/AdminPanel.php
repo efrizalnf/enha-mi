@@ -10,7 +10,6 @@ class Adminpanel extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->library('session');	
 		$this->load->model('enhamodel');
-
 	
 	}
 
@@ -83,58 +82,59 @@ class Adminpanel extends CI_Controller {
 
 	}
 
-	public function editguru(){
-		$this->setsession();
-		$id = $this->input->post('edit_id');
-        $config['upload_path']= 'assets/landing/img/fotoguru';
-        $config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
-		$this->load->library('upload', $config);
-        if(!$this->upload->do_upload('foto_guru')){
-		// 	$item = $this->enhamodel->get($data['id'])->row();
-		// 	if ($item->image != null) {
-		// 	$target_file = 'assets/landing/img/fotoguru'.$item->image;
-		// 	unlink($target_file);
-		// }
-			$nip = $this->input->post('nip');
-			$nama = $this->input->post('nama_guru');
-			$mapel = $this->input->post('mapel_ampu');
+	public function editguru($id){
+		// $this->setsession();
+		// $id = $this->input->post('edit_id');
+        // $config['upload_path']= 'assets/landing/img/fotoguru';
+        // $config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
+		// $this->load->library('upload', $config);
+        // if(!$this->upload->do_upload('foto_guru')){
+		// // 	$item = $this->enhamodel->get($data['id'])->row();
+		// // 	if ($item->image != null) {
+		// // 	$target_file = 'assets/landing/img/fotoguru'.$item->image;
+		// // 	unlink($target_file);
+		// // }
+		// 	$nip = $this->input->post('nip');
+		// 	$nama = $this->input->post('nama_guru');
+		// 	$mapel = $this->input->post('mapel_ampu');
 
-			$data = array(
-				'nip' => $nip,
-				'nama_guru' => $nama,
-				'mapel_ampu' => $mapel,
+		// 	$data = array(
+		// 		'nip' => $nip,
+		// 		'nama_guru' => $nama,
+		// 		'mapel_ampu' => $mapel,
 				
-			);
+		// 	);
 	
-			$this->enhamodel->prosesEditGuru($data, $id);
-			$this->session->set_flashdata('message', 'Data guru berhasil di ubah');
-			redirect('adminpanel/dataguru');
-        }else{
-				$nip = $this->input->post('editnip');
-				$nama = $this->input->post('editnamaguru');
-				$mapel = $this->input->post('editmapelampu');
-				$foto = $_FILES['editfotoguru']['name'];
-                $foto = $this->upload->data('file_name');
-        }
+		// 	$this->enhamodel->prosesEditGuru($data, $id);
+		// 	$this->session->set_flashdata('message', 'Data guru berhasil di ubah');
+		// 	redirect('adminpanel/dataguru');
+        // }else{
+		// 		$nip = $this->input->post('editnip');
+		// 		$nama = $this->input->post('editnamaguru');
+		// 		$mapel = $this->input->post('editmapelampu');
+		// 		$foto = $_FILES['editfotoguru']['name'];
+        //         $foto = $this->upload->data('file_name');
+        // }
         
-        $data = array(
-			'nip' => $nip,
-			'nama_guru' => $nama,
-			'mapel_ampu' => $mapel,
+        // $data = array(
+		// 	'nip' => $nip,
+		// 	'nama_guru' => $nama,
+		// 	'mapel_ampu' => $mapel,
 			
-		);
+		// );
 
-		if ($data['foto_guru'] != null) {
-			# code...
-			$data['foto_guru'] = $foto['foto_guru'];
-		}
+		// if ($data['foto_guru'] != null) {
+		// 	# code...
+		// 	$data['foto_guru'] = $foto['foto_guru'];
+		// }
 		
 
-		$where = array('id_guru' => $id);
-
-		$this->enhamodel->prosesEditGuru($data, $id, $where);
-		$this->session->set_flashdata('message', 'Data guru berhasil di ubah');
-		redirect('adminpanel/dataguru');
+		// $where = array('id_guru' => $id);
+		$data['guru'] = $this->enhamodel->getGuruById($id);
+		$this->template->load('templates/admin/template', 'admin/edit_guru', $data);
+		// $this->enhamodel->prosesEditGuru($data, $id, $where);
+		// $this->session->set_flashdata('message', 'Data guru berhasil di ubah');
+		// redirect('adminpanel/dataguru');
 	   
 	}
 

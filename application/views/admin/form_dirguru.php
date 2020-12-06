@@ -40,12 +40,13 @@
                                     <td class="align-middle"><?php echo $gurumapel['mapel_ampu']?></td>
                                     <td class="align-middle"> <img
                                             class="rounded border border-light mx-auto d-block m-3"
-                                            src="<?php echo base_url() . 'assets/landing/img/fotoguru/' .  $gurumapel['foto_guru'];?>"
+                                            src="<?php echo base_url() . 'assets/landing/img/fotoguru/'.$gurumapel['foto_guru'];?>"
                                             width="60" height="60" id="previmg" name="previmg"
                                             value="<?php echo $gurumapel['foto_guru']?>"></td>
                                     <td class="td-actions text-center align-middle">
-                                        <button type="button" class="btn btn-info editmodal"><i class="fa fa-edit"></i></button>
-                                        <button href="<?php base_url()?>deleteguru/<?php echo $gurumapel['id_guru'];?>"
+                                        <a href="<?= base_url();?>adminpanel/editguru/<?= $gurumapel['id_guru'];?>" class="btn btn-info" type="button" data-toggle="modal"
+                            data-target="#edit-modal"><i class="fa fa-edit"></i></a>
+                                        <button href="<?php base_url()?>adminpanel/deleteguru/<?php echo $gurumapel['id_guru'];?>"
                                             class="btn btn-danger m-1 btn-hapus"><i class="fa fa-trash"></i>
                                         </button>
                                     </td>
@@ -188,10 +189,10 @@
                     </div>
                     <div class="modal-body">
                         <?php echo form_open_multipart('adminpanel/editguru');?>
-                        <input type="hidden" class="form-control" id="edit_id" name="edit_id">
+                        <input type="hidden" class="form-control" id="edit_id" name="edit_id" value="<?= $gurumapel['id_guru']?>">
                         <div class="form-group">
                             <label for="inputNip">NIP/NUPTK</label>
-                            <input type="text" class="form-control" id="editnip" name="editnip"
+                            <input type="text" class="form-control" id="editnip" name="editnip" value="<?= $gurumapel['nip']?>"
                                 placeholder="Inputkan NIP atau NUPTK">
                             <div class="invalid-feedback">
                                 Inputkan NIP/NUPTK!
@@ -199,7 +200,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputNama">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="editnamaguru" name="editnamaguru"
+                            <input type="text" class="form-control" id="editnamaguru" name="editnamaguru" value="<?= $gurumapel['nama_guru']?>"
                                 placeholder="Inputkan Nama dan Gelar">
                             <div class="invalid-feedback">
                                 Inputkan Nama Lengkap!
@@ -208,7 +209,7 @@
                         <div class="form-group">
                             <label for="inputMapel">Mapel Ampu</label>
                             <input type="text" class="form-control" id="editmapelampu"
-                                name="editmapelampu" placeholder="Inputkan Mata Pelajaran yang di ampu">
+                                name="editmapelampu" value="<?=$gurumapel['mapel_ampu']?>" placeholder="Inputkan Mata Pelajaran yang di ampu">
                             <div class="invalid-feedback">
                                 Inputkan Mapel yang di ampu!
                             </div>
@@ -242,22 +243,22 @@
     <script src="<?php echo base_url();?>assets/admin/vendors/popper.js/js/popper.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/vendors/bootstrap/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('.editmodal').on('click', function() {
-                $('#edit-modal').modal('show');
+        // $(document).ready(function() {
+        //     $('.editmodal').on('click', function() {
+        //         $('#edit-modal').modal('show');
 
-                $tr = $(this).closest('tr');
+        //         $tr = $(this).closest('tr');
 
-                var data = $tr.children("td").map(function(){
-                    return $(this).text();
-                }).get();
+        //         var data = $tr.children("td").map(function(){
+        //             return $(this).text();
+        //         }).get();
 
-                $('#edit_id').val(data[0]);
-                $('#editnip').val(data[1]);
-                $('#editnamaguru').val(data[2]);
-                $('#editmapelampu').val(data[3]);
-                $('#editfotoguru').val(data[4]);
+        //         $('#edit_id').val(data[0]);
+        //         $('#editnip').val(data[1]);
+        //         $('#editnamaguru').val(data[2]);
+        //         $('#editmapelampu').val(data[3]);
+        //         $('#editfotoguru').val(data[4]);
            
-            });
-        });
+        //     });
+        // });
     </script>
