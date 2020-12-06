@@ -18,14 +18,14 @@ class Adminpanel extends CI_Controller {
 		if($this->session->userdata('status') != 1){
 			$this->session->set_flashdata('error', 'Session anda telah berakhir, silahkan login kembali!');
 			redirect(base_url('login/index'));
-		}
+		} 
 	}
 	
-	public function index()
+	public function dashboard()
 	{	
 		$this->setsession();
-		$data['tb_user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
-		$this->template->load('templates/admin/template', 'admin/dashboard', $data);
+		$datasession['tb_user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
+		$this->template->load('templates/admin/template', 'admin/dashboard', $datasession);
 		
 	}
 
@@ -33,20 +33,16 @@ class Adminpanel extends CI_Controller {
 	public function dataguru()
 	{
 		$this->setsession();
-		$this->load->model('enhamodel');
 		$data['guru'] = $this->enhamodel->getDirGuru();
 		$this->template->load('templates/admin/template', 'admin/form_dirguru' , $data);
-		// $this->index();
 	}	
-
-
 
 	public function inputguru(){
 		$this->setsession();
 			$nip = $this->input->post('nip');
 			$nama = $this->input->post('nama_guru');
 			$mapel = $this->input->post('mapel_ampu');
-			$uploadfoto = $_FILES['foto_guru'];
+			$uploadfoto = $_FILES['foto_guru']['name'];
 			if($uploadfoto == ''){
 				$nip = $this->input->post('nip');
 			$nama = $this->input->post('nama_guru');
@@ -62,7 +58,7 @@ class Adminpanel extends CI_Controller {
 					redirect('adminpanel/dataguru');
 					// echo "Upload gagal!"; die(); //do alert here
 				} else{
-					$uploadfoto = $this->upload->data('file_name');
+					$uploadfoto['foto_guru']= $this->upload->data('file_name');
 				}
 			}
 
@@ -83,12 +79,16 @@ class Adminpanel extends CI_Controller {
 
 	public function editguru(){
 		$this->setsession();
-		$id = $this->input->post('id');
-		
+		$id = $this->input->post('edit_id');
         $config['upload_path']= 'assets/landing/img/fotoguru';
         $config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
 		$this->load->library('upload', $config);
         if(!$this->upload->do_upload('foto_guru')){
+		// 	$item = $this->enhamodel->get($data['id'])->row();
+		// 	if ($item->image != null) {
+		// 	$target_file = 'assets/landing/img/fotoguru'.$item->image;
+		// 	unlink($target_file);
+		// }
 			$nip = $this->input->post('nip');
 			$nama = $this->input->post('nama_guru');
 			$mapel = $this->input->post('mapel_ampu');
@@ -96,18 +96,18 @@ class Adminpanel extends CI_Controller {
 			$data = array(
 				'nip' => $nip,
 				'nama_guru' => $nama,
-				'mapel_ampu' => $mapel
+				'mapel_ampu' => $mapel,
 				
 			);
 	
-			$this->enhamodel->prosesEditGuru('tb_guru', $data, $id );
+			$this->enhamodel->prosesEditGuru($data, $id);
 			$this->session->set_flashdata('message', 'Data guru berhasil di ubah');
 			redirect('adminpanel/dataguru');
         }else{
 				$nip = $this->input->post('editnip');
 				$nama = $this->input->post('editnamaguru');
 				$mapel = $this->input->post('editmapelampu');
-				$foto = $_FILES['editfotoguru'];
+				$foto = $_FILES['editfotoguru']['name'];
                 $foto = $this->upload->data('file_name');
         }
         
@@ -115,12 +115,18 @@ class Adminpanel extends CI_Controller {
 			'nip' => $nip,
 			'nama_guru' => $nama,
 			'mapel_ampu' => $mapel,
-			'foto_guru'	=> $foto
+			
 		);
 
-		$where = array('id' => $id);
+		if ($data['foto_guru'] != null) {
+			# code...
+			$data['foto_guru'] = $foto['foto_guru'];
+		}
+		
 
-		$data ['id'] = $this->enhamodel->prosesEditGuru( 'tb_guru', $where, $data, $id);
+		$where = array('id_guru' => $id);
+
+		$this->enhamodel->prosesEditGuru($data, $id, $where);
 		$this->session->set_flashdata('message', 'Data guru berhasil di ubah');
 		redirect('adminpanel/dataguru');
 	   
@@ -129,8 +135,15 @@ class Adminpanel extends CI_Controller {
 
 	public function deleteguru($id){
 		$this->setsession();
+		$item['guru'] = $this->enhamodel->selectdeleteGuru($id);
+		if ($item['foto_guru']  != '') {
+			$target_file = 'assets/landing/img/fotoguru'.$item['foto_guru'];
+			unlink($target_file);
+			echo var_dump($target_file);
+		}else{
 		$this->enhamodel->selectdeleteGuru($id);
-		redirect('adminpanel/dataguru');
+		$this->session->set_flashdata('message', 'Data guru berhasil di hapus');
+		redirect('adminpanel/dataguru');}
 	}
 
 

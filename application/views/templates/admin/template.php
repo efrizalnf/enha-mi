@@ -82,9 +82,9 @@
             <span class="navbar-toggler-icon"></span>
         </button> -->
     </header>
-    <div class="app-body">
+    <div class="app-body ">
         <div class="sidebar">
-            <nav class="sidebar-nav">
+            <nav class="sidebar-nav ">
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url('adminpanel/dashboard');?>">

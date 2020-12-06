@@ -42,7 +42,7 @@ public function __construct()
 				];
 
 				$this->session->set_userdata($data);
-				redirect('adminpanel/index');
+				redirect('adminpanel/dashboard');
 			}else{
 				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
 			redirect('login/index');
