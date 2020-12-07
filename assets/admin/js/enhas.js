@@ -24,7 +24,7 @@ $(document).on('click', '.btn-hapus', function(e) {
     e.preventDefault();
     const href = $(this).attr('href');
     Swal.fire({
-        title: 'Hapus data guru?',
+        title: 'Hapus data?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

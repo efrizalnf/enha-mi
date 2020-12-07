@@ -101,8 +101,8 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="false" aria-expanded="false">
                             Direktori
                         </a>
                         <div class="dropdown-menu w3-animate-zoom" aria-labelledby="navbarDropdownMenuLink">
@@ -117,8 +117,8 @@
                         <a class="nav-link" href="#section-gallery" class="page-scroll">Galeri</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
                             Informasi
                         </a>
                         <div class="dropdown-menu w3-animate-zoom" aria-labelledby="navbarDropdownMenuLink">
@@ -347,62 +347,30 @@
 
         <!-- enha gallery -->
 
-        <section class="gallery" id="section-gallery">
-            <div class="container gallery-container mt-3">
+        <section class="gallery " id="section-gallery">
+            
+            <div class="container gallery-container mt-3 pt-5">
                 <div class="row justify-content-center">
-                    <div class="title mb-4 mt-4">
-                        <h3 class="title-section mb-1">Gallery</h3>
+                    <div class="title ">
+                        <h3 class="title-section">Gallery</h3>
                         <hr class="hr-section">
                     </div>
                 </div>
                 <div class="tz-gallery">
                     <div class="row">
                         <div class="row">
-                            <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/1.jpeg">
-                                    <img src="<?php echo base_url('assets/landing/img/1.jpeg')?>" alt="enha-img-1">
+                            <?php foreach ($gallery as $item) :?>
+                            <div class="col-sm-6 col-md-4 rounded ">
+                                <h4 class="title-gallery align-middle text-center mb-3">
+                                    <?= $item['nama_kegiatan']?></h4>
+                                    <hr class="hr-section">
+                                <a class="lightbox"
+                                    href="<?php echo base_url() . 'assets/landing/img/gallery/'.$item['foto_kegiatan'];?>">
+                                    <img src="<?php echo base_url() . 'assets/landing/img/gallery/'.$item['foto_kegiatan'];?>"
+                                        alt="enha-img-1">
                                 </a>
                             </div>
-                            <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/2.jpeg">
-                                    <img src="<?php echo base_url('assets/landing/img/2.jpeg')?>" alt="enha-img-2">
-                                </a>
-                            </div>
-                            <div class="col-sm-12 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/3.jpeg">
-                                    <img src="<?php echo base_url('assets/landing/img/3.jpeg')?>" alt="enha-img-3">
-                                </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/4.jpeg">
-                                    <img src="<?php echo base_url('assets/landing/img/4.jpeg')?>" alt="enha-img-4">
-                                </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/5.jpeg">
-                                    <img src="<?php echo base_url('assets/landing/img/5.jpeg')?>" alt="enha-img-5">
-                                </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/6.jpeg">
-                                    <img src="<?php echo base_url('assets/landing/img/6.jpeg')?>" alt="enha-img-6">
-                                </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/7.jpeg">
-                                    <img src="<?php echo base_url('assets/landing/img/7.jpeg')?>" alt="enha-img-7">
-                                </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/8.jpeg">
-                                    <img src="<?php echo base_url('assets/landing/img/8.jpeg')?>" alt="enha-img-8">
-                                </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="<?php echo base_url()?>assets/landing/img/9.jpeg">
-                                    <img src="<?php echo base_url('assets/landing/img/9.jpeg')?>" alt="enha-img-9">
-                                </a>
-                            </div>
+                            <?php endforeach;?>
                         </div>
                     </div>
                 </div>

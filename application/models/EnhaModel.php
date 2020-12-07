@@ -9,14 +9,18 @@ class Enhamodel extends CI_Model{
        return $this->db->get($this->tbguru)->result_array();
     }
 
-    public function getInformasi(){
-        return $this->db->get($this->tbinfo)->result_array();
+    public function getGuruById($id){
+        return $this->db->get_where($this->tbguru, ['id_guru' => $id])->row_array();
     }
 
-    public function getFile(){
-        return $this->db->get($this->tbfiles)->result_array();
+    public function getGallery(){
+        return $this->db->get($this->tbgallery)->result_array();
     }
 
+
+    public function getGalleryById($id){
+        return $this->db->get_where($this->tbgallery, ['id_gallery' => $id])->row_array();
+    }
 
     // Inputt
     public function inputdataGuru($data){
@@ -29,9 +33,7 @@ class Enhamodel extends CI_Model{
     
 
 // Edit
-    public function getGuruById($id){
-        return $this->db->get_where($this->tbguru, ['id_guru' => $id])->row_array();
-    }
+   
 
     public function updatedataguru($data, $id){
         
@@ -45,5 +47,9 @@ class Enhamodel extends CI_Model{
     public function selectdeleteGuru($id){
     
       return $this->db->delete($this->tbguru, ['id_guru' => $id]);
+    }
+    public function selectdeleteGallery($id){
+    
+      return $this->db->delete($this->tbgallery, ['id_gallery' => $id]);
     }
 }

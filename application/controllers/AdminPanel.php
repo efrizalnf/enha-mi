@@ -203,42 +203,46 @@ class Adminpanel extends CI_Controller {
 
 	public function gallery(){
 		$this->setsession();
-		// $this->load->model('enhamodel');
-		// $data['gallery'] = $this->enhamodel->inputFotogallery();
-		$this->template->load('templates/admin/template', 'admin/gallery');
+		$data['gallery'] = $this->enhamodel->getGallery();
+		$this->template->load('templates/admin/template', 'admin/gallery', $data);
 	}
 	
 	public function inputgallery(){
-		$namakegiatan = $this->input->post('nama_kegiatan');
-		$fotokegiatan = $_FILES['foto_kegiatan'];
-		// var_dump($fotokegiatan);
-		for ($i=1; $i <=5 ; $i++) { 
-		if($fotokegiatan = ''){
-			
-		}else{
-			$config['upload_path'] = 'assets/landing/img';
-			$config['allowed_types'] = 'jpg|jpeg|png|gif';
-			 $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
-			$this->load->library('upload', $config);
-				if (!$this->upload->do_upload('foto_kegiatan')) {
-					$this->session->set_flashdata('error', 'Upload Gagal, Silahkan Masukan Foto!');
-					// return redirect('adminpanel/dataguru');
-					// echo "Upload gagal!"; die(); //do alert here
-				} else{
-					$fotokegiatan = $this->upload->data('file_name');
-				}
-		}
+		$config['upload_path'] = 'assets/landing/img/gallery/';
+		$config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
+		$config['encrypt_name'] = true;
+		$this->load->library('upload', $config);
+		$namakegiatan = $this->input->post('namakegiatan');
+		$jmlfoto = count($_FILES['fotokegiatan']['name']);
+		for ($i=0; $i <$jmlfoto ; $i++) { 
+		if (!empty($_FILES['fotokegiatan']['name'][$i])) {
+			$_FILES['file']['name'] = $_FILES['fotokegiatan']['name'][$i];
+			$_FILES['file']['type'] = $_FILES['fotokegiatan']['type'][$i];
+			$_FILES['file']['tmp_name'] = $_FILES['fotokegiatan']['tmp_name'][$i];
+			$_FILES['file']['error'] = $_FILES['fotokegiatan']['error'][$i];
+			$_FILES['file']['size'] = $_FILES['fotokegiatan']['size'][$i];
+			if ($this->upload->do_upload('file')) {
+				$fotokegiatan = $this->upload->data();
+				$data['foto_kegiatan']= $fotokegiatan['file_name'];
+				$data ['nama_kegiatan'] = $namakegiatan[$i];
+				$this->enhamodel->inputFotogallery($data, 'tb_gallery');
+				$this->session->set_flashdata('message', 'Foto berhasil di upload');
+			}
+		}	
 	}
-		$data = array(
-				'nama_kegiatan' => $namakegiatan,
-				'foto_kegiatan' => $fotokegiatan
-			);
+	redirect('adminpanel/gallery');
+}
 
-			$this->enhamodel->inputFotogallery($data, 'tb_gallery');
-			redirect('adminpanel/inputgallery');
-
-		$this->template->load('templates/admin/template', 'admin/gallery');
-	}
+public function deletegallery($id){
+	$this->setsession();
+	$gallery['gallery'] = $this->enhamodel->getGalleryById($id);
+	if ($gallery['gallery']['foto_kegiatan'] != null) {
+		$path = FCPATH.'assets/landing/img/gallery/'.$gallery['gallery']['foto_kegiatan'];
+		unlink($path);
+	$this->enhamodel->selectdeleteGallery($id);
+	$this->session->set_flashdata('message', 'Foto berhasil di hapus');
+	redirect('adminpanel/gallery');}
+}
 
 
 	public function tables()

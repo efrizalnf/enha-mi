@@ -2,21 +2,27 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Enhas extends CI_Controller {
+public function __construct(){
+    parent::__construct();
+    $this->load->model('enhamodel');
+}
+
 
     public function index(){
-         $this->load->view('landing/home');
+        $data['gallery'] = $this->enhamodel->getGallery();
+         $this->load->view('landing/home', $data);
     }
 
     public function dirguru(){
-        $this->load->model('enhamodel');
         $data['guru'] = $this->enhamodel->getDirGuru();
         $this->load->view('templates/landing/header_default');
         $this->load->view('landing/dirguru', $data);
         $this->load->view('templates/landing/footer_default');
     } 
 
+    
+
     public function informasi(){
-        $this->load->model('enhamodel');
         $data['informasi'] = $this->enhamodel->getInformasi();
         $this->load->view('templates/landing/header_default');
         $this->load->view('landing/informasi', $data);
@@ -24,7 +30,6 @@ class Enhas extends CI_Controller {
     }
 
     public function download(){
-        $this->load->model('enhamodel');
         $data['download'] = $this->enhamodel->getFile();
         $this->load->view('templates/landing/header_default');
         $this->load->view('landing/download', $data);
