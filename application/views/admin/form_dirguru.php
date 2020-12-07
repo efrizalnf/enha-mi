@@ -57,7 +57,7 @@
                                             type="button" data-toggle="modal" data-target="#edit-modal"><i
                                                 class="fa fa-edit"></i></a>
                                         <button
-                                            href="<?php base_url()?>adminpanel/deleteguru/<?php echo $gurumapel['id_guru'];?>"
+                                            href="<?php base_url()?>deleteguru/<?php echo $gurumapel['id_guru'];?>"
                                             class="btn btn-danger m-1 btn-hapus"><i class="fa fa-trash"></i>
                                         </button>
                                     </td>

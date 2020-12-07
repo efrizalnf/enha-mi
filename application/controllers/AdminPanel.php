@@ -140,6 +140,7 @@ class Adminpanel extends CI_Controller {
 
 	public function editguru(){
 		$this->setsession();
+		// post di isi variable name di input
 		$id = $this->input->post('edit_id');
 		
 		$nip = $this->input->post('editnip');
@@ -149,7 +150,16 @@ class Adminpanel extends CI_Controller {
         $config['upload_path']= 'assets/landing/img/fotoguru';
         $config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
 		$this->load->library('upload', $config);
-        $this->upload->do_upload('editfotoguru');
+		// do_upload di isi name variable di form input
+		$this->upload->do_upload('editfotoguru');
+		// file_name menngembalikan nama file beserta extensinya
+		$guru['guru'] = $this->enhamodel->getGuruById($id);
+		// var_dump($guru['guru']['foto_guru']);
+		if ($guru['guru']['foto_guru'] != null) {
+			$path = FCPATH.'assets/landing/img/fotoguru/'.$guru['guru']['foto_guru'];
+			unlink($path);
+			$this->session->set_flashdata('message', 'Data foto guru berhasil di ubah');
+		}
         $foto = $this->upload->data('file_name');
         
         
@@ -159,6 +169,8 @@ class Adminpanel extends CI_Controller {
 			'mapel_ampu' => $mapel,
 			'foto_guru' => $foto
 		);
+
+		
 
 		$this->enhamodel->updatedataguru($data, $id);
 		$this->session->set_flashdata('message', 'Data guru berhasil di ubah');
