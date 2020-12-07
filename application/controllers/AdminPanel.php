@@ -148,20 +148,30 @@ class Adminpanel extends CI_Controller {
 		$mapel = $this->input->post('editmapelampu');
 		$foto = $_FILES['editfotoguru'];
         $config['upload_path']= 'assets/landing/img/fotoguru';
-        $config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
-		$this->load->library('upload', $config);
+		$config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
+		
 		// do_upload di isi name variable di form input
-		$this->upload->do_upload('editfotoguru');
-		// file_name menngembalikan nama file beserta extensinya
+		// if ($foto == null){}
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('editfotoguru')) {
+			$data = array(
+				'nip' => $nip,
+				'nama_guru' => $nama,
+				'mapel_ampu' => $mapel
+			);
+	
+			$this->enhamodel->updatedataguru($data, $id);
+			$this->session->set_flashdata('message', 'Data guru berhasil di ubah');
+			redirect('adminpanel/dataguru');
+		}else{
 		$guru['guru'] = $this->enhamodel->getGuruById($id);
 		// var_dump($guru['guru']['foto_guru']);
 		if ($guru['guru']['foto_guru'] != null) {
 			$path = FCPATH.'assets/landing/img/fotoguru/'.$guru['guru']['foto_guru'];
 			unlink($path);
-			$this->session->set_flashdata('message', 'Data foto guru berhasil di ubah');
 		}
+		// file_name menngembalikan nama file beserta extensinya
         $foto = $this->upload->data('file_name');
-        
         
         $data = array(
 			'nip' => $nip,
@@ -170,23 +180,20 @@ class Adminpanel extends CI_Controller {
 			'foto_guru' => $foto
 		);
 
-		
-
 		$this->enhamodel->updatedataguru($data, $id);
 		$this->session->set_flashdata('message', 'Data guru berhasil di ubah');
+		
 		redirect('adminpanel/dataguru');
-	
+	}
 	}
 
 
 	public function deleteguru($id){
 		$this->setsession();
-		$item['guru'] = $this->enhamodel->selectdeleteGuru($id);
-		if ($item['foto_guru']  != '') {
-			$target_file = 'assets/landing/img/fotoguru'.$item['foto_guru'];
-			unlink($target_file);
-			echo var_dump($target_file);
-		}else{
+		$guru['guru'] = $this->enhamodel->getGuruById($id);
+		if ($guru['guru']['foto_guru'] != null) {
+			$path = FCPATH.'assets/landing/img/fotoguru/'.$guru['guru']['foto_guru'];
+			unlink($path);
 		$this->enhamodel->selectdeleteGuru($id);
 		$this->session->set_flashdata('message', 'Data guru berhasil di hapus');
 		redirect('adminpanel/dataguru');}
