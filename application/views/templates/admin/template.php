@@ -116,7 +116,7 @@
                             <i class="nav-icon icon-frame"></i>Input Image Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('adminpanel/charts');?>">
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/datafile');?>">
                             <i class="nav-icon icon-paper-clip"></i>Input File Download</a>
                     </li>
                     <li class="nav-item">

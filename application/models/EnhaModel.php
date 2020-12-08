@@ -37,6 +37,18 @@ class Enhamodel extends CI_Model{
         return $this->db->get_where($this->tbinfo, ['id_info' => $id])->row_array();
     }
 
+
+    public function getFile()
+    {
+        return $this->db->get($this->tbfiles)->result_array();
+    }
+
+    public function getFileById($id)
+    {
+        return $this->db->get_where($this->tbfiles, ['id_files' => $id])->row_array();
+    }
+
+
     /* Inputt */
     public function inputdataGuru($data)
     {
@@ -52,6 +64,11 @@ class Enhamodel extends CI_Model{
     {
         $this->db->insert($this->tbinfo, $data);
     }
+
+    public function inputDataFile($data)
+    {
+        $this->db->insert($this->tbfiles, $data);
+    }
     
 
 /* Edit */
@@ -66,7 +83,14 @@ class Enhamodel extends CI_Model{
     {
         $this->db->where('id_info', $id);
         $this->db->update('tb_info', $data,  ['id_info' => $id]);
-        return TRUE;
+        return true;
+    }
+
+    public function updatedatafile($data, $id)
+    {
+        $this->db->where('id_files', $id);
+        $this->db->update('tb_files', $data,  ['id_files' => $id]);
+        return true;
     }
 
  /*   delete */
@@ -83,5 +107,10 @@ class Enhamodel extends CI_Model{
     public function selectdeleteInfo($id)
     {
         return $this->db->delete($this->tbinfo, ['id_info' => $id]);
+    }
+
+    public function selectdeleteFile($id)
+    {
+        return $this->db->delete($this->tbfiles, ['id_files' => $id]);
     }
 }

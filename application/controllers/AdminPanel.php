@@ -239,7 +239,7 @@ public function deletegallery($id){
 	$this->enhamodel->selectdeleteGallery($id);
 	$this->session->set_flashdata('message', 'Foto berhasil di hapus');
 	redirect('adminpanel/gallery');}
-}
+	}
 
 
 	public function datainfo()
@@ -341,5 +341,77 @@ public function deletegallery($id){
 		$this->session->set_flashdata('message', 'Data informasi berhasil di hapus');
 		redirect('adminpanel/datainfo');
 	}
+
+	/* files download */
+	public function datafile()
+	{
+		$this->setsession();
+		$data['files'] = $this->enhamodel->getFile();
+		$this->template->load('templates/admin/template', 'admin/form_files' , $data);
+	}	
+
+	public function inputfile(){
+		$this->setsession();
+		$namafile = $this->input->post('namafile');
+		$lokasifile = $_FILES['lokasifile']['name'];
+		$config['upload_path'] = 'assets/landing/files'; 
+		$config['allowed_types'] = 'pdf|doc|docx|xls|xlsx|ppt|pptx';
+		$config['encrypt_name'] = true;
+		$this->load->library('upload', $config);
+
+		if($this->upload->do_upload('lokasifile')){
+			$lokasifile['lokasi_file']= $this->upload->data('file_name');
+			$data = array(
+				'nama_file' => $namafile,
+				'lokasi_file' => $lokasifile
+			);
+			
+			$this->enhamodel->inputDataFile($data, 'tb_files');
+			$this->session->set_flashdata('message', 'Data file berhasil ditambahkan');
+			redirect('adminpanel/datafile');
+			}
+	}
+
+	public function editfile(){
+		$this->setsession();
+		$id = $this->input->post('edit_id_file');
+		$editfile = $this->input->post('editfile');
+		$edtlokasifile = $_FILES['edtlokasifile']['name'];
+		$config['upload_path'] = 'assets/landing/files'; 
+		$config['allowed_types'] = 'pdf|doc|docx|xls|xlsx|ppt|pptx';
+		$config['encrypt_name'] = true;
+		$this->load->library('upload', $config);
+
+		$this->upload->do_upload('edtlokasifile');
+			$files['file'] = $this->enhamodel->getFileById($id);
+			if ($files['file']['lokasi_file'] != null) {
+				$path = FCPATH.'assets/landing/files/'.$files['file']['lokasi_file'];
+				unlink($path);
+			}
+			$edtlokasifile = $this->upload->data('file_name');
+			$data = array(
+				'nama_file' => $editfile,
+				'lokasi_file' => $edtlokasifile
+			);
+			$this->enhamodel->updatedatafile($data, 'tb_files');
+			$this->session->set_flashdata('message', 'Data file berhasil diubah');
+			redirect('adminpanel/datafile');
+			
+		}
 	
+
+	public function deletefile($id){
+		$this->setsession();
+		$files['file'] = $this->enhamodel->getFileById($id);
+		if ($files['file']['lokasi_file'] != null) {
+			$path = FCPATH.'assets/landing/files/'.$files['file']['lokasi_file'];
+			unlink($path);
+		}
+		$this->enhamodel->selectdeleteFile($id);
+		$this->session->set_flashdata('message', 'Data file berhasil di hapus');
+		redirect('adminpanel/datafile');
+	}
+
+
+
 }
