@@ -28,7 +28,7 @@
 
                         <tbody class="align-middle" style="height: 100px;">
                             <?php $no=1; 
-                                foreach ($files as $item) :?>
+                                foreach ($filedata as $item) :?>
                             <tr valign="middle">
                                 <td class="align-middle text-center"><?php echo $no++?></td>
                                 <td class="align-middle text-center"><?php echo $item['nama_file']?></td>
@@ -41,7 +41,7 @@
                                         data-nama="<?php echo $item['nama_file']?>"
                                         data-lokasi="<?php echo $item['lokasi_file'] ?>"
                                         class="btn btn-info" type="button"
-                                        data-toggle="modal" data-target="#edit-modal"><i class="fa fa-edit"></i></a>
+                                        data-toggle="modal" data-target="#edit-modal-file"><i class="fa fa-edit"></i></a>
                                     <button href="<?php base_url()?>deletefile/<?php echo $item['id_files'];?>"
                                         class="btn btn-danger m-1 btn-hapus"><i class="fa fa-trash"></i>
                                     </button>
@@ -124,7 +124,7 @@
     <!-- End Input Guru Modal -->
 
     <!--Edit Guru Modal-->
-    <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="edit-modal-file" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -167,14 +167,12 @@
 <script src="<?php echo base_url();?>assets/admin/vendors/bootstrap/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function() {
-    // Untuk sunting
-    $('#edit-modal').on('show.bs.modal', function(event) {
-        var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
+    $('#edit-modal-file').on('show.bs.modal', function(event) {
+        var div = $(event.relatedTarget) 
         var modal = $(this)
-
-        // Isi nilai pada field
-        modal.find('#edit_id_info').attr("value", div.data('id'));
-        modal.find('#editjudul').attr("value", div.data('nama'));
+      
+        modal.find('#edit_id_file').attr("value", div.data('id'));
+        modal.find('#editfile').attr("value", div.data('nama'));
         modal.find('#edtlokasifile').attr("value", div.data('lokasi'));
     });
 });
