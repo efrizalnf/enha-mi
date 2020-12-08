@@ -62,18 +62,25 @@ class Enhamodel extends CI_Model{
         return true;
     }
 
+    public function updatedatainfo($data, $id)
+    {
+        $this->db->where('id_info', $id);
+        $this->db->update('tb_info', $data,  ['id_info' => $id]);
+        return TRUE;
+    }
+
  /*   delete */
     public function selectdeleteGuru($id)
     {
         return $this->db->delete($this->tbguru, ['id_guru' => $id]);
     }
-    
+
     public function selectdeleteGallery($id)
     {
         return $this->db->delete($this->tbgallery, ['id_gallery' => $id]);
     }
 
-    public function selectdeleteInfo()
+    public function selectdeleteInfo($id)
     {
         return $this->db->delete($this->tbinfo, ['id_info' => $id]);
     }

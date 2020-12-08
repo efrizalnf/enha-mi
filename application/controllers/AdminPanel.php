@@ -242,10 +242,10 @@ public function deletegallery($id){
 }
 
 
-public function datainfo()
+	public function datainfo()
 	{
 		$this->setsession();
-		$data['guru'] = $this->enhamodel->getInfo();
+		$data['info'] = $this->enhamodel->getInfo();
 		$this->template->load('templates/admin/template', 'admin/form_info' , $data);
 	}	
 
@@ -268,7 +268,7 @@ public function datainfo()
 
 			$this->enhamodel->inputDataInfo($data, 'tb_info');
 			$this->session->set_flashdata('message', 'Data informasi berhasil ditambahkan');
-				
+			redirect('adminpanel/datainfo');
 			}else{
 				$data = array(
 					'judul_info' => $judulinfo,
@@ -291,25 +291,27 @@ public function datainfo()
 		$editjudul = $this->input->post('editjudul');
 		$editisi = $this->input->post('editisi');
 		$edittgl = $this->input->post('edittgl');
-		$foto = $_FILES['editgbdinfo'];
+		$foto = $_FILES['editgbrinfo'];
         $config['upload_path']= 'assets/landing/img/info';
 		$config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
 		
 		// do_upload di isi name variable di form input
 		$this->load->library('upload', $config);
-		if (!$this->upload->do_upload('editfotoguru')) {
+		if (!$this->upload->do_upload('editgbrinfo')) {
 			$data = array(
 				'judul_info' => $editjudul,
 				'isi_info' => $editisi,
 				'tgl_info' => $edittgl
 			);
 
-			$this->enhamodel->editDataInfo($data, 'tb_info');
+			// var_dump($data);
+			$this->enhamodel->updatedatainfo($data, $id);
 			$this->session->set_flashdata('message', 'Data informasi berhasil diubah');
+			redirect('adminpanel/datainfo');
 		}else{
-		$informasi['info'] = $this->enhamodel->getInfoById($id);
-		if ($informasi['info']['gbr_info'] != null) {
-			$path = FCPATH.'assets/landing/img/info/'.$informasi['info']['gbr_info'];
+		$info['info'] = $this->enhamodel->getInfoById($id);
+		if ($info['info']['gbr_info'] != null) {
+			$path = FCPATH.'assets/landing/img/info/'.$info['info']['gbr_info'];
 			unlink($path);
 		}
 		// file_name menngembalikan nama file beserta extensinya
@@ -324,16 +326,15 @@ public function datainfo()
 
 		$this->enhamodel->updatedatainfo($data, $id);
 		$this->session->set_flashdata('message', 'Data informasi berhasil di ubah');
-		
 		redirect('adminpanel/datainfo');
 	}
 	}
 
 	public function deleteinfo($id){
 		$this->setsession();
-		$informasi['info'] = $this->enhamodel->getInfoById($id);
-		if ($informasi['info']['gbr_info'] != null) {
-			$path = FCPATH.'assets/landing/img/info/'.$informasi['info']['gbr_info'];
+		$info['info'] = $this->enhamodel->getInfoById($id);
+		if ($info['info']['gbr_info'] != null) {
+			$path = FCPATH.'assets/landing/img/info/'.$info['info']['gbr_info'];
 			unlink($path);
 		}
 		$this->enhamodel->selectdeleteInfo($id);

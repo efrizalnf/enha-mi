@@ -23,7 +23,7 @@ public function __construct(){
     
 
     public function informasi(){
-        $data['informasi'] = $this->enhamodel->getInformasi();
+        $data['informasi'] = $this->enhamodel->getInfo();
         $this->load->view('templates/landing/header_default');
         $this->load->view('landing/informasi', $data);
         $this->load->view('templates/landing/footer_default');

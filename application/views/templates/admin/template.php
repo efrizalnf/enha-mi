@@ -120,7 +120,7 @@
                             <i class="nav-icon icon-paper-clip"></i>Input File Download</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('adminpanel/charts');?>">
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/datainfo');?>">
                             <i class="nav-icon icon-info"></i>Input Informasi</a>
                     </li>
                 </ul>

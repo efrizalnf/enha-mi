@@ -19,15 +19,15 @@
                     <hr class="hr-section">
                 </div>
             </div>
-            <div class="container-info">
-                <?php foreach ($informasi as $info) :?>
+            <?php foreach ($informasi as $info) :?>
+            <div class="container-info mb-3">
                <div class="info">
                    <h5><?php echo $info['judul_info']?></h5>
                     <h7><?php echo $info['isi_info']?></h7> 
                     <p>Diposting pada : <?php echo $info['tgl_info']?></p>
                </div>
-                <?php endforeach; ?>
             </div>
+            <?php endforeach; ?>
         </div>
         <br>
         <br>
