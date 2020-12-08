@@ -31,7 +31,6 @@ class Adminpanel extends CI_Controller {
 	public function dashboard()
 	{	
 		$this->template->load('templates/admin/template', 'admin/dashboard');
-		
 	}
 
 
@@ -151,7 +150,6 @@ class Adminpanel extends CI_Controller {
 		$config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
 		
 		// do_upload di isi name variable di form input
-		// if ($foto == null){}
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('editfotoguru')) {
 			$data = array(
@@ -165,7 +163,6 @@ class Adminpanel extends CI_Controller {
 			redirect('adminpanel/dataguru');
 		}else{
 		$guru['guru'] = $this->enhamodel->getGuruById($id);
-		// var_dump($guru['guru']['foto_guru']);
 		if ($guru['guru']['foto_guru'] != null) {
 			$path = FCPATH.'assets/landing/img/fotoguru/'.$guru['guru']['foto_guru'];
 			unlink($path);
@@ -245,15 +242,103 @@ public function deletegallery($id){
 }
 
 
-	public function tables()
+public function datainfo()
 	{
-		$this->template->load('templates/admin/template', 'admin/tables');
+		$this->setsession();
+		$data['guru'] = $this->enhamodel->getInfo();
+		$this->template->load('templates/admin/template', 'admin/form_info' , $data);
+	}	
+
+	public function inputinfo(){
+		$this->setsession();
+		$judulinfo = $this->input->post('judulinfo');
+		$isiinfo = $this->input->post('isiinfo');
+		$tglinfo = $this->input->post('tglinfo');
+		$gbrinfo = $_FILES['gbrinfo']['name'];
+		$config['upload_path'] = 'assets/landing/img/info'; 
+		$config['allowed_types'] = 'jpg|jpeg|png|gif';
+		$this->load->library('upload', $config);
+
+		if(!$this->upload->do_upload('gbrinfo')){
+			$data = array(
+				'judul_info' => $judulinfo,
+				'isi_info' => $isiinfo,
+				'tgl_info' => $tglinfo
+			);
+
+			$this->enhamodel->inputDataInfo($data, 'tb_info');
+			$this->session->set_flashdata('message', 'Data informasi berhasil ditambahkan');
+				
+			}else{
+				$data = array(
+					'judul_info' => $judulinfo,
+					'isi_info' => $isiinfo,
+					'tgl_info' => $tglinfo,
+					'gbr_info' => $gbrinfo
+				);
+		
+			$gbrinfo['foto_guru']= $this->upload->data('file_name');
+			$this->enhamodel->inputDataInfo($data, 'tb_info');
+			$this->session->set_flashdata('message', 'Data informasi berhasil ditambahkan');
+			redirect('adminpanel/datainfo');
+			}
 	}
 
-	public function charts()
-	{
-		$this->template->load('templates/admin/template', 'admin/charts');
+	public function editinfo(){
+		$this->setsession();
+		// post di isi variable name di input
+		$id = $this->input->post('edit_id_info');
+		$editjudul = $this->input->post('editjudul');
+		$editisi = $this->input->post('editisi');
+		$edittgl = $this->input->post('edittgl');
+		$foto = $_FILES['editgbdinfo'];
+        $config['upload_path']= 'assets/landing/img/info';
+		$config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
+		
+		// do_upload di isi name variable di form input
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('editfotoguru')) {
+			$data = array(
+				'judul_info' => $editjudul,
+				'isi_info' => $editisi,
+				'tgl_info' => $edittgl
+			);
+
+			$this->enhamodel->editDataInfo($data, 'tb_info');
+			$this->session->set_flashdata('message', 'Data informasi berhasil diubah');
+		}else{
+		$informasi['info'] = $this->enhamodel->getInfoById($id);
+		if ($informasi['info']['gbr_info'] != null) {
+			$path = FCPATH.'assets/landing/img/info/'.$informasi['info']['gbr_info'];
+			unlink($path);
+		}
+		// file_name menngembalikan nama file beserta extensinya
+        $foto = $this->upload->data('file_name');
+        
+		$data = array(
+			'judul_info' => $editjudul,
+			'isi_info' => $editisi,
+			'tgl_info' => $edittgl,
+			'gbr_info' => $foto
+		);
+
+		$this->enhamodel->updatedatainfo($data, $id);
+		$this->session->set_flashdata('message', 'Data informasi berhasil di ubah');
+		
+		redirect('adminpanel/datainfo');
+	}
 	}
 
-   
+	public function deleteinfo($id){
+		$this->setsession();
+		$informasi['info'] = $this->enhamodel->getInfoById($id);
+		if ($informasi['info']['gbr_info'] != null) {
+			$path = FCPATH.'assets/landing/img/info/'.$informasi['info']['gbr_info'];
+			unlink($path);
+		}
+		$this->enhamodel->selectdeleteInfo($id);
+		$this->session->set_flashdata('message', 'Data informasi berhasil di hapus');
+		redirect('adminpanel/datainfo');
+	}
+	
 }
