@@ -108,8 +108,8 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('adminpanel/charts');?>">
-                            <i class="nav-icon icon-frame"></i>Input Image Slide</a>
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/datacover');?>">
+                            <i class="nav-icon icon-frame"></i>ENHAS Gambar Cover</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('adminpanel/gallery');?>">

@@ -193,12 +193,10 @@
 <script src="<?php echo base_url();?>assets/admin/vendors/bootstrap/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function() {
-    // Untuk sunting
     $('#edit-modal-info').on('show.bs.modal', function(event) {
-        var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
+        var div = $(event.relatedTarget) 
         var modal = $(this)
 
-        // Isi nilai pada field
         modal.find('#edit_id_info').attr("value", div.data('id'));
         modal.find('#editjudul').attr("value", div.data('judul'));
         modal.find('#editisi').attr("value", div.data('isi'));

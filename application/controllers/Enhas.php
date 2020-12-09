@@ -10,9 +10,11 @@ public function __construct(){
 
     public function index(){
         $data['gallery'] = $this->enhamodel->getGallery();
-         $this->load->view('landing/home', $data);
+        $data['cover'] = $this->enhamodel->getCoverNext();
+        $data['coverfirst'] = $this->enhamodel->getCoverFirst();
+        $this->load->view('landing/home', $data);
     }
-
+    
     public function dirguru(){
         $data['guru'] = $this->enhamodel->getDirGuru();
         $this->load->view('templates/landing/header_default');

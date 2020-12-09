@@ -4,6 +4,7 @@ class Enhamodel extends CI_Model{
     private $tbgallery = 'tb_gallery';
     private $tbinfo = 'tb_info';
     private $tbfiles = 'tb_files';
+    private $tbcarrousel = 'tb_carrousel';
 
 
     /* Get Data */
@@ -48,6 +49,25 @@ class Enhamodel extends CI_Model{
         return $this->db->get_where($this->tbfiles, ['id_files' => $id])->row_array();
     }
 
+    public function getCover()
+    {
+        return $this->db->get($this->tbcarrousel)->result_array();
+    }
+
+    public function getCoverNext()
+    {
+        return $this->db->limit(4,1)->get($this->tbcarrousel)->result_array();
+    }
+
+    public function getCoverFirst()
+    {
+        return $this->db->get($this->tbcarrousel)->first_row();
+    }
+
+    public function getCoverById($id)
+    {
+        return $this->db->get_where($this->tbcarrousel, ['id_carrousel' => $id])->row_array();
+    }
 
     /* Inputt */
     public function inputdataGuru($data)
@@ -90,6 +110,13 @@ class Enhamodel extends CI_Model{
     {
         $this->db->where('id_files', $id);
         $this->db->update('tb_files', $data,  ['id_files' => $id]);
+        return true;
+    }
+
+    public function updatedatacover($data, $id)
+    {
+        $this->db->where('id_carrousel', $id);
+        $this->db->update('tb_carrousel', $data,  ['id_carrousel' => $id]);
         return true;
     }
 

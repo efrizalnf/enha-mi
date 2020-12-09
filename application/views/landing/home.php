@@ -151,60 +151,56 @@
                             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="carousel-layer"></div>
-                                <img src="<?php echo base_url()?>assets/landing/img/1.png" class="d-block w-100"
-                                    alt="...">
+                                <img src="<?php echo base_url() . 'assets/landing/img/' . $coverfirst->img_cover?>"
+                                    class="d-block w-100" alt="...">
                                 <div class="carousel-caption satu">
-                                    <h3>MI NURUL HUDA</h3>
-                                    <p>"Cerdas, Enerjik, Riang, Intelek, Agamis"</p>
+                                    <h3><?= $coverfirst->txt_title ?></h3>
+                                    <p><?= $coverfirst->txt_desc ?></p>
                                     <hr class="line-1">
                                     <!-- <button type="button" href="#section-profil" class="btn font-weight-bold btn-sm">TENTANG
                                     KAMI</button> -->
-                                    <a href="#section-profil" class="btn font-weight-bold btn-sm">TENTANG
-                                        KAMI</a>
+                                   <!-- <a href="#section-profil" class="btn font-weight-bold btn-sm">TENTANG
+                                        KAMI</a> -->
+                                    </div>
                                 </div>
+                                <?php foreach($cover as $item) :?>
+
+                                <div class="carousel-item">
+                                    <div class="carousel-layer"></div>
+                                    <img src="<?php echo base_url() . 'assets/landing/img/'.$item['img_cover'];?>"
+                                        class="d-block w-100" alt="...">
+                                    <div class="carousel-caption dua">
+                                        <h3><?= $item['txt_title'] ?></h3>
+                                        <p><?= $item['txt_desc'] ?></p>
+                                        <!-- <p>Ayo Buruan daftar..!!</p> -->
+                                        <hr class="line-1">
+                                        <!-- <a href="http://ppdb.yapinda.online" target="blank"
+                                        class="btn font-weight-bold btn-lg">DAFTAR</a> -->
+                                    </div>
+                                </div>
+
+                                <?php endforeach ;?>
                             </div>
-                            <div class="carousel-item">
-                                <div class="carousel-layer"></div>
-                                <img src="<?php echo base_url()?>assets/landing/img/2.png" class="d-block w-100"
-                                    alt="...">
-                                <div class="carousel-caption dua">
-                                    <h3>Menerima Peserta Didik Baru</h3>
-                                    <p>Tahun ajaran 2021-2022</p>
-                                    <!-- <p>Ayo Buruan daftar..!!</p> -->
-                                    <hr class="line-1">
-                                    <a href="http://ppdb.yapinda.online" target="blank"
-                                        class="btn font-weight-bold btn-lg">DAFTAR</a>
-                                </div>
+                            <div class="car-prev">
+                                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
+                                    data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
                             </div>
-                            <div class="carousel-item">
-                                <div class="carousel-layer"></div>
-                                <img src="<?php echo base_url()?>assets/landing/img/3.png" class="d-block w-100"
-                                    alt="...">
-                                <div class="carousel-caption">
-                                    <h3>Madrasah Hebat Bermartabat</h3>
-                                    <p>Ayo Sekolah di Madrasah!</p>
-                                </div>
+                            <div class="car-next">
+                                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
+                                    data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
                         </div>
-                        <div class="car-prev">
-                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </div>
-                        <div class="car-next">
-                            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
                 </section>
             </div>
             <nav>
@@ -348,7 +344,7 @@
         <!-- enha gallery -->
 
         <section class="gallery " id="section-gallery">
-            
+
             <div class="container gallery-container mt-3 pt-5">
                 <div class="row justify-content-center">
                     <div class="title ">
@@ -363,7 +359,7 @@
                             <div class="col-sm-6 col-md-4 rounded ">
                                 <h4 class="title-gallery align-middle text-center mb-3">
                                     <?= $item['nama_kegiatan']?></h4>
-                                    <hr class="hr-section">
+                                <hr class="hr-section">
                                 <a class="lightbox"
                                     href="<?php echo base_url() . 'assets/landing/img/gallery/'.$item['foto_kegiatan'];?>">
                                     <img src="<?php echo base_url() . 'assets/landing/img/gallery/'.$item['foto_kegiatan'];?>"

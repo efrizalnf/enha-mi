@@ -431,5 +431,52 @@ public function deletegallery($id){
 	}
 
 
+	/* Carrousel */
+
+	public function datacover()
+	{
+		$this->setsession();
+		$data['cover'] = $this->enhamodel->getCover();
+		$this->template->load('templates/admin/template', 'admin/form_carrousel' , $data);
+	}	
+
+	public function editcover(){
+		$this->setsession();
+		$id = $this->input->post('edit_id_cover');
+		$editjudul = $this->input->post('editjudulcover');
+		$editisi = $this->input->post('editdesccover');
+		$foto = $_FILES['editimgcover'];
+        $config['upload_path']= 'assets/landing/img/';
+		$config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
+		
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('editimgcover')) {
+			$data = array(
+				'txt_title' => $editjudul,
+				'txt_desc' => $editisi
+			);
+
+			$this->enhamodel->updatedatacover($data, $id);
+			$this->session->set_flashdata('message', 'Data berhasil diubah');
+			redirect('adminpanel/datacover');
+		}else{
+		$cover['cvr'] = $this->enhamodel->getCoverById($id);
+		if ($cover['cvr']['img_cover'] != null) {
+			$path = FCPATH.'assets/landing/img/'.$cover['cvr']['img_cover'];
+			unlink($path);
+		}
+        $foto = $this->upload->data('file_name');
+        
+		$data = array(
+			'txt_title' => $editjudul,
+			'txt_desc' => $editisi,
+			'img_cover' => $foto
+		);
+
+		$this->enhamodel->updatedatacover($data, $id);
+		$this->session->set_flashdata('message', 'Data berhasil di ubah');
+		redirect('adminpanel/datacover');
+	}
+	}
 
 }
