@@ -290,7 +290,7 @@ public function deletegallery($id){
 		$id = $this->input->post('edit_id_info');
 		$editjudul = $this->input->post('editjudul');
 		$editisi = $this->input->post('editisi');
-		$edittgl = $this->input->post('edittgl');
+		// $edittgl = $this->input->post('edittgl');
 		$foto = $_FILES['editgbrinfo'];
         $config['upload_path']= 'assets/landing/img/info';
 		$config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
@@ -300,8 +300,8 @@ public function deletegallery($id){
 		if (!$this->upload->do_upload('editgbrinfo')) {
 			$data = array(
 				'judul_info' => $editjudul,
-				'isi_info' => $editisi,
-				'tgl_info' => $edittgl
+				'isi_info' => $editisi
+				// 'tgl_info' => $edittgl
 			);
 
 			$this->enhamodel->updatedatainfo($data, $id);
@@ -319,7 +319,7 @@ public function deletegallery($id){
 		$data = array(
 			'judul_info' => $editjudul,
 			'isi_info' => $editisi,
-			'tgl_info' => $edittgl,
+			// 'tgl_info' => $edittgl,
 			'gbr_info' => $foto
 		);
 
