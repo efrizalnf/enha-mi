@@ -81,11 +81,6 @@ class Enhamodel extends CI_Model{
         return $this->db->get($this->tbruntext)->result_array();
     }
 
-    public function getRunTextById($id)
-    {
-        return $this->db->get_where($this->tbruntext, ['id_rtext' => $id])->row_array();
-    }
-
     /* get Runtext home */
     public function getRunTextHome()
     {
@@ -154,11 +149,9 @@ class Enhamodel extends CI_Model{
         return true;
     }
 
-    public function updatedataruntext($data, $id)
+    public function updatedataruntext($data)
     {
-        $this->db->where('id_rtext', $id);
-        $this->db->update($this->tbruntext, $data,  ['id_rtext' => $id]);
-        return true;
+        $this->db->replace($this->tbruntext, $data);
     }
 
  /*   delete */

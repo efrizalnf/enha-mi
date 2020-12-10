@@ -7,7 +7,6 @@ public function __construct(){
     $this->load->model('enhamodel');
 }
 
-
     public function index(){
         $data['gallery'] = $this->enhamodel->getGallery();
         $data['cover'] = $this->enhamodel->getCoverNext();
@@ -22,8 +21,6 @@ public function __construct(){
         $this->load->view('landing/dirguru', $data);
         $this->load->view('templates/landing/footer_default');
     } 
-
-    
 
     public function informasi(){
         $data['informasi'] = $this->enhamodel->getInfo();
