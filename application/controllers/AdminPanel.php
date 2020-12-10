@@ -504,7 +504,7 @@ public function deletegallery($id){
 	{
 		$this->setsession();
 		$data['profile'] = $this->enhamodel->getProfile();
-		$this->template->load('templates/admin/template', 'admin/form_rtext' , $data);
+		$this->template->load('templates/admin/template', 'admin/form_profile' , $data);
 	}	
 
 
