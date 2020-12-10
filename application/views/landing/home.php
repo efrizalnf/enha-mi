@@ -207,17 +207,7 @@
                 <div class="informasi">
                     <div class="row">
                         <div class="inform col-md-12 col-sm-12">
-                            <p class="font-weight-bold">|| SELAMAT DATANG DI OFFICIAL WEBSITE MI NURUL HUDA &nbsp;
-                                &nbsp; &nbsp; || &nbsp; &nbsp; &nbsp; <span>Penerimaan Peserta
-                                    didik baru tahun
-                                    ajaran 2021/2022
-                                    telah
-                                    dibuka.
-                                    anda dapat melakukan pendaftaran secara online di website : ppdb.yapinda.online
-                                    ||
-                                </span>
-                                <span>JAGA KESEHATAN #TETAPDIRUMAHAJA ||
-                                </span>
+                            <p class="font-weight-bold"><?= $runtext->isi_rtext?>
                             </p>
                         </div>
                     </div>

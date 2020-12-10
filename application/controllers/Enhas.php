@@ -12,6 +12,7 @@ public function __construct(){
         $data['gallery'] = $this->enhamodel->getGallery();
         $data['cover'] = $this->enhamodel->getCoverNext();
         $data['coverfirst'] = $this->enhamodel->getCoverFirst();
+        $data['runtext'] = $this->enhamodel->getRunTextHome();
         $this->load->view('landing/home', $data);
     }
     

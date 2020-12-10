@@ -5,6 +5,8 @@ class Enhamodel extends CI_Model{
     private $tbinfo = 'tb_info';
     private $tbfiles = 'tb_files';
     private $tbcarrousel = 'tb_carrousel';
+    private $tbruntext = 'tb_rtext';
+    private $tbschool = 'tb_school';
 
 
     /* Get Data */
@@ -38,6 +40,7 @@ class Enhamodel extends CI_Model{
         return $this->db->get_where($this->tbinfo, ['id_info' => $id])->row_array();
     }
 
+    /* Edt File Download Admin */
 
     public function getFile()
     {
@@ -49,6 +52,7 @@ class Enhamodel extends CI_Model{
         return $this->db->get_where($this->tbfiles, ['id_files' => $id])->row_array();
     }
 
+    /* Show Cover Home */
     public function getCover()
     {
         return $this->db->get($this->tbcarrousel)->result_array();
@@ -64,9 +68,39 @@ class Enhamodel extends CI_Model{
         return $this->db->get($this->tbcarrousel)->first_row();
     }
 
+    /* Edt Cover admin */
+
     public function getCoverById($id)
     {
         return $this->db->get_where($this->tbcarrousel, ['id_carrousel' => $id])->row_array();
+    }
+
+    /* get Runtext admin */
+    public function getRunText()
+    {
+        return $this->db->get($this->tbruntext)->result_array();
+    }
+
+    public function getRunTextById($id)
+    {
+        return $this->db->get_where($this->tbruntext, ['id_rtext' => $id])->row_array();
+    }
+
+    /* get Runtext home */
+    public function getRunTextHome()
+    {
+        return $this->db->get($this->tbruntext)->first_row();
+    }
+
+    /* Edt Profile */
+    public function getProfile()
+    {
+        return $this->db->get($this->tbschool)->result_array();
+    }
+
+    public function getProfileById($id)
+    {
+        return $this->db->get_where($this->tbschool, ['id_school' => $id])->row_array();
     }
 
     /* Inputt */
@@ -91,7 +125,7 @@ class Enhamodel extends CI_Model{
     }
     
 
-/* Edit */
+    /* Edit */
     public function updatedataguru($data, $id)
     {
         $this->db->where('id_guru', $id);
@@ -117,6 +151,13 @@ class Enhamodel extends CI_Model{
     {
         $this->db->where('id_carrousel', $id);
         $this->db->update('tb_carrousel', $data,  ['id_carrousel' => $id]);
+        return true;
+    }
+
+    public function updatedataruntext($data, $id)
+    {
+        $this->db->where('id_rtext', $id);
+        $this->db->update($this->tbruntext, $data,  ['id_rtext' => $id]);
         return true;
     }
 

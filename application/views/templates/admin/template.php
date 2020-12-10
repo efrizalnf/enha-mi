@@ -92,7 +92,7 @@
                             <span class="badge badge-primary">HOME</span>
                         </a>
                     </li>
-                    <li class="nav-title"> </li>
+                    <!-- <li class="nav-title"> </li>
                     <li class="nav-item nav-dropdown">
                         <a class="nav-link nav-dropdown-toggle" href="#">
                             <i class="nav-icon icon-people"></i>Direktori</a>
@@ -106,22 +106,35 @@
                                     <i class="nav-icon icon-user"></i>Direktori Siswa</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
+                    <li class="nav-item">
+                                <a class="nav-link" href="<?php echo base_url('adminpanel/dataprofile');?>">
+                                    <i class="nav-icon icon-graduation"></i>ENHAS Profile</a>
+                            </li>
+                    <li class="nav-item">
+                    <li class="nav-item">
+                                <a class="nav-link" href="<?php echo base_url('adminpanel/dataguru');?>">
+                                    <i class="nav-icon icon-folder"></i>Direktori Guru</a>
+                            </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('adminpanel/datacover');?>">
-                            <i class="nav-icon icon-frame"></i>ENHAS Gambar Cover</a>
+                            <i class="nav-icon icon-film"></i>ENHAS Gambar Cover</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/data_rtext');?>">
+                            <i class="nav-icon icon-bubble"></i>ENHAS Running Text</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('adminpanel/gallery');?>">
-                            <i class="nav-icon icon-frame"></i>Input Image Gallery</a>
+                            <i class="nav-icon icon-picture"></i>ENHAS Image Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('adminpanel/datafile');?>">
-                            <i class="nav-icon icon-paper-clip"></i>Input File Download</a>
+                            <i class="nav-icon icon-cloud-download"></i>ENHAS File Download</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('adminpanel/datainfo');?>">
-                            <i class="nav-icon icon-info"></i>Input Informasi</a>
+                            <i class="nav-icon icon-info"></i>ENHAS Informasi</a>
                     </li>
                 </ul>
             </nav>

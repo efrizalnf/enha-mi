@@ -479,4 +479,41 @@ public function deletegallery($id){
 	}
 	}
 
+
+	/* Running Text */
+	public function data_rtext()
+	{
+		$this->setsession();
+		$data['runtext'] = $this->enhamodel->getRunText();
+		$this->template->load('templates/admin/template', 'admin/form_rtext' , $data);
+	}	
+
+	public function editrtext(){
+		$this->setsession();
+		$id = $this->input->post('edit_id_rtext');
+		$editrtext = $this->input->post('editrtext');
+		
+		$data = ['isi_rtext'=>$editrtext];
+		
+		$this->enhamodel->updatedataruntext($data, $id);
+		$this->session->set_flashdata('message', 'Data berhasil di ubah');
+		redirect('adminpanel/data_rtext');
+	}
+
+	/* Edt Profile */
+	public function dataprofile()
+	{
+		$this->setsession();
+		$data['profile'] = $this->enhamodel->getProfile();
+		$this->template->load('templates/admin/template', 'admin/form_profile' , $data);
+	}	
+
+
+
+
+
+
+
 }
+
+
