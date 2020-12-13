@@ -10,9 +10,10 @@
     <meta name="author" content="">
 
     <title>ENHAS Web Admin Login</title>
-
+    <link rel="icon" href="<?php echo base_url()?>assets/landing/img/favicon.ico">
     <!-- Custom fonts for this template-->
-    <link href="<?php echo base_url();?>assets/login/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url();?>assets/login/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+        type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -22,7 +23,7 @@
 
 </head>
 
-<body class="bg-gradient-success">
+<body class="bg-gradient-dark">
 
     <div class="container">
 
@@ -35,9 +36,11 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block m-auto text-center"><img
-                                    src="<?php echo base_url();?>assets/landing/img/logo-enha2.png"
-                                    style="width: 230px; height: 230px;">
+                            <div class="col-lg-6 d-none d-lg-block m-auto text-center">
+                                <img src="<?php echo base_url();?>assets/landing/img/<?= $profile->logo_sekolah?>"
+                                    style="width: 200px; height: 200px;">
+                                <p class="title font-weight-bold h3 mt-2"><?= $profile->nama_madrasah?></p>
+                                <p class="h6 pl-3 pr-3"><?= $profile->visi_motto?></p>
                             </div>
 
                             <div class="col-lg-6">
@@ -46,17 +49,17 @@
                                         <h1 class="h4 text-gray-900 mb-4">ENHAS <br> Web Admin Panel Login</h1>
                                     </div>
                                     <?php echo $this->session->flashdata('message');?>
-                                    <form class="user" method="post"
-                                        action="<?php echo base_url('login/index');?>">
+                                    <form class="user" method="post" action="<?php echo base_url('login/index');?>">
 
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" name="username"
-                                                id="username" placeholder="Username" value="<?php echo set_value('username');?>">
+                                                id="username" placeholder="Username"
+                                                value="<?php echo set_value('username');?>">
                                             <?php echo form_error('username', '<small class="text-danger pl-3">', '</small>')?>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                name="password" id="password" placeholder="Password" >
+                                                name="password" id="password" placeholder="Password">
                                             <?php echo form_error('password', '<small class="text-danger pl-3">', '</small>')?>
                                         </div>
                                         <div class="form-group">
@@ -66,7 +69,7 @@
                                                     Password</label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-success btn-user btn-block">
+                                        <button type="submit" class="btn btn-dark btn-user btn-block">
                                             Login
                                         </button>
 

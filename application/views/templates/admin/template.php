@@ -35,10 +35,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#">
-            <img class="navbar-brand-full" src="<?php echo base_url();?>assets/landing/img/logo-enha.png" width="32"
-                height="32" alt="Enha Logo">
-            <img class="navbar-brand-minimized" src="<?php echo base_url();?>assets/landing/img/logo-enha.png"
-                width="30" height="30" alt="CoreUI Logo">
+            <img class="navbar-brand-full" src="<?php echo base_url();?>assets/landing/img/logo-enhas.png" width="90"
+                height="40" alt="Enha Logo">
+            <img class="navbar-brand-minimized" src="<?php echo base_url();?>assets/landing/img/logo-enhas.png"
+                width="30" height="30" alt="logo-enhas">
         </a>
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
             <span class="navbar-toggler-icon"></span>
@@ -49,9 +49,7 @@
                 <li class="nav-item px-3">
                     <a class="nav-link" href="#">Dashboard</a>
                 </li>
-                <li class="nav-item px-3">
-                    <a class="nav-link" href="#">Users</a>
-                </li>
+              
                 <li class="nav-item px-3">
                     <a class="nav-link" href="#">Settings</a>
                 </li>
@@ -59,7 +57,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                     aria-expanded="false">
-                    <img class="img-avatar" src="<?php echo base_url();?>assets/landing/img/logo-enha.png"
+                    <img class="img-avatar" src="<?php echo base_url();?>assets/landing/img/logo-enhas.png"
                         alt="admin@enha">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
@@ -136,6 +134,10 @@
                         <a class="nav-link" href="<?php echo base_url('adminpanel/datainfo');?>">
                             <i class="nav-icon icon-info"></i>ENHAS Informasi</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url()?>login/logout">
+                            <i class="nav-icon icon-logout"></i>LOGOUT</a>
+                    </li>
                 </ul>
             </nav>
             <button class="sidebar-minimizer brand-minimizer" type="button"></button>
@@ -146,7 +148,7 @@
     </div>
     <footer class="app-footer">
         <div>
-            <a href="https://misnurulhuda.sch.id">ENHAS Web Admin Panel</a>
+            <a href="https://everyzalz.blogspot.com" target="_blank">ENHAS Web Admin Panel</a>
             <span>&copy; 2020 Build by zlz.</span>
         </div>
     </footer>

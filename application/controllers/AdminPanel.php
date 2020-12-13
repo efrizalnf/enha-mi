@@ -10,7 +10,8 @@ class Adminpanel extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->library('session');	
 		$this->load->model('enhamodel');
-	
+		 $dt = $this->enhamodel->getProfile();
+		// var_dump($dt);
 	}
 
 	public function setsession(){
@@ -24,13 +25,16 @@ class Adminpanel extends CI_Controller {
 	{	
 		$this->setsession();
 		$datasession['tb_user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
-		$this->template->load('templates/admin/template', 'admin/dashboard', $datasession);
+		$this->template->load('templates/admin/template',  $datasession);
 		
 	}
 
 	public function dashboard()
 	{	
-		$this->template->load('templates/admin/template', 'admin/dashboard');
+		$data['guru'] = count($this->enhamodel->getGuru());
+		$data['file'] = count($this->enhamodel->getCountFile());
+		$data['info'] = count($this->enhamodel->getCountInfo());
+		$this->template->load('templates/admin/template', 'admin/dashboard', $data);
 	}
 
 
@@ -530,7 +534,7 @@ public function deletegallery($id){
 		$linkig = $this->input->post('linkig');
 		$linkyt = $this->input->post('linkyt');
 		$visi = $this->input->post('visi');
-		$namakepsek = $this->input->post('namakepsek');
+		$nama_kepsek = $this->input->post('namakepsek');
 		$nipkepsek = $this->input->post('nipkepsek');
 		$uploadfotokamad =$_FILES['uploadfotokamad']['name'];
 		$uploadlogo = $_FILES['uploadlogo']['name'];
@@ -561,7 +565,7 @@ public function deletegallery($id){
 				'link_ig' => $linkig,
 				'link_youtube' => $linkyt,
 				'visi_motto' => $visi,
-				'nama_kepsek' => $namakepsek,
+				'nama_kepsek' => $nama_kepsek,
 				'nip_kepsek' => $nipkepsek
 			];
 
@@ -596,7 +600,7 @@ public function deletegallery($id){
 				'link_ig' => $linkig,
 				'link_youtube' => $linkyt,
 				'visi_motto' => $visi,
-				'nama_kepsek' => $namakepsek,
+				'nama_kepsek' => $nama_kepsek,
 				'nip_kepsek' => $nipkepsek,
 				'img_kepsek' => $uploadfotokamad
 			];
@@ -634,7 +638,7 @@ public function deletegallery($id){
 				'link_ig' => $linkig,
 				'link_youtube' => $linkyt,
 				'visi_motto' => $visi,
-				'nama_kepsek' => $namakepsek,
+				'nama_kepsek' => $nama_kepsek,
 				'nip_kepsek' => $nipkepsek,
 				'logo_sekolah' => $uploadlogo
 			];

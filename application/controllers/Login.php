@@ -13,12 +13,13 @@ public function __construct()
 
 	public function index()
 	{	
+		$data['profile'] = $this->enhamodel->getProfile();
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		
 
 		if ($this->form_validation->run() == false) {
-			$this->load->view('admin/login');
+			$this->load->view('admin/login', $data);
 		} else {
 			// validasi sukses login
 			$this->login();

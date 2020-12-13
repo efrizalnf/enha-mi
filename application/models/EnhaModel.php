@@ -20,6 +20,12 @@ class Enhamodel extends CI_Model{
         return $this->db->get_where($this->tbguru, ['id_guru' => $id])->row_array();
     }
 
+    function getGuru()
+    {
+        $query = $this->db->get($this->tbguru);
+        return $query->result();
+    }
+
     public function getGallery()
     {
         return $this->db->get($this->tbgallery)->result_array();
@@ -40,6 +46,12 @@ class Enhamodel extends CI_Model{
         return $this->db->get_where($this->tbinfo, ['id_info' => $id])->row_array();
     }
 
+    function getCountInfo()
+    {
+        $query = $this->db->get($this->tbinfo);
+        return $query->result();
+    }
+
     /* Edt File Download Admin */
 
     public function getFile()
@@ -50,6 +62,12 @@ class Enhamodel extends CI_Model{
     public function getFileById($id)
     {
         return $this->db->get_where($this->tbfiles, ['id_files' => $id])->row_array();
+    }
+
+    function getCountFile()
+    {
+        $query = $this->db->get($this->tbfiles);
+        return $query->result();
     }
 
     /* Show Cover Home */
