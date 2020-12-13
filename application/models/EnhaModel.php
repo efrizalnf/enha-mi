@@ -7,7 +7,6 @@ class Enhamodel extends CI_Model{
     private $tbcarrousel = 'tb_carrousel';
     private $tbruntext = 'tb_rtext';
     private $tbschool = 'tb_school';
-    private $tbjenjang = 'tb_jenjang';
 
 
     /* Get Data */
@@ -94,12 +93,11 @@ class Enhamodel extends CI_Model{
         return $this->db->get($this->tbschool)->first_row();
     }
 
- 
-
     public function getProfileById($id)
     {
         return $this->db->get_where($this->tbschool, ['id_school' => $id])->row_array();
     }
+    
 
     /* Inputt */
     public function inputdataGuru($data)
@@ -155,6 +153,13 @@ class Enhamodel extends CI_Model{
     public function updatedataruntext($data)
     {
         $this->db->replace($this->tbruntext, $data);
+    }
+
+    public function updatedataprofile($data, $id)
+    {
+        $this->db->where('id_school', $id);
+        $this->db->update($this->tbschool, $data,  ['id_school' => $id]);
+        return true;
     }
 
  /*   delete */

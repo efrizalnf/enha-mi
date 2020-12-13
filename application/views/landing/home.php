@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/w3.css">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/baguetteBox.min.css">
-    <title>MI Nurul Huda Kota Bandung</title>
+    <link rel="stylesheet" href="<?= base_url()?>assets/leaflet/leaflet.css">
+    <script src="<?= base_url()?>assets/leaflet/leaflet.js"></script>
+    <title><?= $profile->nama_madrasah?></title>
 </head>
 
 <body onload="hideloader();">
@@ -46,19 +48,19 @@
         <div class="nav-header d-flex flex-row justify-content-stretch align-items-center">
             <div class="top-contact mr-auto ml-4">
                 <ul class="list-inline">
-                    <li class="list-inline-item pl-3 pr-0"><a href="tel:+62225207636" target="_blank"><i
-                                class="fas fa-phone"></i>022-5207636</a>
+                    <li class="list-inline-item pl-3 pr-0"><a href="tel:+622<?= $profile->phone?>" target="_blank"><i
+                                class="fas fa-phone"></i>022-<?= $profile->phone?></a>
                     </li>
-                    <li class="list-inline-item pl-3 pr-0"><a href="mailto:info@minurulhuda.sch.id" target="_blank"><i
-                                class="fas fa-envelope"></i>info@minurulhuda.sch.id</a>
+                    <li class="list-inline-item pl-3 pr-0"><a href="mailto:<?= $profile->email?>" target="_blank"><i
+                                class="fas fa-envelope"></i><?= $profile->email?></a>
                     </li>
                 </ul>
             </div>
             <div class="top-sosmed justify-content-end mr-5">
                 <ul class="list-inline">
-                    <li class="list-inline-item pl-3 pr-0"><a href="https://www.facebook.com/mi.nurulhuda.589"
+                    <li class="list-inline-item pl-3 pr-0"><a href="<?= $profile->link_fb?>"
                             target="_blank"><i class="fab fa-facebook"></i></a></li>
-                    <li class="list-inline-item pl-3 pr-0"><a href="https://www.youtube.com/watch?v=MngGrau0l3U&t=16s"
+                    <li class="list-inline-item pl-3 pr-0"><a href="<?= $profile->link_youtube?>"
                             target="_blank"><i class="fab fa-youtube"></i></a>
                     </li>
                 </ul>
@@ -73,12 +75,12 @@
             </div>
             <div class="top-header">
                 <a href="<?php echo base_url('enhas/index')?>" class="navbar-brand ml-3 mt-2">
-                    <img src="<?php echo base_url()?>assets/landing/img/logo-enha2.png" class="ml-15 mr-2" width="49"
+                    <img src="<?php echo base_url()?>assets/landing/img/<?= $profile->logo_sekolah?>" class="ml-15 mr-2" width="49"
                         height="49">
                     <div class="nav-text">
                         <ul class="list-unstyled ">
                             <li>
-                                <h5 class="font-weight-bold brand">MI NURUL HUDA</h5>
+                                <h5 class="font-weight-bold brand"><?= $profile->nama_madrasah?></h5>
                             </li>
                         </ul>
                     </div>
@@ -128,7 +130,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://minurulhuda.sch.id" id="navbarDropdownMenuLink"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             eNHa Apps
                         </a>
@@ -232,19 +234,19 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Madrasah </td>
-                                    <td>: MIS Nurul Huda</td>
+                                    <td>: <?= $profile->nama_madrasah?></td>
                                 </tr>
                                 <tr>
                                     <td>NPSN </td>
-                                    <td>: 60709744</td>
+                                    <td>: <?= $profile->npsn?></td>
                                 </tr>
                                 <tr>
                                     <td>NSM </td>
-                                    <td>: 111232730037</td>
+                                    <td>: <?= $profile->nsm?></td>
                                 </tr>
                                 <tr>
                                     <td>Status Akreditasi </td>
-                                    <td>: A</td>
+                                    <td>: <?= $profile->nilai_akreditasi?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -263,7 +265,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md m-auto text-center">
-                        <img src="<?php echo base_url()?>assets/landing/img/kamad.png" alt="H. Enan Suryana Alm">
+                        <img src="<?php echo base_url()?>assets/landing/img/<?= $profile->img_kepsek?>" alt="H. Enan Suryana Alm">
                     </div>
                     <div class="col-md m-2">
                         <p class="content-sejarah mt-1 mr-5">
@@ -366,13 +368,11 @@
                 <div class="row">
                     <div class="col-md">
                         <div class="logo-footer justify-content-center text-center">
-                            <img class="mb-2" src="<?php echo base_url()?>assets/landing/img/logo-enha2.png"
+                            <img class="mb-2" src="<?php echo base_url()?>assets/landing/img/<?= $profile->logo_sekolah?>"
                                 alt="footer mas nurul huda">
-                            <h3>MIS Nurul Huda</h3>
-                            <h5 class="mb-1">"Terwujudnya Insan kamil yang beriman, berilmu pengetahuan, cerdas,
-                                terampil dan mampu mengembangkan diri, serta berakhlakul karimah"</h5>
-                            <h7>Jl.KH. Wahid Hasyim Gg.Parasdi Dalam I No.7 Kec.Bojongloa Kidul Kel. Situsaeur
-                                Bandung 40234
+                            <h3><?= $profile->nama_madrasah?></h3>
+                            <h5 class="mb-1">"<?= $profile->visi_motto?>"</h5>
+                            <h7><?= $profile->alamat_madrasah?>
                             </h7>
                         </div>
                     </div>
@@ -380,20 +380,20 @@
                         <h4>Line Kontak</h4>
                         <hr>
                         <ul>
-                            <li><a href="tel:+62225207636" target="_blank"><i
-                                        class="fas fa-phone fa-lg"></i>022-5207636</a>
+                            <li><a href="tel:+622<?= $profile->phone?>" target="_blank"><i
+                                        class="fas fa-phone fa-lg"></i>022-<?= $profile->phone?></a>
                             </li>
-                            <li><a href="mailto:info@minurulhuda.sch.id" target="_blank"><i
-                                        class="fas fa-envelope fa-lg"></i>info@minurulhuda.sch.id</a>
+                            <li><a href="mailto:<?= $profile->email?>" target="_blank"><i
+                                        class="fas fa-envelope fa-lg"></i><?= $profile->email?></a>
                             </li>
                         </ul>
                         <h4>Sosial Media</h4>
                         <hr>
                         <ul>
-                            <li><a href="https://www.facebook.com/mi.nurulhuda.589" target="_blank"><i
+                            <li><a href="<?= $profile->link_fb?>" target="_blank"><i
                                         class="fab fa-facebook fa-lg"></i> @minurulhudakotabandung</a></li>
 
-                            <li><a href="https://www.youtube.com/watch?v=MngGrau0l3U&t=16s" target="_blank"><i
+                            <li><a href="<?= $profile->link_youtube?>" target="_blank"><i
                                         class="fab fa-youtube fa-lg"></i> @mi nurulhuda</a>
                             </li>
                         </ul>
@@ -419,6 +419,7 @@
         <script src="<?php echo base_url()?>assets/landing/js/bootstrap.min.js"></script>
         <script src="<?php echo base_url()?>assets/landing/js/smooth-scroll.min.js"></script>
         <script src="<?php echo base_url()?>assets/landing/js/baguetteBox.min.js"></script>
+  
         <script type="text/javascript">
         $(function() {
             var scroll = new SmoothScroll('a[href*="#section-"]', {
@@ -430,11 +431,22 @@
                 }
             });
         });
+
+        var map = L.map('map').setView([-6.937930,107.595264], 17);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+        L.marker([-6.937930,107.595264]).addTo(map)
+            .bindPopup('<div class="text-center"><b>MI NURUL HUDA</b><br> Jl.KH.Wahid Hasyim Gg.Parasdi Dalam I No.7</div>')
+            .openPopup();
+            
         </script>
         <script src="<?php echo base_url()?>assets/landing/js/loader.js"></script>
         <script src="<?php echo base_url()?>assets/landing/js/enha.js"></script>
-        <script async defer
+        <!-- <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfz3Euq9lMt4i7V-rho11jkgRCTC5t4vo&callback=initMap">
-        </script>
+        </script> -->
 </body>
 </div>

@@ -14,14 +14,17 @@
                     <i class="fa fa-align-justify"></i>Profil Sekolah
                 </div>
                 <div class="card-body">
-                    <form
+                    <!-- <form
                         action="http://ard1.masnurulhuda.sch.id/proktor_madrasah/madrasah/update/146625b4f43fe5be5387134a1450b865"
-                        method="post" enctype="multipart/form-data">
+                        method="post" enctype="multipart/form-data"> -->
+                        <?= form_open_multipart('adminpanel/editprofile'); ?>
                         <div class="m-portlet__body">
                             <div class="row" style="padding: 20px">
                                 <div class="col-md-4">
                                     <div style="border:1px #d2d6de solid;border-radius: 5px" align="center">
                                         <div class="" style="width: 90%">
+                                        <input type="hidden" class="form-control" id="idskul" name="idskul"
+                        value="<?= $profile->id_school?>">
                                             <label for="uploadlogo">Logo Madrasah</label>
                                             <div style="border:#d2d6de 1px solid; border-radius:10px; padding:10px;">
                                                 <img class="img-responsive" width="100%"
@@ -95,7 +98,6 @@
                                                                     value="<?php echo $profile->jenjang;?>" required>
                                                                     <?php if (!empty($profile->jenjang)) :?>
                                                                     <option><?php echo $profile->jenjang;?></option>
-                                                                    <?php else :?>
                                                                     <option value="">-- Jenjang --</option>
                                                                     <option>RA</option>
                                                                     <option>MI</option>
@@ -139,7 +141,6 @@
                                                                     <?php if (!empty($profile->nilai_akreditasi)) :?>
                                                                     <option><?php echo $profile->nilai_akreditasi;?>
                                                                     </option>
-                                                                    <?php else :?>
                                                                     <option value="">-- Akreditasi --</option>
                                                                     <option>A</option>
                                                                     <option>B</option>
@@ -156,7 +157,6 @@
                                                                     <?php if (!empty($profile->status_sekolah)) :?>
                                                                     <option><?php echo $profile->status_sekolah;?>
                                                                     </option>
-                                                                    <?php else :?>
                                                                     <option value="">-- Status --</option>
                                                                     <option value="negeri">Negeri</option>
                                                                     <option value="swasta">Swasta</option>
@@ -335,7 +335,8 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                        <?= form_close();?>
+                    <!-- </form> -->
                 </div>
             </div>
         </div>

@@ -400,7 +400,6 @@ public function deletegallery($id){
 			redirect('adminpanel/datafile');
 		}else{
 		$filedata['filedata'] = $this->enhamodel->getFileById($id);
-		var_dump($filedata['filedata']);
 		if ($filedata['filedata']['lokasi_file'] != null) {
 			$path = FCPATH.'assets/landing/files/'.$filedata['filedata']['lokasi_file'];
 			unlink($path);
@@ -507,12 +506,146 @@ public function deletegallery($id){
 		$this->template->load('templates/admin/template', 'admin/form_profile' , $data);
 	}	
 
+	public function editprofile(){
+		$this->setsession();
+		
+		$id = $this->input->post('idskul');
+		$jejangsekolah = $this->input->post('jenjang');
+		$nsm = $this->input->post('nsm');
+		$npsn = $this->input->post('npsn');
+		$namamadrasah = $this->input->post('namamadrasah');
+		$akreditasi = $this->input->post('akreditasi');
+		$statussekolah = $this->input->post('statussekolah');
+		$provinsi = $this->input->post('provinsi');
+		$kabkota = $this->input->post('kabkota');
+		$kecamatan = $this->input->post('kecamatan');
+		$kelurahan = $this->input->post('kelurahan');
+		$alamat = $this->input->post('alamat');
+		$kodepos = $this->input->post('kodepos');
+		$lattitude = $this->input->post('lattitude');
+		$longitude = $this->input->post('longitude');
+		$phone = $this->input->post('phone');
+		$email = $this->input->post('email');
+		$linkfb = $this->input->post('linkfb');
+		$linkig = $this->input->post('linkig');
+		$linkyt = $this->input->post('linkyt');
+		$visi = $this->input->post('visi');
+		$namakepsek = $this->input->post('namakepsek');
+		$nipkepsek = $this->input->post('nipkepsek');
+		$uploadfotokamad =$_FILES['uploadfotokamad']['name'];
+		$uploadlogo = $_FILES['uploadlogo']['name'];
+		$config['upload_path']= 'assets/landing/img';
+		$config['allowed_types'] = 'jpg|jpeg|png|gif|bmp';
 
+		$this->load->library('upload', $config);
+		if(!$this->upload->do_upload('uploadlogo')){
+			if(!$this->upload->do_upload('uploadfotokamad')){
+			$data = [
+				'jenjang' => $jejangsekolah,
+				'npsn' => $npsn,
+				'nsm' => $nsm,
+				'nama_madrasah' => $namamadrasah,
+				'alamat_madrasah' => $alamat,
+				'provinsi' => $provinsi,
+				'kab_kota' => $kabkota,
+				'kecamatan' => $kecamatan,
+				'kelurahan'	=> $kelurahan,
+				'kodepos' => $kodepos,
+				'lattitude' => $lattitude,
+				'longitude'	=> $longitude,
+				'nilai_akreditasi'	=> $akreditasi,
+				'status_sekolah' => $statussekolah,
+				'email' => $email,
+				'phone' => $phone,
+				'link_fb'	=> $linkfb,
+				'link_ig' => $linkig,
+				'link_youtube' => $linkyt,
+				'visi_motto' => $visi,
+				'nama_kepsek' => $namakepsek,
+				'nip_kepsek' => $nipkepsek
+			];
 
+			$this->enhamodel->updatedataprofile($data, $id);
+			$this->session->set_flashdata('message', 'Data berhasil di ubah');
+			redirect('adminpanel/dataprofile');
+		}else{
+			$loadfoto['profile'] = $this->enhamodel->getProfile();
+			if ($loadfoto['profile']->img_kepsek != null) {
+				$path = FCPATH.'assets/landing/img/'.$loadfoto['profile']->img_kepsek;
+				unlink($path);
+			}
+        	$uploadfotokamad = $this->upload->data('file_name');
+			$data = [
+				'jenjang' => $jejangsekolah,
+				'npsn' => $npsn,
+				'nsm' => $nsm,
+				'nama_madrasah' => $namamadrasah,
+				'alamat_madrasah' => $alamat,
+				'provinsi' => $provinsi,
+				'kab_kota' => $kabkota,
+				'kecamatan' => $kecamatan,
+				'kelurahan'	=> $kelurahan,
+				'kodepos' => $kodepos,
+				'lattitude' => $lattitude,
+				'longitude'	=> $longitude,
+				'nilai_akreditasi'	=> $akreditasi,
+				'status_sekolah' => $statussekolah,
+				'email' => $email,
+				'phone' => $phone,
+				'link_fb'	=> $linkfb,
+				'link_ig' => $linkig,
+				'link_youtube' => $linkyt,
+				'visi_motto' => $visi,
+				'nama_kepsek' => $namakepsek,
+				'nip_kepsek' => $nipkepsek,
+				'img_kepsek' => $uploadfotokamad
+			];
 
+			$this->enhamodel->updatedataprofile($data, $id);
+			$this->session->set_flashdata('message', 'Data berhasil di rubah');
+			redirect('adminpanel/dataprofile');
+			}
+			
+		}else{
+			$loadfoto['profile'] = $this->enhamodel->getProfile();
+			if ($loadfoto['profile']->logo_sekolah != null) {
+				$path = FCPATH.'assets/landing/img/'.$loadfoto['profile']->logo_sekolah;
+				unlink($path);
+			}
+        	$uploadlogo = $this->upload->data('file_name');
+			$data = [
+				'jenjang' => $jejangsekolah,
+				'npsn' => $npsn,
+				'nsm' => $nsm,
+				'nama_madrasah' => $namamadrasah,
+				'alamat_madrasah' => $alamat,
+				'provinsi' => $provinsi,
+				'kab_kota' => $kabkota,
+				'kecamatan' => $kecamatan,
+				'kelurahan'	=> $kelurahan,
+				'kodepos' => $kodepos,
+				'lattitude' => $lattitude,
+				'longitude'	=> $longitude,
+				'nilai_akreditasi'	=> $akreditasi,
+				'status_sekolah' => $statussekolah,
+				'email' => $email,
+				'phone' => $phone,
+				'link_fb'	=> $linkfb,
+				'link_ig' => $linkig,
+				'link_youtube' => $linkyt,
+				'visi_motto' => $visi,
+				'nama_kepsek' => $namakepsek,
+				'nip_kepsek' => $nipkepsek,
+				'logo_sekolah' => $uploadlogo
+			];
 
+			$this->enhamodel->updatedataprofile($data, $id);
+			$this->session->set_flashdata('message', 'Data berhasil di rubah');
+			redirect('adminpanel/dataprofile');
+		}
+
+	
+	}
 
 
 }
-
-
