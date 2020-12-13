@@ -58,7 +58,7 @@
 			                <div class="col-sm-6 col-lg-4">
 			                    <div class="card text-white bg-danger">
 			                        <div class="card-body pb-0">
-									<button type="button" class="btn btn-transparent p-0 float-right">
+									<button type="button" class="btn btn-transparent p-0 float-right" href="<?php echo base_url('adminpanel/datainfo');?>">
 			                                <i class="icon-info"></i>
 			                            </button>
 			                            <div class="text-value"><?= $info?></div>

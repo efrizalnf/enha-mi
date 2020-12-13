@@ -19,9 +19,9 @@
                     <hr class="hr-section">
                 </div>
             </div>
-            <div class="foto">
+            <div class="row mb-3">
                 <?php foreach ($guru as $gurumapel) :?>
-                <div class="imgguru">
+                <div class="imgguru col-sm-12 col-md-4 col-lg-4 mb-3">
                     <h4><?php echo $gurumapel['mapel_ampu']?></h4>
                     <img src="<?php echo base_url()?>assets/landing/img/fotoguru/<?php echo $gurumapel['foto_guru']?>"
                         alt="">

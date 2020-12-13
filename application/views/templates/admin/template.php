@@ -37,8 +37,8 @@
         <a class="navbar-brand" href="#">
             <img class="navbar-brand-full" src="<?php echo base_url();?>assets/landing/img/logo-enhas.png" width="90"
                 height="40" alt="Enha Logo">
-            <img class="navbar-brand-minimized" src="<?php echo base_url();?>assets/landing/img/logo-enhas.png"
-                width="30" height="30" alt="logo-enhas">
+            <!-- <img class="navbar-brand-minimized" src=""
+                width="30" height="30" alt="logo-enhas"> -->
         </a>
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
             <span class="navbar-toggler-icon"></span>
@@ -47,11 +47,11 @@
         <ul class="nav navbar-nav ml-auto">
             <ul class="nav navbar-nav d-md-down-none">
                 <li class="nav-item px-3">
-                    <a class="nav-link" href="#">Dashboard</a>
+                    <a class="nav-link" href="<?php echo base_url('adminpanel/dashboard');?>">Dashboard</a>
                 </li>
               
                 <li class="nav-item px-3">
-                    <a class="nav-link" href="#">Settings</a>
+                    <a class="nav-link" href="<?php echo base_url('adminpanel/dataprofile');?>">Settings</a>
                 </li>
             </ul>
             <li class="nav-item dropdown">
