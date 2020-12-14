@@ -51,20 +51,6 @@
                                         <h1 class="h4 text-gray-900 mb-4">ENHAS <br> Web Admin Panel Login</h1>
                                     </div>
                                     <form class="user" method="post" action="<?php echo base_url('adminpanel');?>">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" name="username"
-                                                id="username" placeholder="Username"
-                                                value="<?php set_value('username')?>">
-                                            <?php form_error('username')?>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                name="password" id="password" placeholder="Password"
-                                                value="<?php set_value('password')?>">
-                                            <?php form_error('password')?>
-                                            <?php echo $this->session->flashdata('message');?>
-                                            <form class="user" method="post"
-                                                action="<?php echo base_url('login/index');?>">
 
                                                 <div class="form-group">
                                                     <input type="text" class="form-control form-control-user"
@@ -86,8 +72,6 @@
                                                     </div>
                                                 </div>
 
-                                                <button type="submit" class="btn btn-success btn-user btn-block"
-                                                    onclick="Swal('Halla', 'asdasd', 'success')">
 
                                                     <button type="submit" class="btn btn-dark btn-user btn-block">
 
