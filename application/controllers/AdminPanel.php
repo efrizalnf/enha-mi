@@ -20,6 +20,8 @@ class Adminpanel extends CI_Controller {
 
 		if ($this->form_validation->run() == false) {
 			$this->load->view('admin/login');
+		}else{
+			echo "asdasdasd";
 		}
 	}
 

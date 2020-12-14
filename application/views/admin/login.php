@@ -12,13 +12,14 @@
     <title>ENHAS Web Admin Login</title>
 
     <!-- Custom fonts for this template-->
-    <link href="<?php echo base_url();?>/landing/vendor/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url();?>/landing/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url();?>assets/admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
 
 </head>
 
@@ -44,16 +45,17 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">ENHAS <br> Web Admin Panel Login</h1>
                                     </div>
-                                    <form class="user" method="post"
-                                        action="<?php echo base_url('adminpanel/index');?>">
+                                    <form class="user" method="post" action="<?php echo base_url('adminpanel');?>">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" name="username"
-                                                id="username" placeholder="Username">
+                                                id="username" placeholder="Username"
+                                                value="<?php set_value('username')?>">
                                             <?php form_error('username')?>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                name="password" id="password" placeholder="Password">
+                                                name="password" id="password" placeholder="Password"
+                                                value="<?php set_value('password')?>">
                                             <?php form_error('password')?>
                                         </div>
                                         <div class="form-group">
@@ -63,11 +65,12 @@
                                                     Password</label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-success btn-user btn-block">
+                                        <button type="submit" class="btn btn-success btn-user btn-block"
+                                            onclick="Swal('Halla', 'asdasd', 'success')">
                                             Login
                                         </button>
-
-                                        <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
+                                    </form>
+                                    <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google
                                         </a>
                                         <a href="index.html" class="btn btn-facebook btn-user btn-block">
@@ -101,6 +104,8 @@
     <script src="<?php echo base_url();?>assets/admin/vendors/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="<?php echo base_url();?>assets/admin/js/sb-admin-2.min.js"></script>
+    <!-- sweet alert -->
+    <script src="<?php echo base_url();?>assets/swal/sweetalert2.all.min.js"></script>"></script>
 
 </body>
 
