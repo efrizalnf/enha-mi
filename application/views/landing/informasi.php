@@ -19,15 +19,21 @@
                     <hr class="hr-section">
                 </div>
             </div>
-            <div class="container-info">
-                <?php foreach ($informasi as $info) :?>
-               <div class="info">
-                   <h5><?php echo $info['judul_info']?></h5>
-                    <h7><?php echo $info['isi_info']?></h7> 
+            <?php foreach ($informasi as $info) :?>
+            <div class="container-info mb-3">
+                <div class="info ">
+                    <h5 class="mb-2"><?php echo $info['judul_info']?></h5>
+                    <?php if ($info['gbr_info'] == '') :?>
+                    <?php elseif($info['gbr_info'] >= 0) :?>
+                    <img src="<?php echo base_url() . 'assets/landing/img/info/'.$info['gbr_info'];?>" width="300"
+                        height="160" id="previmg" name="previmg">
+                    <br>
+                    <?php endif; ?>
+                    <h7 class="mb-2"><?php echo $info['isi_info']?></h7>
                     <p>Diposting pada : <?php echo $info['tgl_info']?></p>
-               </div>
-                <?php endforeach; ?>
+                </div>
             </div>
+            <?php endforeach; ?>
         </div>
         <br>
         <br>

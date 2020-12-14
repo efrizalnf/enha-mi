@@ -35,10 +35,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#">
-            <img class="navbar-brand-full" src="<?php echo base_url();?>assets/landing/img/logo-enha.png" width="32"
-                height="32" alt="Enha Logo">
-            <img class="navbar-brand-minimized" src="<?php echo base_url();?>assets/landing/img/logo-enha.png"
-                width="30" height="30" alt="CoreUI Logo">
+            <img class="navbar-brand-full" src="<?php echo base_url();?>assets/landing/img/logo-enhas.png" width="90"
+                height="40" alt="Enha Logo">
+            <!-- <img class="navbar-brand-minimized" src=""
+                width="30" height="30" alt="logo-enhas"> -->
         </a>
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
             <span class="navbar-toggler-icon"></span>
@@ -47,19 +47,17 @@
         <ul class="nav navbar-nav ml-auto">
             <ul class="nav navbar-nav d-md-down-none">
                 <li class="nav-item px-3">
-                    <a class="nav-link" href="#">Dashboard</a>
+                    <a class="nav-link" href="<?php echo base_url('adminpanel/dashboard');?>">Dashboard</a>
                 </li>
+              
                 <li class="nav-item px-3">
-                    <a class="nav-link" href="#">Users</a>
-                </li>
-                <li class="nav-item px-3">
-                    <a class="nav-link" href="#">Settings</a>
+                    <a class="nav-link" href="<?php echo base_url('adminpanel/dataprofile');?>">Settings</a>
                 </li>
             </ul>
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                     aria-expanded="false">
-                    <img class="img-avatar" src="<?php echo base_url();?>assets/landing/img/logo-enha.png"
+                    <img class="img-avatar" src="<?php echo base_url();?>assets/landing/img/logo-enhas.png"
                         alt="admin@enha">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
@@ -67,10 +65,10 @@
                         <strong>Settings</strong>
                     </div>
                     <a class="dropdown-item" href="#">
-                        <i class="fa fa-user"></i> Profile</a>
+                        <i class="fa fa-user"></i>Profile</a>
                     <a class="dropdown-item" href="#">
                         <i class="fa fa-wrench"></i> Settings</a>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="<?= base_url()?>login/logout">
                         <i class="fa fa-lock"></i> Logout</a>
                 </div>
             </li>
@@ -82,42 +80,63 @@
             <span class="navbar-toggler-icon"></span>
         </button> -->
     </header>
-    <div class="app-body">
+    <div class="app-body ">
         <div class="sidebar">
-            <nav class="sidebar-nav">
+            <nav class="sidebar-nav ">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('adminpanel/dashboard');?>">
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/dashboard');?>">
                             <i class="nav-icon icon-speedometer"></i> Dashboard
                             <span class="badge badge-primary">HOME</span>
                         </a>
                     </li>
-                    <li class="nav-title"> </li>
+                    <!-- <li class="nav-title"> </li>
                     <li class="nav-item nav-dropdown">
                         <a class="nav-link nav-dropdown-toggle" href="#">
                             <i class="nav-icon icon-people"></i>Direktori</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('adminpanel/dataguru');?>">
+                                <a class="nav-link" href="<?php echo base_url('adminpanel/dataguru');?>">
                                     <i class="nav-icon icon-user"></i>Direktori Guru</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('adminpanel/tables');?>">
+                                <a class="nav-link" href="<?php echo base_url('adminpanel/tables');?>">
                                     <i class="nav-icon icon-user"></i>Direktori Siswa</a>
                             </li>
                         </ul>
+                    </li> -->
+                    <li class="nav-item">
+                                <a class="nav-link" href="<?php echo base_url('adminpanel/dataprofile');?>">
+                                    <i class="nav-icon icon-graduation"></i>ENHAS Profile</a>
+                            </li>
+                    <li class="nav-item">
+                    <li class="nav-item">
+                                <a class="nav-link" href="<?php echo base_url('adminpanel/dataguru');?>">
+                                    <i class="nav-icon icon-folder"></i>Direktori Guru</a>
+                            </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/datacover');?>">
+                            <i class="nav-icon icon-film"></i>ENHAS Gambar Cover</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('adminpanel/charts');?>">
-                            <i class="nav-icon icon-frame"></i>Input Image Slide</a>
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/data_rtext');?>">
+                            <i class="nav-icon icon-bubble"></i>ENHAS Running Text</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('adminpanel/charts');?>">
-                            <i class="nav-icon icon-paper-clip"></i>Input File Download</a>
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/gallery');?>">
+                            <i class="nav-icon icon-picture"></i>ENHAS Image Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('adminpanel/charts');?>">
-                            <i class="nav-icon icon-info"></i>Input Informasi</a>
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/datafile');?>">
+                            <i class="nav-icon icon-cloud-download"></i>ENHAS File Download</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/datainfo');?>">
+                            <i class="nav-icon icon-info"></i>ENHAS Informasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url()?>login/logout">
+                            <i class="nav-icon icon-logout"></i>LOGOUT</a>
                     </li>
                 </ul>
             </nav>
@@ -129,7 +148,7 @@
     </div>
     <footer class="app-footer">
         <div>
-            <a href="https://misnurulhuda.sch.id">ENHAS Web Admin Panel</a>
+            <a href="https://everyzalz.blogspot.com" target="_blank">ENHAS Web Admin Panel</a>
             <span>&copy; 2020 Build by zlz.</span>
         </div>
     </footer>
@@ -147,6 +166,9 @@
     </script>
     <script src="<?php echo base_url();?>assets/admin/js/main.js"></script>
     <script src="<?php echo base_url();?>assets/admin/js/charts.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/js/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/js/enhas.js"></script>
+   
 </body>
 
 </html>
