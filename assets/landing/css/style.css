@@ -20,7 +20,8 @@
 	.carousel-caption {
 		width: 60%;
 		/* margin: auto; */
-		background-color: #12b337;
+		border-radius: 25px;
+		background-color: #ffffff;
 		opacity: 65%;
 		text-align: center;
 		/* top: 50%;
@@ -29,7 +30,8 @@
 	}
 
 	.carousel-caption h3 {
-		color: #ffffff;
+		color: #009624;
+		text-shadow: 1px 1px #0a0a0a;
 		font-size: 3vw;
 		font-family: 'Righteous',
 			cursive;
@@ -43,7 +45,8 @@
 	.carousel-caption p {
 		margin: auto;
 		margin-top: 7px;
-		color: rgb(255, 255, 255);
+		color: #009624;
+		text-shadow: 1px 1px #0a0a0a;
 		font-size: 2vw;
 		font-family: 'Raleway',
 			sans-serif;
@@ -103,7 +106,8 @@
 		height: 120px;
 		width: 60%;
 		margin: auto;
-		background-color: #12b337;
+		border-radius: 25px;
+		background-color: #ffffff;
 		opacity: 65%;
 		text-align: center;
 		top: 50%;
@@ -112,7 +116,8 @@
 	}
 
 	.carousel-caption h3 {
-		color: #ffffff;
+		color: #009624;
+		text-shadow: 1px 1px #0a0a0a;
 		font-size: 3vw;
 		font-family: 'Righteous',
 			cursive;
@@ -124,7 +129,8 @@
 	.carousel-caption p {
 		line-height: 3;
 		margin: auto;
-		color: rgb(255, 255, 255);
+		color: #009624;
+		text-shadow: 1px 1px #0a0a0a;
 		font-size: 2vw;
 		font-family: 'Raleway',
 			sans-serif;
@@ -173,7 +179,8 @@
 	.carousel-caption {
 		width: 60%;
 		margin: auto;
-		background-color: #12b337;
+		border-radius: 25px;
+		background-color: #ffffff;
 		opacity: 65%;
 		text-align: center;
 		top: 50%;
@@ -182,7 +189,8 @@
 	}
 
 	.carousel-caption h3 {
-		color: #ffffff;
+		color: #009624;
+		text-shadow: 1px 1px #0a0a0a;
 		font-size: 3vw;
 		font-family: 'Righteous',
 			cursive;
@@ -194,7 +202,8 @@
 	.carousel-caption p {
 		line-height: 3;
 		margin: auto;
-		color: rgb(255, 255, 255);
+		color: #009624;
+		text-shadow: 1px 1px #0a0a0a;
 		font-size: 2vw;
 		font-family: 'Raleway',
 			sans-serif;
@@ -204,7 +213,6 @@
 		width: 200px;
 		height: 1px;
 		margin: auto;
-		margin-bottom: 15px;
 		border-width: 1;
 		color: #212121;
 		background-color: #212121;
