@@ -10,8 +10,6 @@ class Adminpanel extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->library('session');	
 		$this->load->model('enhamodel');
-		 $dt = $this->enhamodel->getProfile();
-		// var_dump($dt);
 	}
 
 	public function setsession(){
