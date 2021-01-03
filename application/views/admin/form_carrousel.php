@@ -18,7 +18,7 @@
                             class="fa fa-plus"></i>&nbsp; Input Cover</button>
                             <br> -->
                             <small>*Silahkan upload 4 foto yang akan tampil pada Slide utama Halaman Web (Rekomendasi ukuran 1046x500px)</small>
-                    <table class="table table-hover table-responsive-sm table-bordered table-striped table-sm mt-3">
+                    <table class="table tb table-hover table-responsive-sm table-bordered table-striped table-sm mt-3">
                         <thead>
                             <tr class="text-center">
                                 <th>No.</th>

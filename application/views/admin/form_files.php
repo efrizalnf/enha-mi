@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inputEnhasModal"><i
                             class="fa fa-plus"></i>&nbsp; Input File</button>
-                    <table class="table table-hover table-responsive-sm table-bordered table-striped table-sm mt-3">
+                    <table class="table tb table-hover table-responsive-sm table-bordered table-striped table-sm mt-3">
                         <thead>
                             <tr class="text-center">
                                 <th>No.</th>
@@ -51,28 +51,7 @@
 
                         </tbody>
                     </table>
-                    <nav>
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#">Prev</a>
-                            </li>
-                            <li class="page-item active">
-                                <a class="page-link" href="#">1</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">3</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">4</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                            </li>
-                        </ul>
-                    </nav>
+                   
                 </div>
             </div>
         </div>

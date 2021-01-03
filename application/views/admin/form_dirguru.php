@@ -5,6 +5,8 @@
             <!-- Breadcrumb Menu-->
 
         </ol>
+        <!-- Bootstrap CSS-->
+        <link rel="stylesheet" href="<?= base_url('assets/vendors/bootstrap/css/bootstrap.css')?>">
         <div class="flash-data" data-flashdata="<?php echo $this->session->flashdata('message')?>"></div>
         <div class="flash-data-err" data-flashdata="<?php echo $this->session->flashdata('error')?>"></div>
         <div class="row">
@@ -17,7 +19,8 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal"
                             data-target="#inputEnhasModal"><i class="fa fa-plus"></i>&nbsp; Input
                             Data</button>
-                        <table class="table table-hover table-responsive-sm table-bordered table-striped table-sm mt-3">
+                        <table
+                            class="table tb table-hover table-responsive-sm table-bordered table-striped table-sm mt-3">
                             <thead>
                                 <tr class="text-center">
                                     <th>No.</th>
@@ -47,17 +50,14 @@
                                         <!-- <a href="<?= base_url();?>adminpanel/editguru/<?= $gurumapel['id_guru'];?>"
                                             class="btn btn-info" type="button" data-toggle="modal"
                                             data-target="#edit-modal"><i class="fa fa-edit"></i></a> -->
-                                        <a href="javascript:;" 
-                                        data-id="<?php echo $gurumapel['id_guru'] ?>" 
-                                        data-nip="<?php echo $gurumapel['nip'] ?>" 
-                                        data-nama="<?php echo $gurumapel['nama_guru'] ?>" 
-                                        data-mapel="<?php echo $gurumapel['mapel_ampu'] ?>" 
-                                        data-foto="<?php echo $gurumapel['foto_guru'] ?>" 
-                                        class="btn btn-info"
+                                        <a href="javascript:;" data-id="<?php echo $gurumapel['id_guru'] ?>"
+                                            data-nip="<?php echo $gurumapel['nip'] ?>"
+                                            data-nama="<?php echo $gurumapel['nama_guru'] ?>"
+                                            data-mapel="<?php echo $gurumapel['mapel_ampu'] ?>"
+                                            data-foto="<?php echo $gurumapel['foto_guru'] ?>" class="btn btn-info"
                                             type="button" data-toggle="modal" data-target="#edit-modal"><i
                                                 class="fa fa-edit"></i></a>
-                                        <button
-                                            href="<?php base_url()?>deleteguru/<?php echo $gurumapel['id_guru'];?>"
+                                        <button href="<?php base_url()?>deleteguru/<?php echo $gurumapel['id_guru'];?>"
                                             class="btn btn-danger m-1 btn-hapus"><i class="fa fa-trash"></i>
                                         </button>
                                     </td>
@@ -69,28 +69,6 @@
 
                             </tbody>
                         </table>
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Prev</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">4</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -230,7 +208,8 @@
                         <label for="uploadFoto">Upload Foto</label>
                         <div class="custom-file mb-3">
                             <!-- <label class="custom-file-label" for="uploadFoto">Pilih foto...</label> -->
-                            <input type="file" class="form-control editfotoguru" id="editfotoguru" name="editfotoguru" value="<?=$gurumapel['foto_guru']?>">
+                            <input type="file" class="form-control editfotoguru" id="editfotoguru" name="editfotoguru"
+                                value="<?=$gurumapel['foto_guru']?>">
 
                         </div>
                         <!-- <div class="form-group">
@@ -255,6 +234,9 @@
     <script src="<?php echo base_url();?>assets/admin/vendors/jquery/js/jquery.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/vendors/popper.js/js/popper.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?= base_url()?>assets/vendors/bootstrap/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url()?>assets/vendors/bootstrap/datatables/dataTables.bootstrap4.min.js"></script>
+
     <script>
 // $(document).ready(function() {
 //     $('.editmodal').on('click', function() {
@@ -275,18 +257,20 @@
 //     });
 // });
 
-$(document).ready(function() {
-        // Untuk sunting
-        $('#edit-modal').on('show.bs.modal', function (event) {
-            var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
-            var modal          = $(this)
+        $(document).ready(function() {
+            // Untuk sunting
+            $('#edit-modal').on('show.bs.modal', function(event) {
+                var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
+                var modal = $(this)
 
-            // Isi nilai pada field
-            modal.find('#edit_id').attr("value",div.data('id'));
-            modal.find('#editnip').attr("value",div.data('nip'));
-            modal.find('#editnamaguru').attr("value",div.data('nama'));
-            modal.find('#editmapelampu').attr("value",div.data('mapel'));
-            modal.find('#editfotoguru').attr("value",div.data('foto'));
+                // Isi nilai pada field
+                modal.find('#edit_id').attr("value", div.data('id'));
+                modal.find('#editnip').attr("value", div.data('nip'));
+                modal.find('#editnamaguru').attr("value", div.data('nama'));
+                modal.find('#editmapelampu').attr("value", div.data('mapel'));
+                modal.find('#editfotoguru').attr("value", div.data('foto'));
+            });
         });
-    });
+
+        $('tbguru').DataTable();
     </script>

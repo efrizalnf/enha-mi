@@ -17,6 +17,9 @@
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
     <title>ENHAS Admin Panel</title>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="<?= base_url('assets/admin/vendors/bootstrap/css/bootstrap.css')?>">
+    <link rel="stylesheet" href="<?= base_url('assets/admin/vendors/bootstrap/datatables/dataTables.bootstrap4.min.css')?>">
     <!-- Icons-->
     <link rel="icon" href="<?php echo base_url()?>assets/landing/img/favicon.ico">
     <link href="<?php echo base_url();?>assets/admin/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
@@ -49,7 +52,7 @@
                 <li class="nav-item px-3">
                     <a class="nav-link" href="<?php echo base_url('adminpanel/dashboard');?>">Dashboard</a>
                 </li>
-              
+
                 <li class="nav-item px-3">
                     <a class="nav-link" href="<?php echo base_url('adminpanel/dataprofile');?>">Settings</a>
                 </li>
@@ -106,14 +109,14 @@
                         </ul>
                     </li> -->
                     <li class="nav-item">
-                                <a class="nav-link" href="<?php echo base_url('adminpanel/dataprofile');?>">
-                                    <i class="nav-icon icon-graduation"></i>ENHAS Profile</a>
-                            </li>
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/dataprofile');?>">
+                            <i class="nav-icon icon-graduation"></i>ENHAS Profile</a>
+                    </li>
                     <li class="nav-item">
                     <li class="nav-item">
-                                <a class="nav-link" href="<?php echo base_url('adminpanel/dataguru');?>">
-                                    <i class="nav-icon icon-folder"></i>Direktori Guru</a>
-                            </li>
+                        <a class="nav-link" href="<?php echo base_url('adminpanel/dataguru');?>">
+                            <i class="nav-icon icon-folder"></i>Direktori Guru</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('adminpanel/datacover');?>">
                             <i class="nav-icon icon-film"></i>ENHAS Gambar Cover</a>
@@ -159,6 +162,8 @@
     <script src="<?php echo base_url();?>assets/admin/vendors/pace-progress/js/pace.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/vendors/@coreui/coreui/js/coreui.min.js"></script>
+    <script src="<?= base_url()?>assets/admin/vendors/bootstrap/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url()?>assets/admin/vendors/bootstrap/datatables/dataTables.bootstrap4.min.js"></script>
     <!-- Plugins and scripts required by this view-->
     <script src="<?php echo base_url();?>assets/admin/vendors/chart.js/js/Chart.min.js"></script>
     <script
@@ -168,7 +173,9 @@
     <script src="<?php echo base_url();?>assets/admin/js/charts.js"></script>
     <script src="<?php echo base_url();?>assets/admin/js/sweetalert/sweetalert2.all.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/js/enhas.js"></script>
-   
+    <script>
+    $('.tb').DataTable();
+    </script>
 </body>
 
 </html>
