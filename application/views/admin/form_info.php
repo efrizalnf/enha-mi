@@ -45,9 +45,9 @@
                                     <a href="javascript:;" data-id="<?php echo $item['id_info']?>"
                                         data-judul="<?php echo $item['judul_info']?>"
                                         data-isi="<?php echo $item['isi_info'] ?>"
-                                       
                                         data-foto="<?php echo $item['gbr_info'] ?>" class="btn btn-info" type="button"
-                                        data-toggle="modal" data-target="#edit-modal-info"><i class="fa fa-edit"></i></a>
+                                        data-toggle="modal" data-target="#edit-modal-info"><i
+                                            class="fa fa-edit"></i></a>
                                     <button href="<?php base_url()?>deleteinfo/<?php echo $item['id_info'];?>"
                                         class="btn btn-danger m-1 btn-hapus"><i class="fa fa-trash"></i>
                                     </button>
@@ -56,7 +56,7 @@
                             <?php endforeach;?>
                         </tbody>
                     </table>
-                   
+
                 </div>
             </div>
         </div>
@@ -173,7 +173,7 @@
 <script>
 $(document).ready(function() {
     $('#edit-modal-info').on('show.bs.modal', function(event) {
-        var div = $(event.relatedTarget) 
+        var div = $(event.relatedTarget)
         var modal = $(this)
 
         modal.find('#edit_id_info').attr("value", div.data('id'));

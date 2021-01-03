@@ -115,36 +115,6 @@
                             </div>
                         </div>
 
-                        <!-- <div class="custom-control custom-checkbox mb-3">
-                                <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-                                <label class="custom-control-label" for="customControlValidation1">Check this custom
-                                    checkbox</label>
-                                <div class="invalid-feedback">Example invalid feedback text</div>
-                            </div>
-
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" id="customControlValidation2"
-                                    name="radio-stacked" required>
-                                <label class="custom-control-label" for="customControlValidation2">Toggle this custom
-                                    radio</label>
-                            </div>
-                            <div class="custom-control custom-radio mb-3">
-                                <input type="radio" class="custom-control-input" id="customControlValidation3"
-                                    name="radio-stacked" required>
-                                <label class="custom-control-label" for="customControlValidation3">Or toggle this other
-                                    custom radio</label>
-                                <div class="invalid-feedback">More example invalid feedback text</div>
-                            </div>
-
-                            <div class="form-group">
-                                <select class="custom-select" required>
-                                    <option value="">Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <div class="invalid-feedback">Example invalid custom select feedback</div>
-                            </div> -->
                         <label for="uploadFoto">Upload Foto</label>
                         <div class="custom-file mb-3">
                             <!-- <label class="custom-file-label" for="uploadFoto">Pilih foto...</label> -->
@@ -257,20 +227,20 @@
 //     });
 // });
 
-        $(document).ready(function() {
-            // Untuk sunting
-            $('#edit-modal').on('show.bs.modal', function(event) {
-                var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
-                var modal = $(this)
+$(document).ready(function() {
+    // Untuk sunting
+    $('#edit-modal').on('show.bs.modal', function(event) {
+        var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
+        var modal = $(this)
 
-                // Isi nilai pada field
-                modal.find('#edit_id').attr("value", div.data('id'));
-                modal.find('#editnip').attr("value", div.data('nip'));
-                modal.find('#editnamaguru').attr("value", div.data('nama'));
-                modal.find('#editmapelampu').attr("value", div.data('mapel'));
-                modal.find('#editfotoguru').attr("value", div.data('foto'));
-            });
-        });
+        // Isi nilai pada field
+        modal.find('#edit_id').attr("value", div.data('id'));
+        modal.find('#editnip').attr("value", div.data('nip'));
+        modal.find('#editnamaguru').attr("value", div.data('nama'));
+        modal.find('#editmapelampu').attr("value", div.data('mapel'));
+        modal.find('#editfotoguru').attr("value", div.data('foto'));
+    });
+});
 
-        $('tbguru').DataTable();
+$('tbguru').DataTable();
     </script>
