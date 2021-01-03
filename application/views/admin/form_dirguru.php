@@ -204,8 +204,7 @@
     <script src="<?php echo base_url();?>assets/admin/vendors/jquery/js/jquery.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/vendors/popper.js/js/popper.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/vendors/bootstrap/js/bootstrap.min.js"></script>
-    <script src="<?= base_url()?>assets/vendors/bootstrap/datatables/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url()?>assets/vendors/bootstrap/datatables/dataTables.bootstrap4.min.js"></script>
+   
 
     <script>
 // $(document).ready(function() {
@@ -227,20 +226,19 @@
 //     });
 // });
 
-$(document).ready(function() {
-    // Untuk sunting
-    $('#edit-modal').on('show.bs.modal', function(event) {
-        var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
-        var modal = $(this)
+    $(document).ready(function() {
+        // Untuk sunting
+        $('#edit-modal').on('show.bs.modal', function(event) {
+            var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
+            var modal = $(this)
 
-        // Isi nilai pada field
-        modal.find('#edit_id').attr("value", div.data('id'));
-        modal.find('#editnip').attr("value", div.data('nip'));
-        modal.find('#editnamaguru').attr("value", div.data('nama'));
-        modal.find('#editmapelampu').attr("value", div.data('mapel'));
-        modal.find('#editfotoguru').attr("value", div.data('foto'));
+            // Isi nilai pada field
+            modal.find('#edit_id').attr("value", div.data('id'));
+            modal.find('#editnip').attr("value", div.data('nip'));
+            modal.find('#editnamaguru').attr("value", div.data('nama'));
+            modal.find('#editmapelampu').attr("value", div.data('mapel'));
+            modal.find('#editfotoguru').attr("value", div.data('foto'));
+        });
     });
-});
 
-$('tbguru').DataTable();
-    </script>
+</script>
