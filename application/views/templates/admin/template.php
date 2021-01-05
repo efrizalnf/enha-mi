@@ -35,14 +35,14 @@
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
     <header class="app-header navbar">
-       
+
         <a class="navbar-brand" href="#">
             <img class="navbar-brand-full" src="<?php echo base_url();?>assets/landing/img/logo-enhas.png" width="90"
                 height="40" alt="Enha Logo">
             <!-- <img class="navbar-brand-minimized" src=""
                 width="30" height="30" alt="logo-enhas"> -->
         </a>
-         <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
             <span class="navbar-toggler-icon"></span>
         </button>
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
@@ -50,7 +50,7 @@
         </button>
 
         <ul class="nav navbar-nav ml-auto">
-            <ul class="nav navbar-nav d-md-down-none">
+            <!-- <ul class="nav navbar-nav d-md-down-none">
                 <li class="nav-item px-3">
                     <a class="nav-link" href="<?php echo base_url('adminpanel/dashboard');?>">Dashboard</a>
                 </li>
@@ -58,7 +58,7 @@
                 <li class="nav-item px-3">
                     <a class="nav-link" href="<?php echo base_url('adminpanel/dataprofile');?>">Settings</a>
                 </li>
-            </ul>
+            </ul> -->
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                     aria-expanded="false">
@@ -154,7 +154,9 @@
     <footer class="app-footer">
         <div>
             <a href="https://everyzalz.blogspot.com" target="_blank">ENHAS Web Admin Panel</a>
-            <span>&copy; 2020 Build by zlz.</span>
+            <span>&copy; <script>
+                document.write(new Date().getFullYear())
+                </script> Build by zlz.</span>
         </div>
     </footer>
     <!-- Bootstrap and necessary plugins-->
