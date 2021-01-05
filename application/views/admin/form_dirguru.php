@@ -16,9 +16,11 @@
                         <i class="fa fa-align-justify"></i>Input Guru
                     </div>
                     <div class="card-body">
-                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#inputEnhasModal"><i class="fa fa-plus"></i>&nbsp; Input
-                            Data</button>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary m-3" data-toggle="modal"
+                                data-target="#inputEnhasModal"><i class="fa fa-plus"></i>&nbsp; Input
+                                Guru</button>
+                        </div>
                         <table
                             class="table tb table-hover table-responsive-sm table-bordered table-striped table-sm mt-3">
                             <thead>
@@ -148,12 +150,11 @@
                     </div>
                     <div class="modal-body">
                         <?php echo form_open_multipart('adminpanel/editguru');?>
-                        <input type="hidden" class="form-control" id="edit_id" name="edit_id"
-                            >
+                        <input type="hidden" class="form-control" id="edit_id" name="edit_id">
                         <div class="form-group">
                             <label for="inputNip">NIP/NUPTK</label>
                             <input type="text" class="form-control" id="editnip" name="editnip"
-                                 placeholder="Inputkan NIP atau NUPTK">
+                                placeholder="Inputkan NIP atau NUPTK">
                             <div class="invalid-feedback">
                                 Inputkan NIP/NUPTK!
                             </div>
@@ -169,7 +170,6 @@
                         <div class="form-group">
                             <label for="inputMapel">Mapel Ampu</label>
                             <input type="text" class="form-control" id="editmapelampu" name="editmapelampu"
-                               
                                 placeholder="Inputkan Mata Pelajaran yang di ampu">
                             <div class="invalid-feedback">
                                 Inputkan Mapel yang di ampu!
@@ -178,8 +178,7 @@
                         <label for="uploadFoto">Upload Foto</label>
                         <div class="custom-file mb-3">
                             <!-- <label class="custom-file-label" for="uploadFoto">Pilih foto...</label> -->
-                            <input type="file" class="form-control editfotoguru" id="editfotoguru" name="editfotoguru"
-                                >
+                            <input type="file" class="form-control editfotoguru" id="editfotoguru" name="editfotoguru">
 
                         </div>
                         <!-- <div class="form-group">
@@ -204,7 +203,7 @@
     <script src="<?php echo base_url();?>assets/admin/vendors/jquery/js/jquery.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/vendors/popper.js/js/popper.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/vendors/bootstrap/js/bootstrap.min.js"></script>
-   
+
 
     <script>
 // $(document).ready(function() {
@@ -226,19 +225,18 @@
 //     });
 // });
 
-    $(document).ready(function() {
-        // Untuk sunting
-        $('#edit-modal').on('show.bs.modal', function(event) {
-            var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
-            var modal = $(this)
+$(document).ready(function() {
+    // Untuk sunting
+    $('#edit-modal').on('show.bs.modal', function(event) {
+        var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
+        var modal = $(this)
 
-            // Isi nilai pada field
-            modal.find('#edit_id').attr("value", div.data('id'));
-            modal.find('#editnip').attr("value", div.data('nip'));
-            modal.find('#editnamaguru').attr("value", div.data('nama'));
-            modal.find('#editmapelampu').attr("value", div.data('mapel'));
-            modal.find('#editfotoguru').attr("value", div.data('foto'));
-        });
+        // Isi nilai pada field
+        modal.find('#edit_id').attr("value", div.data('id'));
+        modal.find('#editnip').attr("value", div.data('nip'));
+        modal.find('#editnamaguru').attr("value", div.data('nama'));
+        modal.find('#editmapelampu').attr("value", div.data('mapel'));
+        modal.find('#editfotoguru').attr("value", div.data('foto'));
     });
-
-</script>
+});
+    </script>

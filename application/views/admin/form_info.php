@@ -14,9 +14,11 @@
                     <i class="fa fa-align-justify"></i>Input Informasi
                 </div>
                 <div class="card-body">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inputEnhasModal"><i
-                            class="fa fa-plus"></i>&nbsp; Input
-                        Informasi</button>
+                    <div class="row">
+                        <button type="button" class="btn btn-primary m-3" data-toggle="modal"
+                            data-target="#inputEnhasModal"><i class="fa fa-plus"></i>&nbsp; Input
+                            Informasi</button>
+                    </div>
                     <table class="table tb table-hover table-responsive-sm table-bordered table-striped table-sm mt-3">
                         <thead>
                             <tr class="text-center">
@@ -134,12 +136,11 @@
                 </div>
                 <div class="modal-body">
                     <?php echo form_open_multipart('adminpanel/editinfo');?>
-                    <input type="hidden" class="form-control" id="edit_id_info" name="edit_id_info"
-                        value="<?= $item['id_info']?>">
+                    <input type="hidden" class="form-control" id="edit_id_info" name="edit_id_info">
                     <div class="form-group">
                         <label for="editjudul">NIP/NUPTK</label>
                         <input type="text" class="form-control" id="editjudul" name="editjudul"
-                            value="<?= $item['judul_info']?>" placeholder="Inputkan Judul Informasi">
+                            placeholder="Inputkan Judul Informasi">
                         <div class="invalid-feedback">
                             Inputkan Judul Informasi!
                         </div>
@@ -147,7 +148,7 @@
                     <div class="form-group">
                         <label for="editisi">Konten Informasi</label>
                         <input type="text" class="form-control" id="editisi" name="editisi"
-                            value="<?= $item['isi_info']?>" placeholder="Inputkan Isi Informasi">
+                            placeholder="Inputkan Isi Informasi">
                         <div class="invalid-feedback">
                             Inputkan Isi Informasi!
                         </div>

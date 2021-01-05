@@ -10,6 +10,7 @@ class Adminpanel extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->library('session');	
 		$this->load->model('enhamodel');
+		$this->setsession();
 	}
 
 	public function setsession(){
@@ -21,7 +22,6 @@ class Adminpanel extends CI_Controller {
 	
 	public function index()
 	{	
-		$this->setsession();
 		$datasession['tb_user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
 		$this->template->load('templates/admin/template',  $datasession);
 
@@ -43,13 +43,11 @@ class Adminpanel extends CI_Controller {
 
 	public function dataguru()
 	{
-		$this->setsession();
 		$data['guru'] = $this->enhamodel->getDirGuru();
 		$this->template->load('templates/admin/template', 'admin/form_dirguru' , $data);
 	}	
 
 	public function inputguru(){
-		$this->setsession();
 			$nip = $this->input->post('nip');
 			$nama = $this->input->post('nama_guru');
 			$mapel = $this->input->post('mapel_ampu');
@@ -145,7 +143,6 @@ class Adminpanel extends CI_Controller {
 	// }
 
 	public function editguru(){
-		$this->setsession();
 		// post di isi variable name di input
 		$id = $this->input->post('edit_id');
 		
@@ -193,7 +190,6 @@ class Adminpanel extends CI_Controller {
 
 
 	public function deleteguru($id){
-		$this->setsession();
 		$guru['guru'] = $this->enhamodel->getGuruById($id);
 		if ($guru['guru']['foto_guru'] != null) {
 			$path = FCPATH.'assets/landing/img/fotoguru/'.$guru['guru']['foto_guru'];
@@ -206,7 +202,6 @@ class Adminpanel extends CI_Controller {
 
 
 	public function gallery(){
-		$this->setsession();
 		$data['gallery'] = $this->enhamodel->getGallery();
 		$this->template->load('templates/admin/template', 'admin/gallery', $data);
 	}
@@ -238,7 +233,6 @@ class Adminpanel extends CI_Controller {
 }
 
 public function deletegallery($id){
-	$this->setsession();
 	$gallery['gallery'] = $this->enhamodel->getGalleryById($id);
 	if ($gallery['gallery']['foto_kegiatan'] != null) {
 		$path = FCPATH.'assets/landing/img/gallery/'.$gallery['gallery']['foto_kegiatan'];
@@ -251,13 +245,11 @@ public function deletegallery($id){
 
 	public function datainfo()
 	{
-		$this->setsession();
 		$data['info'] = $this->enhamodel->getInfo();
 		$this->template->load('templates/admin/template', 'admin/form_info' , $data);
 	}	
 
 	public function inputinfo(){
-		$this->setsession();
 		$judulinfo = $this->input->post('judulinfo');
 		$isiinfo = $this->input->post('isiinfo');
 		$tglinfo = $this->input->post('tglinfo');
@@ -292,7 +284,6 @@ public function deletegallery($id){
 	}
 
 	public function editinfo(){
-		$this->setsession();
 		// post di isi variable name di input
 		$id = $this->input->post('edit_id_info');
 		$editjudul = $this->input->post('editjudul');
@@ -337,7 +328,6 @@ public function deletegallery($id){
 	}
 
 	public function deleteinfo($id){
-		$this->setsession();
 		$info['info'] = $this->enhamodel->getInfoById($id);
 		if ($info['info']['gbr_info'] != null) {
 			$path = FCPATH.'assets/landing/img/info/'.$info['info']['gbr_info'];
@@ -351,7 +341,6 @@ public function deletegallery($id){
 	/* files download */
 	public function datafile()
 	{
-		$this->setsession();
 		$data['filedata'] = $this->enhamodel->getFile();
 		$this->template->load('templates/admin/template', 'admin/form_files' , $data);
 	}	
@@ -388,7 +377,6 @@ public function deletegallery($id){
 	}}
 
 	public function editfile(){
-		$this->setsession();
 		// post di isi variable name di input
 		$id = $this->input->post('edit_id_file');
 		$editfile = $this->input->post('editfile');
@@ -425,7 +413,6 @@ public function deletegallery($id){
 	}}
 
 	public function deletefile($id){
-		$this->setsession();
 		$files['file'] = $this->enhamodel->getFileById($id);
 		if ($files['file']['lokasi_file'] != null) {
 			$path = FCPATH.'assets/landing/files/'.$files['file']['lokasi_file'];
@@ -441,13 +428,11 @@ public function deletegallery($id){
 
 	public function datacover()
 	{
-		$this->setsession();
 		$data['cover'] = $this->enhamodel->getCover();
 		$this->template->load('templates/admin/template', 'admin/form_carrousel' , $data);
 	}	
 
 	public function editcover(){
-		$this->setsession();
 		$id = $this->input->post('edit_id_cover');
 		$editjudul = $this->input->post('editjudulcover');
 		$editisi = $this->input->post('editdesccover');
@@ -489,13 +474,11 @@ public function deletegallery($id){
 	/* Running Text */
 	public function data_rtext()
 	{
-		$this->setsession();
 		$data['runtext'] = $this->enhamodel->getRunText();
 		$this->template->load('templates/admin/template', 'admin/form_rtext' , $data);
 	}	
 
 	public function editrtext(){
-		$this->setsession();
 		$editrtext = $this->input->post('editrtext');
 		
 		$data = ['isi_rtext'=>$editrtext];
@@ -508,13 +491,11 @@ public function deletegallery($id){
 	/* Edt Profile */
 	public function dataprofile()
 	{
-		$this->setsession();
 		$data['profile'] = $this->enhamodel->getProfile();
 		$this->template->load('templates/admin/template', 'admin/form_profile' , $data);
 	}	
 
 	public function editprofile(){
-		$this->setsession();
 		
 		$id = $this->input->post('idskul');
 		$jejangsekolah = $this->input->post('jenjang');
@@ -650,8 +631,6 @@ public function deletegallery($id){
 			$this->session->set_flashdata('message', 'Data berhasil di rubah');
 			redirect('adminpanel/dataprofile');
 		}
-
-	
 	}
 
 

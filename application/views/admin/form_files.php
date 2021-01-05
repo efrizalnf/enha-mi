@@ -14,8 +14,10 @@
                     <i class="fa fa-align-justify"></i>Input File
                 </div>
                 <div class="card-body">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inputEnhasModal"><i
-                            class="fa fa-plus"></i>&nbsp; Input File</button>
+                    <div class="row">
+                        <button type="button" class="btn btn-primary align-right m-3" data-toggle="modal"
+                            data-target="#inputEnhasModal"><i class="fa fa-plus"></i>&nbsp; Input File</button>
+                    </div>
                     <table class="table tb table-hover table-responsive-sm table-bordered table-striped table-sm mt-3">
                         <thead>
                             <tr class="text-center">
@@ -39,9 +41,9 @@
                                 <td class="td-actions text-center align-middle">
                                     <a href="javascript:;" data-id="<?php echo $item['id_files']?>"
                                         data-nama="<?php echo $item['nama_file']?>"
-                                        data-lokasi="<?php echo $item['lokasi_file'] ?>"
-                                        class="btn btn-info" type="button"
-                                        data-toggle="modal" data-target="#edit-modal-file"><i class="fa fa-edit"></i></a>
+                                        data-lokasi="<?php echo $item['lokasi_file'] ?>" class="btn btn-info"
+                                        type="button" data-toggle="modal" data-target="#edit-modal-file"><i
+                                            class="fa fa-edit"></i></a>
                                     <button href="<?php base_url()?>deletefile/<?php echo $item['id_files'];?>"
                                         class="btn btn-danger m-1 btn-hapus"><i class="fa fa-trash"></i>
                                     </button>
@@ -51,7 +53,7 @@
 
                         </tbody>
                     </table>
-                   
+
                 </div>
             </div>
         </div>
@@ -81,7 +83,7 @@
                             Inputkan Nama File!
                         </div>
                     </div>
-                
+
                     <label for="lokasifile">Upload File</label>
                     <div class="custom-file mb-3">
                         <!-- <label class="custom-file-label" for="uploadFoto">Pilih foto...</label> -->
@@ -115,20 +117,18 @@
                 </div>
                 <div class="modal-body">
                     <?php echo form_open_multipart('adminpanel/editfile');?>
-                    <input type="hidden" class="form-control" id="edit_id_file" name="edit_id_file"
-                        >
+                    <input type="hidden" class="form-control" id="edit_id_file" name="edit_id_file">
                     <div class="form-group">
                         <label for="editfile">Nama File</label>
                         <input type="text" class="form-control" id="editfile" name="editfile"
-                             placeholder="Inputkan File">
+                            placeholder="Inputkan File">
                         <div class="invalid-feedback">
                             Inputkan File!
                         </div>
                     </div>
                     <label for="edtlokasifile">Upload File</label>
                     <div class="custom-file mb-3">
-                        <input type="file" class="form-control" id="edtlokasifile" name="edtlokasifile"
-                            >
+                        <input type="file" class="form-control" id="edtlokasifile" name="edtlokasifile">
 
                     </div>
                     <div class="modal-footer w-100">
@@ -147,9 +147,9 @@
 <script>
 $(document).ready(function() {
     $('#edit-modal-file').on('show.bs.modal', function(event) {
-        var div = $(event.relatedTarget) 
+        var div = $(event.relatedTarget)
         var modal = $(this)
-      
+
         modal.find('#edit_id_file').attr("value", div.data('id'));
         modal.find('#editfile').attr("value", div.data('nama'));
         modal.find('#edtlokasifile').attr("value", div.data('lokasi'));
