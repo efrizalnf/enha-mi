@@ -1,7 +1,7 @@
 <main class="main">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active">Input Informasi</li>
+        <li class="breadcrumb-item active">ENHAS Informasi</li>
         <!-- Breadcrumb Menu-->
 
     </ol>

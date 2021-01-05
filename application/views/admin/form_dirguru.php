@@ -1,7 +1,7 @@
 <main class="main">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active">Direktori Guru</li>
+        <li class="breadcrumb-item active">ENHAS Guru</li>
         <!-- Breadcrumb Menu-->
 
     </ol>

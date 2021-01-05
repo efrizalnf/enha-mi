@@ -30,7 +30,7 @@
                             <div class="text-value"><?= $guru?></div>
                             <div>Jumlah Guru</div>
                         </div>
-                        <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+                        <div class="chart-wrapper mt-3 mx-3" style="height:25px;">
                             <canvas id="card-chart1" class="chart" height="70"></canvas>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             <div>Jumlah File (Yang dapat di unduh)</div>
                         </div>
 
-                        <div class="chart-wrapper mt-3" style="height:70px;">
+                        <div class="chart-wrapper mt-3" style="height:25px;">
                             <canvas id="card-chart3" class="chart" height="70"></canvas>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                             <div class="text-value"><?= $info?></div>
                             <div>Jumlah Informasi</div>
                         </div>
-                        <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+                        <div class="chart-wrapper mt-3 mx-3" style="height:25px;">
                             <canvas id="card-chart4" class="chart" height="70"></canvas>
                         </div>
                     </div>

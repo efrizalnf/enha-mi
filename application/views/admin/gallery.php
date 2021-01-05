@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="<?php echo base_url()?>assets/landing/css/gallery-grid.css">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active">Input Gallery</li>
+        <li class="breadcrumb-item active">ENHAS Image Gallery</li>
         <!-- Breadcrumb Menu-->
     </ol>
     <div class="row p-4">

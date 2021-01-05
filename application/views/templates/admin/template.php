@@ -35,15 +35,16 @@
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
     <header class="app-header navbar">
-        <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+       
         <a class="navbar-brand" href="#">
             <img class="navbar-brand-full" src="<?php echo base_url();?>assets/landing/img/logo-enhas.png" width="90"
                 height="40" alt="Enha Logo">
             <!-- <img class="navbar-brand-minimized" src=""
                 width="30" height="30" alt="logo-enhas"> -->
         </a>
+         <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -116,11 +117,11 @@
                     <li class="nav-item">
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('adminpanel/dataguru');?>">
-                            <i class="nav-icon icon-folder"></i>Direktori Guru</a>
+                            <i class="nav-icon icon-folder"></i>ENHAS Guru</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('adminpanel/datacover');?>">
-                            <i class="nav-icon icon-film"></i>ENHAS Gambar Cover</a>
+                            <i class="nav-icon icon-film"></i>ENHAS Gambar Slide</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('adminpanel/data_rtext');?>">
@@ -166,12 +167,12 @@
     <script src="<?= base_url()?>assets/admin/vendors/bootstrap/datatables/jquery.dataTables.min.js"></script>
     <script src="<?= base_url()?>assets/admin/vendors/bootstrap/datatables/dataTables.bootstrap4.min.js"></script>
     <!-- Plugins and scripts required by this view-->
-    <script src="<?php echo base_url();?>assets/admin/vendors/chart.js/js/Chart.min.js"></script>
+    <!-- <script src="<?php echo base_url();?>assets/admin/vendors/chart.js/js/Chart.min.js"></script> -->
     <script
         src="<?php echo base_url();?>assets/admin/vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/js/custom-tooltips.min.js">
     </script>
-    <script src="<?php echo base_url();?>assets/admin/js/main.js"></script>
-    <script src="<?php echo base_url();?>assets/admin/js/charts.js"></script>
+    <!-- <script src="<?php echo base_url();?>assets/admin/js/main.js"></script> -->
+    <!-- <script src="<?php echo base_url();?>assets/admin/js/charts.js"></script> -->
     <script src="<?php echo base_url();?>assets/admin/js/sweetalert/sweetalert2.all.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/js/enhas.js"></script>
     <script>
