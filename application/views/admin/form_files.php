@@ -141,18 +141,3 @@
         </div>
     </div>
 </main>
-<script src="<?php echo base_url();?>assets/admin/vendors/jquery/js/jquery.min.js"></script>
-<script src="<?php echo base_url();?>assets/admin/vendors/popper.js/js/popper.min.js"></script>
-<script src="<?php echo base_url();?>assets/admin/vendors/bootstrap/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('#edit-modal-file').on('show.bs.modal', function(event) {
-        var div = $(event.relatedTarget)
-        var modal = $(this)
-
-        modal.find('#edit_id_file').attr("value", div.data('id'));
-        modal.find('#editfile').attr("value", div.data('nama'));
-        modal.find('#edtlokasifile').attr("value", div.data('lokasi'));
-    });
-});
-</script>

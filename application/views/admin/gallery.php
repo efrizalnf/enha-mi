@@ -82,9 +82,4 @@
             </div>
         </div>
     </div>
-
-
 </main>
-<script src="<?php echo base_url()?>assets/landing/js/jquery-3.4.1.slim.min.js"></script>
-<script src="<?php echo base_url()?>assets/landing/js/baguetteBox.min.js"></script>
-<script src="<?php echo base_url()?>assets/landing/js/enha.js"></script>

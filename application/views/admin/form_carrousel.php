@@ -108,19 +108,3 @@
         </div>
     </div>
 </main>
-<script src="<?php echo base_url();?>assets/admin/vendors/jquery/js/jquery.min.js"></script>
-<script src="<?php echo base_url();?>assets/admin/vendors/popper.js/js/popper.min.js"></script>
-<script src="<?php echo base_url();?>assets/admin/vendors/bootstrap/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('#edit-modal-cover').on('show.bs.modal', function(event) {
-        var div = $(event.relatedTarget) 
-        var modal = $(this)
-
-        modal.find('#edit_id_cover').attr("value", div.data('id'));
-        modal.find('#editimgcover').attr("value", div.data('cover'));
-        modal.find('#editjudulcover').attr("value", div.data('title'));
-        modal.find('#editdesccover').attr("value", div.data('desc'));
-    });
-});
-</script>

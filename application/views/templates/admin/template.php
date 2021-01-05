@@ -19,7 +19,8 @@
     <title>ENHAS Admin Panel</title>
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="<?= base_url('assets/admin/vendors/bootstrap/css/bootstrap.css')?>">
-    <link rel="stylesheet" href="<?= base_url('assets/admin/vendors/bootstrap/datatables/dataTables.bootstrap4.min.css')?>">
+    <link rel="stylesheet"
+        href="<?= base_url('assets/admin/vendors/bootstrap/datatables/dataTables.bootstrap4.min.css')?>">
     <!-- Icons-->
     <link rel="icon" href="<?php echo base_url()?>assets/landing/img/favicon.ico">
     <link href="<?php echo base_url();?>assets/admin/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
@@ -174,7 +175,72 @@
     <script src="<?php echo base_url();?>assets/admin/js/sweetalert/sweetalert2.all.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/js/enhas.js"></script>
     <script>
+    /* data table */
     $('.tb').DataTable();
+
+    /* teacher */
+    $(document).ready(function() {
+        $('#edit-modal').on('show.bs.modal', function(event) {
+            var div = $(event.relatedTarget)
+            var modal = $(this)
+
+            modal.find('#edit_id').attr("value", div.data('id'));
+            modal.find('#editnip').attr("value", div.data('nip'));
+            modal.find('#editnamaguru').attr("value", div.data('nama'));
+            modal.find('#editmapelampu').attr("value", div.data('mapel'));
+            modal.find('#editfotoguru').attr("value", div.data('foto'));
+        });
+    });
+
+    /* carrousel */
+    $(document).ready(function() {
+        $('#edit-modal-cover').on('show.bs.modal', function(event) {
+            var div = $(event.relatedTarget)
+            var modal = $(this)
+
+            modal.find('#edit_id_cover').attr("value", div.data('id'));
+            modal.find('#editimgcover').attr("value", div.data('cover'));
+            modal.find('#editjudulcover').attr("value", div.data('title'));
+            modal.find('#editdesccover').attr("value", div.data('desc'));
+        });
+    });
+
+    /* rtext */
+    $(document).ready(function() {
+        $('#edit-modal-rtext').on('show.bs.modal', function(event) {
+            var div = $(event.relatedTarget)
+            var modal = $(this)
+
+            modal.find('#edit_id_rtext').attr("value", div.data('id'));
+            modal.find('#editrtext').attr("value", div.data('isi'));
+
+        });
+    });
+
+    /* files */
+    $(document).ready(function() {
+        $('#edit-modal-file').on('show.bs.modal', function(event) {
+            var div = $(event.relatedTarget)
+            var modal = $(this)
+
+            modal.find('#edit_id_file').attr("value", div.data('id'));
+            modal.find('#editfile').attr("value", div.data('nama'));
+            modal.find('#edtlokasifile').attr("value", div.data('lokasi'));
+        });
+    });
+
+    /* infos */
+    $(document).ready(function() {
+        $('#edit-modal-info').on('show.bs.modal', function(event) {
+            var div = $(event.relatedTarget)
+            var modal = $(this)
+
+            modal.find('#edit_id_info').attr("value", div.data('id'));
+            modal.find('#editjudul').attr("value", div.data('judul'));
+            modal.find('#editisi').attr("value", div.data('isi'));
+            modal.find('#editgbrinfo').attr("value", div.data('foto'));
+        });
+    });
     </script>
 </body>
 

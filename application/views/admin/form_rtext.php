@@ -71,18 +71,3 @@
         </div>
     </div>
 </main>
-<script src="<?php echo base_url();?>assets/admin/vendors/jquery/js/jquery.min.js"></script>
-<script src="<?php echo base_url();?>assets/admin/vendors/popper.js/js/popper.min.js"></script>
-<script src="<?php echo base_url();?>assets/admin/vendors/bootstrap/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('#edit-modal-rtext').on('show.bs.modal', function(event) {
-        var div = $(event.relatedTarget)
-        var modal = $(this)
-
-        modal.find('#edit_id_rtext').attr("value", div.data('id'));
-        modal.find('#editrtext').attr("value", div.data('isi'));
-       
-    });
-});
-</script>

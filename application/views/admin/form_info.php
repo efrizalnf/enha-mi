@@ -168,19 +168,3 @@
         </div>
     </div>
 </main>
-<script src="<?php echo base_url();?>assets/admin/vendors/jquery/js/jquery.min.js"></script>
-<script src="<?php echo base_url();?>assets/admin/vendors/popper.js/js/popper.min.js"></script>
-<script src="<?php echo base_url();?>assets/admin/vendors/bootstrap/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('#edit-modal-info').on('show.bs.modal', function(event) {
-        var div = $(event.relatedTarget)
-        var modal = $(this)
-
-        modal.find('#edit_id_info').attr("value", div.data('id'));
-        modal.find('#editjudul').attr("value", div.data('judul'));
-        modal.find('#editisi').attr("value", div.data('isi'));
-        modal.find('#editgbrinfo').attr("value", div.data('foto'));
-    });
-});
-</script>
