@@ -58,8 +58,7 @@ public function __construct()
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('nama');
 		$this->session->unset_userdata('status');
-
-		$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda Telah Logout!</div>');
-			redirect('login');
+		// $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda Telah Logout!</div>');
+		redirect('login');
 	}
 }
