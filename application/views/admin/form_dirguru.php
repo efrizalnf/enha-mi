@@ -149,11 +149,11 @@
                     <div class="modal-body">
                         <?php echo form_open_multipart('adminpanel/editguru');?>
                         <input type="hidden" class="form-control" id="edit_id" name="edit_id"
-                            value="<?= $gurumapel['id_guru']?>">
+                            >
                         <div class="form-group">
                             <label for="inputNip">NIP/NUPTK</label>
                             <input type="text" class="form-control" id="editnip" name="editnip"
-                                value="<?= $gurumapel['nip']?>" placeholder="Inputkan NIP atau NUPTK">
+                                 placeholder="Inputkan NIP atau NUPTK">
                             <div class="invalid-feedback">
                                 Inputkan NIP/NUPTK!
                             </div>
@@ -161,7 +161,7 @@
                         <div class="form-group">
                             <label for="inputNama">Nama Lengkap</label>
                             <input type="text" class="form-control" id="editnamaguru" name="editnamaguru"
-                                value="<?= $gurumapel['nama_guru']?>" placeholder="Inputkan Nama dan Gelar">
+                                placeholder="Inputkan Nama dan Gelar">
                             <div class="invalid-feedback">
                                 Inputkan Nama Lengkap!
                             </div>
@@ -169,7 +169,7 @@
                         <div class="form-group">
                             <label for="inputMapel">Mapel Ampu</label>
                             <input type="text" class="form-control" id="editmapelampu" name="editmapelampu"
-                                value="<?=$gurumapel['mapel_ampu']?>"
+                               
                                 placeholder="Inputkan Mata Pelajaran yang di ampu">
                             <div class="invalid-feedback">
                                 Inputkan Mapel yang di ampu!
@@ -179,7 +179,7 @@
                         <div class="custom-file mb-3">
                             <!-- <label class="custom-file-label" for="uploadFoto">Pilih foto...</label> -->
                             <input type="file" class="form-control editfotoguru" id="editfotoguru" name="editfotoguru"
-                                value="<?=$gurumapel['foto_guru']?>">
+                                >
 
                         </div>
                         <!-- <div class="form-group">

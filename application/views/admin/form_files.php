@@ -116,11 +116,11 @@
                 <div class="modal-body">
                     <?php echo form_open_multipart('adminpanel/editfile');?>
                     <input type="hidden" class="form-control" id="edit_id_file" name="edit_id_file"
-                        value="<?= $item['id_files']?>">
+                        >
                     <div class="form-group">
                         <label for="editfile">Nama File</label>
                         <input type="text" class="form-control" id="editfile" name="editfile"
-                            value="<?= $item['nama_file']?>" placeholder="Inputkan File">
+                             placeholder="Inputkan File">
                         <div class="invalid-feedback">
                             Inputkan File!
                         </div>
@@ -128,7 +128,7 @@
                     <label for="edtlokasifile">Upload File</label>
                     <div class="custom-file mb-3">
                         <input type="file" class="form-control" id="edtlokasifile" name="edtlokasifile"
-                            value="<?=$item['lokasi_file']?>">
+                            >
 
                     </div>
                     <div class="modal-footer w-100">
