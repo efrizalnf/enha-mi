@@ -7,14 +7,7 @@ class Enhamodel extends CI_Model{
     private $tbcarrousel = 'tb_carrousel';
     private $tbruntext = 'tb_rtext';
     private $tbschool = 'tb_school';
-    private $tbuser = 'tb_user'; 
 
-
-/* Get User */
-    public function getUser()
-    {
-        return $this->db->get_where($this->tbuser)->result_array();
-    }
 
     /* Get Data */
     public function getDirGuru()
