@@ -30,12 +30,9 @@ public function __construct()
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 
-		 $user = $this->db->get_where('tb_user', ['username' => $username])->row_array();
-		 $pass = $this->db->get_where('tb_user', ['password' => $password])->row_array();
-		// var_dump($user); die;
-
+		$user= $this->db->get_where('tb_user', ['username' => $username])->row_array();
 		if($username == $user['username']){
-			if($password == $pass['password']){
+			if(password_verify($password, $user['password'])){
 				$data = [
 					'username' => $user['username'],
 					'nama' => $user['nama'],
@@ -46,11 +43,11 @@ public function __construct()
 				redirect('adminpanel/dashboard');
 			}else{
 				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
-			redirect('login');
+				redirect('login');
 			}
 		}else{
-			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Username tidak terdaftar!</div>');
-			redirect('login');
+				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Username tidak terdaftar!</div>');
+				redirect('login');
 		}
 	}
 
