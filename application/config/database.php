@@ -76,9 +76,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'enha_db',
+	'username' => 'minc2944_enha_ma',
+	'password' => 'IL~x}4q~C+=B',
+	'database' => 'minc2944_db_enha_ma',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
